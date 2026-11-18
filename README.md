@@ -8,6 +8,8 @@
 
 - **Posts** in Markdown with front matter (`posts/`), built by a small Python script (`build.py`) into static HTML
 - **SEO built in:** canonical URLs, Open Graph, JSON-LD (Article, BreadcrumbList, FAQPage), sitemap, RSS and topic pages
+- **Previous-year question pages** built from [assam-exam-pyq](https://github.com/axomrank/assam-exam-pyq) by `pyq_pages.py`: one page per paper (`/question-papers/`) and one per topic (`/questions/`)
+- **Growth plan:** [SEO-GROWTH-PLAN.md](docs/SEO-GROWTH-PLAN.md)
 - **Measurable funnel:** every link into the app gets UTM tags automatically
 - **Deploys** through GitHub Actions on every push to `main`
 - **Plans:** the [sales and marketing plan](docs/MARKETING-PLAN.md) and the [account organisation](docs/ACCOUNT-ORGANISATION.md)

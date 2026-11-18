@@ -19,12 +19,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # PYQ dataset for /question-papers/ and /questions/ (only the data and figures, not the PDFs)
+      - uses: actions/checkout@v4
+        with:
+          repository: axomrank/assam-exam-pyq
+          path: pyq-data
+          sparse-checkout: |
+            questions.csv
+            catalog.json
+            exams/*/*/figures
+          sparse-checkout-cone-mode: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       # Change BASE_URL (repo variable) to https://blog.axomrank.org once a custom domain is set.
-      - run: python build.py --base-url "${{ vars.BASE_URL || 'https://axomrank.github.io/axomrank-blog' }}"
+      - run: python build.py --pyq-dir pyq-data --base-url "${{ vars.BASE_URL || 'https://axomrank.github.io/axomrank-blog' }}"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

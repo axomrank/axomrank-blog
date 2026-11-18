@@ -25,12 +25,15 @@ import argparse
 import datetime as dt
 import html
 import json
+import os
 import re
 import shutil
 from pathlib import Path
 from urllib.parse import quote
 
 import markdown
+
+import pyq_pages
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "_site"
@@ -114,9 +117,10 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
   <div class="wrap bar">
     <a class="brand" href="{base}/"><span class="mark" aria-hidden="true">A</span><span>AxomRank <em>Blog</em></span></a>
     <nav aria-label="Main">
+      <a href="{base}/question-papers/">Question papers</a>
+      <a href="{base}/questions/">Topic-wise MCQs</a>
       <a href="{base}/topics/adre/">ADRE</a>
       <a href="{base}/topics/apsc/">APSC</a>
-      <a href="{base}/topics/assam-history/">Assam History</a>
       <a class="cta-sm" href="{utm(app, 'nav', 'nav')}">Open the free app</a>
     </nav>
   </div>
@@ -127,6 +131,7 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
 <footer class="foot">
   <div class="wrap">
     <p><strong>AxomRank</strong> · free, bilingual (English and Assamese) lessons and previous-year questions for ADRE, APSC CCE, Assam TET and Assam Police.</p>
+    <p><a href="{base}/question-papers/">Previous year papers</a> · <a href="{base}/questions/">Questions by topic</a> · <a href="{base}/topics/assam-history/">Assam history</a></p>
     <p><a href="{utm(app, 'footer', 'footer')}">AxomRank app</a> · <a href="https://github.com/axomrank/assam-exam-pyq">Open PYQ dataset</a> · <a href="{base}/rss.xml">RSS</a> · <a href="{base}/about/">About and corrections</a></p>
   </div>
 </footer>
@@ -148,7 +153,7 @@ def fmt_date(d):
     return dt.date.fromisoformat(d).strftime("%-d %B %Y")
 
 
-def build(base_url=None):
+def build(base_url=None, pyq_dir=None):
     site = json.loads((ROOT / "site.json").read_text())
     if base_url:
         site["base_url"] = base_url.rstrip("/")
@@ -242,12 +247,23 @@ def build(base_url=None):
         for t in p["exam"] + p["tags"]:
             topics.setdefault(t, []).append(p)
 
+    # Previous-year question pages from the assam-exam-pyq dataset
+    pyq_dir = pyq_dir or os.environ.get("PYQ_DIR") or (ROOT.parent / "assam-exam-pyq")
+    papers = pyq_pages.build(site, page, OUT, urls, utm, pyq_dir)
+    pyq_strip = ""
+    if papers:
+        total = sum(len(x["qs"]) for x in papers)
+        pyq_strip = f'''<section class="wrap strip"><div><h2>{len(papers)} real question papers, {total:,} questions, all with answers</h2>
+<p>ADRE, APSC CCE Prelims, Assam Police, Assam TET and DME papers as text instead of blurry PDFs.</p></div>
+<p><a class="btn" href="{base}/question-papers/">Browse question papers</a> <a class="btn ghost" href="{base}/questions/">Questions by topic</a></p></section>'''
+
     # Home
     home = f"""<section class="hero wrap">
   <h1>{html.escape(site['tagline'])}</h1>
   <p class="dek">Exam analysis built from real previous-year papers, Assam history checked against named sources, and study plans that do not need a coaching fee. Every post links to free practice in the AxomRank app.</p>
   <a class="btn" href="{utm(site['app_url'], 'home_hero', 'hero')}">Start practising free</a>
 </section>
+{pyq_strip}
 <section class="wrap list">{''.join(card(site, p) for p in posts)}</section>"""
     (OUT / "index.html").write_text(page(site, title=f"{site['title']}: Assam govt exam preparation (ADRE, APSC, TET)",
                                          description="Free, source-checked guides for ADRE, APSC CCE, Assam TET and Assam Police: previous-year question analysis, Assam history and study plans.",
@@ -307,4 +323,6 @@ def build(base_url=None):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--base-url")
-    build(ap.parse_args().base_url)
+    ap.add_argument("--pyq-dir", help="checkout of axomrank/assam-exam-pyq (default ../assam-exam-pyq or $PYQ_DIR)")
+    a = ap.parse_args()
+    build(a.base_url, a.pyq_dir)

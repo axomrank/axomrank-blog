@@ -5,6 +5,7 @@ Marketing and SEO blog for AxomRank. Part of AxomRank: see README.md for the ove
 ## Layout
 
 - `posts/*.md`: posts with front matter (see README)
+- `pyq_pages.py`: question-paper and topic pages from ../assam-exam-pyq (or `--pyq-dir`)
 - `build.py`: static site builder
 - `assets/style.css`: brand-kit styling
 - `docs/`: marketing plan and account organisation

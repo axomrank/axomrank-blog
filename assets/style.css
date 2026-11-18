@@ -85,3 +85,23 @@ nav a:hover { color: var(--link); }
 @media (max-width: 560px) { nav { gap: 12px; } nav a:not(.cta-sm) { font-size: .9rem; } }
 .toc .toc { border: 0; padding: 0; margin: 0; background: none; }
 @media (max-width: 560px) { .masthead { position: static; } .bar { padding-top: 8px; padding-bottom: 8px; } }
+
+/* Previous-year question pages */
+.btn.ghost { background: transparent; color: var(--link); border: 1px solid var(--maroon); }
+.strip { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; margin-bottom: 24px; }
+.strip h2 { margin: 0 0 4px; font-size: 1.25rem; }
+.strip p { margin: 0; }
+.list .sect { grid-column: 1 / -1; margin: 24px 0 0; font-size: 1.35rem; }
+.pyq .qs { list-style: decimal; padding-left: 2.2em; margin: 0; }
+.pyq .q { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 18px; margin: 0 0 14px; scroll-margin-top: 80px; }
+.pyq .q::marker { font-weight: 700; color: var(--maroon); }
+.pyq .qt { margin: 0 0 8px; font-weight: 600; }
+.pyq .ctx { margin: 0 0 6px; color: var(--muted); font-size: .92rem; }
+.pyq .q img { max-width: 100%; height: auto; display: block; margin: 8px 0; border-radius: 8px; background: #fff; }
+.pyq .opts { list-style: none; padding: 0; margin: 0 0 8px; display: grid; gap: 4px; }
+.pyq .ol { display: inline-grid; place-items: center; width: 1.6em; height: 1.6em; border: 1px solid var(--line); border-radius: 50%; font-size: .8rem; font-weight: 600; margin-right: 6px; }
+.pyq details summary { cursor: pointer; color: var(--link); font-weight: 600; font-size: .95rem; }
+.pyq .ans { margin: 8px 0 4px; color: var(--ok); }
+.pyq .why { margin: 4px 0; font-size: .95rem; }
+.pyq .src, .pyq .qmeta, .pyq .flag { margin: 4px 0 0; font-size: .82rem; color: var(--muted); }
+.pyq > h2 { margin-top: 2em; }
