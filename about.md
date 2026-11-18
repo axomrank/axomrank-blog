@@ -6,7 +6,7 @@ AxomRank is run as a sole proprietorship by **Angsuman Das**.
 
 ## How we check facts
 
-- Exam statistics come from the real question booklets. The data and code are open in the [PYQ repository](https://github.com/axomrank/PYQ).
+- Exam statistics come from the real question booklets. The data and code are open in the [PYQ repository](https://github.com/axomrank/assam-exam-pyq).
 - We say which answers come from an official key and which are our own worked solutions.
 - History content names its sources. Where sources disagree, we say so instead of picking one silently.
 - We do not claim Assamese editorial review that has not happened.

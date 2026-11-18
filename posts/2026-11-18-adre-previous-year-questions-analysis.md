@@ -9,7 +9,7 @@ cta: /
 cta_text: Practise ADRE questions free
 ---
 
-Most "ADRE syllabus" pages list subjects. Few show how many marks each subject has actually carried. We extracted **all 1,290 questions** from the ten ADRE papers SLRC Assam set in 2022 and 2024 and tagged each one by subject and topic. The full dataset is open on [GitHub](https://github.com/axomrank/PYQ), so you can check every number below.
+Most "ADRE syllabus" pages list subjects. Few show how many marks each subject has actually carried. We extracted **all 1,290 questions** from the ten ADRE papers SLRC Assam set in 2022 and 2024 and tagged each one by subject and topic. The full dataset is open on [GitHub](https://github.com/axomrank/assam-exam-pyq), so you can check every number below.
 
 > **How to read this.** Counts come from the question booklets themselves. The 2024 answers follow SLRC's **official final key**. The 2022 papers had no published key, so those answers are worked solutions, with reasoning recorded for each one.
 
@@ -134,7 +134,7 @@ Start with maths and English. Together they were 44% of Grade III questions in 2
 
 ### Where can I practise ADRE previous year questions for free?
 
-All 1,290 questions are in the open [AxomRank PYQ dataset](https://github.com/axomrank/PYQ), and the [AxomRank app]({{app}}/) has free bilingual lessons for the Assam history, polity and geography topics.
+All 1,290 questions are in the open [AxomRank PYQ dataset](https://github.com/axomrank/assam-exam-pyq), and the [AxomRank app]({{app}}/) has free bilingual lessons for the Assam history, polity and geography topics.
 
 ## Sources and method
 

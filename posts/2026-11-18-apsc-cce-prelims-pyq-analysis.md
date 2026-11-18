@@ -9,7 +9,7 @@ cta: /
 cta_text: Study Assam history and polity free
 ---
 
-The APSC Combined Competitive Examination (CCE) Prelims has two papers: **GS-I**, which decides the merit list, and **GS-II (CSAT)**, which is qualifying. We took the papers for **2023, 2024 and 2025** and tagged every question we could read by subject and topic. All of it is open in the [AxomRank PYQ dataset](https://github.com/axomrank/PYQ).
+The APSC Combined Competitive Examination (CCE) Prelims has two papers: **GS-I**, which decides the merit list, and **GS-II (CSAT)**, which is qualifying. We took the papers for **2023, 2024 and 2025** and tagged every question we could read by subject and topic. All of it is open in the [AxomRank PYQ dataset](https://github.com/axomrank/assam-exam-pyq).
 
 > **Method note.** The booklets are scans, so we extracted them with OCR. Every GS-I paper came out almost complete (295 of 300 questions). GS-II came out less complete (234 questions) because some items are diagrams or passages. Answers follow APSC's **official provisional keys**.
 

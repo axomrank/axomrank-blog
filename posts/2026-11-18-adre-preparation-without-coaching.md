@@ -13,7 +13,7 @@ Coaching batches for ADRE in Assam often cost a few thousand rupees, and many go
 
 ## What you need (all free)
 
-- **The real papers.** All ten ADRE papers from 2022 and 2024, with answers, are in the open [AxomRank PYQ dataset](https://github.com/axomrank/PYQ). The 2024 answers follow SLRC's official final key.
+- **The real papers.** All ten ADRE papers from 2022 and 2024, with answers, are in the open [AxomRank PYQ dataset](https://github.com/axomrank/assam-exam-pyq). The 2024 answers follow SLRC's official final key.
 - **Assam GK lessons.** The [AxomRank app]({{app}}/) has bilingual (English and Assamese) lessons on Assam history, Indian polity, geography, maths and reasoning, with spaced review. It works offline once loaded.
 - **A notebook for mistakes.** This matters more than any book.
 

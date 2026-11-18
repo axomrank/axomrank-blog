@@ -127,7 +127,7 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
 <footer class="foot">
   <div class="wrap">
     <p><strong>AxomRank</strong> · free, bilingual (English and Assamese) lessons and previous-year questions for ADRE, APSC CCE, Assam TET and Assam Police.</p>
-    <p><a href="{utm(app, 'footer', 'footer')}">AxomRank app</a> · <a href="https://github.com/axomrank/PYQ">Open PYQ dataset</a> · <a href="{base}/rss.xml">RSS</a> · <a href="{base}/about/">About and corrections</a></p>
+    <p><a href="{utm(app, 'footer', 'footer')}">AxomRank app</a> · <a href="https://github.com/axomrank/assam-exam-pyq">Open PYQ dataset</a> · <a href="{base}/rss.xml">RSS</a> · <a href="{base}/about/">About and corrections</a></p>
   </div>
 </footer>
 </body>

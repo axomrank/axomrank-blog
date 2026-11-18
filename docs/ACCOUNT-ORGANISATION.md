@@ -8,11 +8,11 @@ Reviewed 18 November 2026: 35 public repositories. The goal is that a student, j
 | Repo | Live URL | Notes |
 |---|---|---|
 | `axomrank.github.io` | axomrank.pages.dev | **The app.** Pin first |
-| `ahom-lessons` | axomrank.github.io/ahom-lessons | Ahom course |
-| `AHOM` | axomrank.github.io/AHOM | Ahom kingdom story site |
-| `historymap` | axomrank.github.io/historymap | Assam Through Time |
-| `Assam-History-Characters` | axomrank.github.io/Assam-History-Characters | Character sheets |
-| `assam` | axomrank.github.io/assam | Visual archive |
+| `ahom-lessons` | axomrank.github.io/ahom-kings-lessons | Ahom course |
+| `AHOM` | axomrank.github.io/ahom-kingdom-history | Ahom kingdom story site |
+| `historymap` | axomrank.github.io/assam-history-map | Assam Through Time |
+| `Assam-History-Characters` | axomrank.github.io/assam-history-characters | Character sheets |
+| `assam` | axomrank.github.io/assam-visual-archive | Visual archive |
 | `map` | Pages not enabled | Assam map portal. Enable Pages |
 
 ### 2. Open data (link magnets): keep, pin `PYQ`
