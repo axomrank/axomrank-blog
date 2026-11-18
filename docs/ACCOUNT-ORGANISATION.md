@@ -33,7 +33,7 @@ Reviewed 18 November 2026: 35 public repositories. The goal is that a student, j
 | `API-App`, `the-floor-test` | Small single tools. Keep public, unpinned |
 | `Axomrank_matt` | Job radar. Its README points to `github.com/Angsumi/Axomrank_matt`. **Keep active** if the job radar will be developed (recommended, see the marketing plan); otherwise archive |
 
-### 5. Not AxomRank: move to the personal account (`Angsumi`)
+### 5. Not AxomRank: remove from this account
 `bioinformatics`, `BLOG` (personal essays), `Flood-Relief`, `genone`, `bamboo-crafts`, `Portfolio_Maker`, `NE-Ethnomedicine`, `Assam_Ethnomedicine`, `Teaching-schools`
 
 They are good work but dilute the brand. GitHub keeps redirects after a transfer, so old links keep working.
@@ -58,12 +58,11 @@ GitHub shows the README of the repo named like the account (`axomrank/axomrank`,
 | Renamed and archived | `Axomrank` → `axomrank-workspace-legacy` | Done. Old URLs redirect |
 | Archived (read-only) | `History`, `Polity`, `Geography`, `axomrank-content` | Done. `Geography`'s Pages site stays live |
 | Archived (duplicates of the Angsumi copies) | `bioinformatics`, `BLOG`, `Assam_Ethnomedicine` | Done. Angsumi already had these names. `Assam_Ethnomedicine` is identical, and the other two are older snapshots |
-| Transfer to Angsumi requested | `Flood-Relief`, `genone`, `bamboo-crafts`, `Portfolio_Maker`, `NE-Ethnomedicine`, `Teaching-schools` | **Waiting for Angsumi to accept** from the GitHub email. `bamboo-crafts`' Pages URL will move to angsumi.github.io/bamboo-crafts |
+| Deleted (owner's decision, instead of a transfer) | `Flood-Relief`, `genone`, `bamboo-crafts`, `Portfolio_Maker`, `NE-Ethnomedicine`, `Teaching-schools` | Done. They can be restored until mid-February 2027 from GitHub Settings → Repositories → Deleted repositories |
 | Deleted | `gitzo-ps-1-1793602232`, `gitzo-ps-1-axomrank-1793602273`, `gitzo-ps-2-axomrank-1793602294`, `axomrank-achievements` | Done |
 | Fixed | `Study_Assam` README `file:///` links → relative | Done. 12 links point to files that were never committed (for example, the CCE Mains syllabus) |
 | Topics and homepage links | 13 product, data and marketing repos | Done |
 
 ## Still for the owner
 - Pin `axomrank.github.io`, `PYQ`, `axomrank-blog`, `ahom-lessons`, `historymap` and `AHOM` (profile → Customize your pins).
-- Accept the six transfers from the Angsumi account's email.
 - Point DNS for axomrank.org and blog.axomrank.org.
