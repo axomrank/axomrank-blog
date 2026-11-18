@@ -7,7 +7,7 @@
 | Asset | Repo | Status | Marketing value |
 |---|---|---|---|
 | Main learning app (PWA, offline, English + Assamese) | `axomrank.github.io` → axomrank.pages.dev | Live | **The product.** 93 Assam history lessons, 60 polity, 32 Indian history, 16 maths, 23 reasoning, 16 geography |
-| Ahom kings course (41 reigns) | `ahom-kings-lessons` | Live | Strong hook for the "Ahom kings" searches |
+| Ahom kings course (41 reigns) | `ahom-kingdom-history/lessons` | Live | Strong hook for the "Ahom kings" searches |
 | Ahom kingdom story site | `ahom-kingdom-history` | Live | Linkable reference site |
 | Assam Through Time (year-by-year map) | `assam-history-map` | Live | Shareable, linkable |
 | Assam history character sheets | `assam-history-characters` | Live | Social content source |
@@ -103,7 +103,7 @@ Rules for every post: real data or a named source, a clear table, an FAQ section
 | **Telegram channel** | Where Assam aspirants already are (eKuhipath and Adda run channels) | Daily quiz question + weekly post link | `assam-exam-pyq` |
 | **WhatsApp channel** | Same audience, more personal | 3 posts a week | `assam-exam-pyq`, blog |
 | **Instagram carousels** | 10 carousels already designed | 3 a week | `axomrank-brand-assets` |
-| **YouTube Shorts** | "One Ahom king in 60 seconds", 41 episodes ready-made | 2 a week | `ahom-kings-lessons`, `assam-history-characters` |
+| **YouTube Shorts** | "One Ahom king in 60 seconds", 41 episodes ready-made | 2 a week | `ahom-kingdom-history`, `assam-history-characters` |
 | **Facebook groups** (ADRE, APSC, TET aspirant groups) | High reach in Assam | Share PYQ analysis posts, no spam | blog |
 | **Google Search** | Long-term compounding traffic | 2 posts a week | blog |
 
