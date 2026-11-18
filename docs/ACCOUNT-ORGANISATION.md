@@ -59,12 +59,11 @@ GitHub shows the README of the repo named like the account (`axomrank/axomrank`,
 | Archived (read-only) | `History`, `Polity`, `Geography`, `axomrank-content` | Done. `Geography`'s Pages site stays live |
 | Archived (duplicates of the Angsumi copies) | `bioinformatics`, `BLOG`, `Assam_Ethnomedicine` | Done. Angsumi already had these names. `Assam_Ethnomedicine` is identical, and the other two are older snapshots |
 | Transfer to Angsumi requested | `Flood-Relief`, `genone`, `bamboo-crafts`, `Portfolio_Maker`, `NE-Ethnomedicine`, `Teaching-schools` | **Waiting for Angsumi to accept** from the GitHub email. `bamboo-crafts`' Pages URL will move to angsumi.github.io/bamboo-crafts |
-| Made private (to be deleted) | `gitzo-ps-1-1793602232`, `gitzo-ps-1-axomrank-1793602273`, `gitzo-ps-2-axomrank-1793602294`, `axomrank-achievements` | Hidden. Deleting needs the `delete_repo` scope: `gh auth refresh -h github.com -s delete_repo`, then `gh repo delete axomrank/<name> --yes` |
+| Deleted | `gitzo-ps-1-1793602232`, `gitzo-ps-1-axomrank-1793602273`, `gitzo-ps-2-axomrank-1793602294`, `axomrank-achievements` | Done |
 | Fixed | `Study_Assam` README `file:///` links → relative | Done. 12 links point to files that were never committed (for example, the CCE Mains syllabus) |
 | Topics and homepage links | 13 product, data and marketing repos | Done |
 
 ## Still for the owner
 - Pin `axomrank.github.io`, `PYQ`, `axomrank-blog`, `ahom-lessons`, `historymap` and `AHOM` (profile → Customize your pins).
 - Accept the six transfers from the Angsumi account's email.
-- Delete the four private badge repos (command above).
 - Point DNS for axomrank.org and blog.axomrank.org.
