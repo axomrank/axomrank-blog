@@ -50,11 +50,21 @@ GitHub shows the README of the repo named like the account (`axomrank/axomrank`,
 1. Rename `Axomrank` → `axomrank-workspace-legacy` and archive it.
 2. Create a new `axomrank/axomrank` repo containing [PROFILE-README.md](PROFILE-README.md).
 
-## Done in this pass (18 Nov 2026)
-- Created `axomrank-blog`, with four posts, and deployed it to GitHub Pages.
-- Added topics and homepage links to the product and data repos.
+## Cleanup log (18 Nov 2026)
 
-## Needs the owner (not done automatically)
-- Pinning repos. Use the profile page: **Customize your pins**. The GitHub API cannot set pins.
-- Archive, transfer, rename and delete (tiers 3–6). These were left for confirmation.
-- Pointing DNS for axomrank.org and blog.axomrank.org.
+| Action | Repos | State |
+|---|---|---|
+| Created | `axomrank-blog` (live on Pages), `axomrank` (profile README) | Done |
+| Renamed and archived | `Axomrank` → `axomrank-workspace-legacy` | Done. Old URLs redirect |
+| Archived (read-only) | `History`, `Polity`, `Geography`, `axomrank-content` | Done. `Geography`'s Pages site stays live |
+| Archived (duplicates of the Angsumi copies) | `bioinformatics`, `BLOG`, `Assam_Ethnomedicine` | Done. Angsumi already had these names. `Assam_Ethnomedicine` is identical, and the other two are older snapshots |
+| Transfer to Angsumi requested | `Flood-Relief`, `genone`, `bamboo-crafts`, `Portfolio_Maker`, `NE-Ethnomedicine`, `Teaching-schools` | **Waiting for Angsumi to accept** from the GitHub email. `bamboo-crafts`' Pages URL will move to angsumi.github.io/bamboo-crafts |
+| Made private (to be deleted) | `gitzo-ps-1-1793602232`, `gitzo-ps-1-axomrank-1793602273`, `gitzo-ps-2-axomrank-1793602294`, `axomrank-achievements` | Hidden. Deleting needs the `delete_repo` scope: `gh auth refresh -h github.com -s delete_repo`, then `gh repo delete axomrank/<name> --yes` |
+| Fixed | `Study_Assam` README `file:///` links → relative | Done. 12 links point to files that were never committed (for example, the CCE Mains syllabus) |
+| Topics and homepage links | 13 product, data and marketing repos | Done |
+
+## Still for the owner
+- Pin `axomrank.github.io`, `PYQ`, `axomrank-blog`, `ahom-lessons`, `historymap` and `AHOM` (profile → Customize your pins).
+- Accept the six transfers from the Angsumi account's email.
+- Delete the four private badge repos (command above).
+- Point DNS for axomrank.org and blog.axomrank.org.
