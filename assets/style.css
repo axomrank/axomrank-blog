@@ -105,3 +105,12 @@ nav a:hover { color: var(--link); }
 .pyq .why { margin: 4px 0; font-size: .95rem; }
 .pyq .src, .pyq .qmeta, .pyq .flag { margin: 4px 0 0; font-size: .82rem; color: var(--muted); }
 .pyq > h2 { margin-top: 2em; }
+
+/* Exam hubs and syllabus pages */
+.note { background: var(--surface); border-left: 4px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; padding: 4px 18px; margin: 20px 0; }
+.prose blockquote.official { font-size: .95rem; }
+.prose blockquote.official p { margin: .5em 0; }
+.syllabus h4 { margin: 1.4em 0 .3em; font-size: 1.05rem; }
+.syllabus .count { font-weight: 400; color: var(--muted); font-size: .85rem; }
+.syllabus .subs { color: var(--muted); font-size: .88rem; }
+.syllabus .src { font-size: .85rem; color: var(--muted); }

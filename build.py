@@ -33,6 +33,7 @@ from urllib.parse import quote
 
 import markdown
 
+import exam_pages
 import pyq_pages
 
 ROOT = Path(__file__).resolve().parent
@@ -117,10 +118,11 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
   <div class="wrap bar">
     <a class="brand" href="{base}/"><span class="mark" aria-hidden="true">A</span><span>AxomRank <em>Blog</em></span></a>
     <nav aria-label="Main">
+      <a href="{base}/adre/">ADRE</a>
+      <a href="{base}/apsc-cce/">APSC</a>
+      <a href="{base}/exams/">All exams</a>
       <a href="{base}/question-papers/">Question papers</a>
       <a href="{base}/questions/">Topic-wise MCQs</a>
-      <a href="{base}/topics/adre/">ADRE</a>
-      <a href="{base}/topics/apsc/">APSC</a>
       <a class="cta-sm" href="{utm(app, 'nav', 'nav')}">Open the free app</a>
     </nav>
   </div>
@@ -131,7 +133,7 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
 <footer class="foot">
   <div class="wrap">
     <p><strong>AxomRank</strong> · free, bilingual (English and Assamese) lessons and previous-year questions for ADRE, APSC CCE, Assam TET and Assam Police.</p>
-    <p><a href="{base}/question-papers/">Previous year papers</a> · <a href="{base}/questions/">Questions by topic</a> · <a href="{base}/topics/assam-history/">Assam history</a></p>
+    <p><a href="{base}/exams/">Exams</a> · <a href="{base}/syllabus/adre/">ADRE syllabus</a> · <a href="{base}/syllabus/apsc-cce/">APSC syllabus</a> · <a href="{base}/question-papers/">Previous year papers</a> · <a href="{base}/questions/">Questions by topic</a> · <a href="{base}/topics/assam-history/">Assam history</a></p>
     <p><a href="{utm(app, 'footer', 'footer')}">AxomRank app</a> · <a href="https://github.com/axomrank/assam-exam-pyq">Open PYQ dataset</a> · <a href="{base}/rss.xml">RSS</a> · <a href="{base}/about/">About and corrections</a></p>
   </div>
 </footer>
@@ -250,6 +252,7 @@ def build(base_url=None, pyq_dir=None):
     # Previous-year question pages from the assam-exam-pyq dataset
     pyq_dir = pyq_dir or os.environ.get("PYQ_DIR") or (ROOT.parent / "assam-exam-pyq")
     papers = pyq_pages.build(site, page, OUT, urls, utm, pyq_dir)
+    exam_pages.build(site, page, OUT, urls, utm, papers, posts, md)
     pyq_strip = ""
     if papers:
         total = sum(len(x["qs"]) for x in papers)
