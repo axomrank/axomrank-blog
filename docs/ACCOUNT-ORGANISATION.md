@@ -1,12 +1,13 @@
 # Organising the `axomrank` GitHub account
 
-Last updated 18 November 2026. The account holds **15 repositories**. Every name says what the repo contains, every repo has a professional README with a roadmap and an AGENTS.md for AI agents, and each README cross-links its siblings.
+Last updated 18 November 2026. The account holds **16 repositories**: 15 public and 1 private (`axomrank-app`). Every name says what the repo contains, every repo has a professional README with a roadmap and an AGENTS.md for AI agents, and each README cross-links its siblings.
 
 ## Repositories
 
 | Group | Repo | Live site |
 |---|---|---|
-| Learn | `axomrank.github.io` (the app; name required for the user site) | axomrank.pages.dev, axomrank.github.io |
+| Learn | `axomrank-app` (**private**: the app, AxomRank's core product) | axomrank.pages.dev (Cloudflare Pages, direct upload) |
+| Home | `axomrank.github.io` (public home page; the name is required for the user site) | axomrank.github.io |
 | Learn | `floor-test-simulator` | axomrank.github.io/floor-test-simulator |
 | History | `ahom-kingdom-history` (includes the Ahom Kings lessons in `lessons/`) | axomrank.github.io/ahom-kingdom-history, lessons at axomrank.github.io/ahom-kingdom-history/lessons and ahom-lessons.pages.dev |
 | History | `assam-history-map` | axomrank.github.io/assam-history-map |
@@ -52,9 +53,13 @@ GitHub redirects the old repository URLs. For the old GitHub Pages URLs, `axomra
 - **Deleted:** the legacy workspace (`Axomrank`), `History`, `Polity`, `Geography`, `axomrank-content`, `API-App`, `Axomrank_matt`, `bioinformatics`, `BLOG`, `Assam_Ethnomedicine`, `Flood-Relief`, `genone`, `bamboo-crafts`, `Portfolio_Maker`, `NE-Ethnomedicine`, `Teaching-schools`, three `gitzo-ps-*` repos, `axomrank-achievements`, and `Assam_MAP_file` and `ahom-kings-lessons` after their merges.
 - Deleted repos can be restored for 90 days from GitHub Settings → Repositories → Deleted repositories. Local copies are in `_deleted-backup/` on the owner's machine.
 
+## App made private (18 Nov 2026)
+
+The app is AxomRank's main product and is not open source. Its full history (all 5 branches, 105 commits) was copied to the private repository `axomrank-app`. The public `axomrank.github.io` was then deleted and recreated with fresh history, holding only the home page and the redirect page, so no app code remains public. Cloudflare Pages (`axomrank` and `ahom-lessons` projects) uses direct upload rather than a Git connection, so `scripts/deploy_cloudflare.sh` keeps deploying from the private repository's folder. Note: the code was public until this date, so copies made earlier cannot be recalled.
+
 ## Still for the owner
 
-- Pin `axomrank.github.io`, `assam-exam-pyq`, `axomrank-blog`, `assam-history-map` and `ahom-kingdom-history` (profile → Customize your pins).
+- Pin `axomrank.github.io` (home page), `assam-exam-pyq`, `axomrank-blog`, `assam-history-map` and `ahom-kingdom-history` (profile → Customize your pins).
 - Choose licenses: most repos have none, which means all rights are reserved.
 - Rights review of the PDFs in `assam-history-sources`. Some are modern editions that may still be under copyright.
 - Point DNS for axomrank.org and blog.axomrank.org.

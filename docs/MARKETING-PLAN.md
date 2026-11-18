@@ -6,7 +6,7 @@
 
 | Asset | Repo | Status | Marketing value |
 |---|---|---|---|
-| Main learning app (PWA, offline, English + Assamese) | `axomrank.github.io` → axomrank.pages.dev | Live | **The product.** 93 Assam history lessons, 60 polity, 32 Indian history, 16 maths, 23 reasoning, 16 geography |
+| Main learning app (PWA, offline, English + Assamese) | `axomrank-app` (private) → axomrank.pages.dev | Live | **The product.** 93 Assam history lessons, 60 polity, 32 Indian history, 16 maths, 23 reasoning, 16 geography |
 | Ahom kings course (41 reigns) | `ahom-kingdom-history/lessons` | Live | Strong hook for the "Ahom kings" searches |
 | Ahom kingdom story site | `ahom-kingdom-history` | Live | Linkable reference site |
 | Assam Through Time (year-by-year map) | `assam-history-map` | Live | Shareable, linkable |
