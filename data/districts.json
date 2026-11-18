@@ -1,0 +1,1675 @@
+{
+ "source": {
+  "title": "Statistical Handbook, Assam 2025",
+  "publisher": "Directorate of Economics and Statistics, Government of Assam",
+  "url": "https://des.assam.gov.in/information-and-services/statistical-handbook",
+  "pdf": "https://des.assam.gov.in/sites/default/files/swf1/dms43_statistical_handbook_assam_2025_0.pdf",
+  "sha256": "1372a665e688bba2947b5703cbed39a24e7c7209f7fa6645d8374883f81bc9a0",
+  "tables": {
+   "1.01": "District-wise projected population (35 districts)",
+   "1.02": "Area, sub-divisions, towns, villages, blocks, gaon panchayats, revenue circles (33 districts)",
+   "1.03": "Population, Census 2011 (33 districts)",
+   "1.04": "SC and ST population, Census 2011 (33 districts)",
+   "1.05": "Literacy rate, Census 2011 (33 districts)",
+   "22.08": "Colleges as on 2024-25 (35 districts)"
+  },
+  "note": "The handbook says figures in Tables 1.01-1.05 are provisionally estimated for 35 and 33 districts from Census of India 2011 by DES Assam."
+ },
+ "state": {
+  "population_2011": 31205576,
+  "population_2026_projected": 36718189,
+  "area_sq_km": 78438,
+  "literacy_2011": 72.19
+ },
+ "districts": [
+  {
+   "name": "Kokrajhar",
+   "population": {
+    "2011_current_boundaries": 887142,
+    "2024_projected": 1024813,
+    "2025_projected": 1034344,
+    "2026_projected": 1043860
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 7,
+    "model": 0,
+    "private": 10,
+    "commerce": 1
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 887142,
+    "female": 434237,
+    "male": 452905,
+    "rural": 832201,
+    "urban": 54941,
+    "child_0_6": 136924,
+    "child_0_6_female": 66839,
+    "area_sq_km": 3296,
+    "area_rural_sq_km": 3280,
+    "sub_divisions": 4,
+    "towns": 4,
+    "villages": 1068,
+    "inhabited_villages": 1053,
+    "cd_blocks": 5,
+    "gaon_panchayats": 0,
+    "revenue_circles": 5,
+    "sc": 29570,
+    "sc_female": 14184,
+    "sc_sex_ratio": 922,
+    "st": 278665,
+    "st_female": 139086,
+    "st_sex_ratio": 996,
+    "literacy": {
+     "total": 65.22,
+     "male": 71.89,
+     "female": 58.27,
+     "rural": 63.63,
+     "urban": 70.45,
+     "gender_gap": 13.62
+    }
+   }
+  },
+  {
+   "name": "Dhubri",
+   "population": {
+    "2011_current_boundaries": 1560589,
+    "2024_projected": 1802769,
+    "2025_projected": 1819535,
+    "2026_projected": 1836274
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 12,
+    "model": 2,
+    "private": 2,
+    "commerce": 1
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": false,
+    "population": 1394144,
+    "female": 678323,
+    "male": 715821,
+    "rural": 1216605,
+    "urban": 177539,
+    "child_0_6": 249565,
+    "child_0_6_female": 122314,
+    "area_sq_km": 1511,
+    "area_rural_sq_km": 1483,
+    "sub_divisions": 2,
+    "towns": 9,
+    "villages": 777,
+    "inhabited_villages": 773,
+    "cd_blocks": 11,
+    "gaon_panchayats": 132,
+    "revenue_circles": 5,
+    "sc": 62628,
+    "sc_female": 30266,
+    "sc_sex_ratio": 935,
+    "st": 2300,
+    "st_female": 1156,
+    "st_sex_ratio": 1010,
+    "literacy": {
+     "total": 61.23,
+     "male": 66.12,
+     "female": 56.06,
+     "rural": 57.62,
+     "urban": 83.74,
+     "gender_gap": 10.06
+    }
+   }
+  },
+  {
+   "name": "Goalpara",
+   "population": {
+    "2011_current_boundaries": 1008183,
+    "2024_projected": 1164638,
+    "2025_projected": 1175469,
+    "2026_projected": 1186283
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 9,
+    "model": 1,
+    "private": 7,
+    "commerce": 0
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 1008183,
+    "female": 494891,
+    "male": 513292,
+    "rural": 870121,
+    "urban": 138062,
+    "child_0_6": 171657,
+    "child_0_6_female": 84200,
+    "area_sq_km": 1824,
+    "area_rural_sq_km": 1760,
+    "sub_divisions": 2,
+    "towns": 11,
+    "villages": 829,
+    "inhabited_villages": 779,
+    "cd_blocks": 8,
+    "gaon_panchayats": 81,
+    "revenue_circles": 5,
+    "sc": 45094,
+    "sc_female": 22095,
+    "sc_sex_ratio": 961,
+    "st": 231570,
+    "st_female": 115557,
+    "st_sex_ratio": 996,
+    "literacy": {
+     "total": 67.37,
+     "male": 71.46,
+     "female": 63.13,
+     "rural": 65.93,
+     "urban": 76.08,
+     "gender_gap": 8.33
+    }
+   }
+  },
+  {
+   "name": "Barpeta",
+   "population": {
+    "2011_current_boundaries": 1439806,
+    "2024_projected": 1663242,
+    "2025_projected": 1678710,
+    "2026_projected": 1694155
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 16,
+    "model": 2,
+    "private": 12,
+    "commerce": 1
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": false,
+    "population": 1693622,
+    "female": 826618,
+    "male": 867004,
+    "rural": 1546269,
+    "urban": 147353,
+    "child_0_6": 287829,
+    "child_0_6_female": 141052,
+    "area_sq_km": 2282,
+    "area_rural_sq_km": 2246,
+    "sub_divisions": 4,
+    "towns": 9,
+    "villages": 835,
+    "inhabited_villages": 825,
+    "cd_blocks": 12,
+    "gaon_panchayats": 129,
+    "revenue_circles": 8,
+    "sc": 95320,
+    "sc_female": 46155,
+    "sc_sex_ratio": 939,
+    "st": 27344,
+    "st_female": 13814,
+    "st_sex_ratio": 1021,
+    "literacy": {
+     "total": 63.81,
+     "male": 69.29,
+     "female": 58.06,
+     "rural": 61.47,
+     "urban": 86.28,
+     "gender_gap": 11.23
+    }
+   }
+  },
+  {
+   "name": "Morigaon",
+   "population": {
+    "2011_current_boundaries": 957423,
+    "2024_projected": 1106001,
+    "2025_projected": 1116286,
+    "2026_projected": 1126556
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 7,
+    "model": 1,
+    "private": 5,
+    "commerce": 1
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 957423,
+    "female": 470772,
+    "male": 486651,
+    "rural": 884125,
+    "urban": 73298,
+    "child_0_6": 163819,
+    "child_0_6_female": 80073,
+    "area_sq_km": 1551,
+    "area_rural_sq_km": 1525,
+    "sub_divisions": 1,
+    "towns": 6,
+    "villages": 632,
+    "inhabited_villages": 598,
+    "cd_blocks": 5,
+    "gaon_panchayats": 85,
+    "revenue_circles": 5,
+    "sc": 117841,
+    "sc_female": 57647,
+    "sc_sex_ratio": 958,
+    "st": 136777,
+    "st_female": 68395,
+    "st_sex_ratio": 1000,
+    "literacy": {
+     "total": 68.03,
+     "male": 71.9,
+     "female": 64.04,
+     "rural": 66.6,
+     "urban": 84.17,
+     "gender_gap": 7.86
+    }
+   }
+  },
+  {
+   "name": "Nagaon",
+   "population": {
+    "2011_current_boundaries": 1774798,
+    "2024_projected": 2050220,
+    "2025_projected": 2069287,
+    "2026_projected": 2088324
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 17,
+    "model": 0,
+    "private": 17,
+    "commerce": 3
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": false,
+    "population": 1892550,
+    "female": 929918,
+    "male": 962632,
+    "rural": 1695366,
+    "urban": 197184,
+    "child_0_6": 308209,
+    "child_0_6_female": 151066,
+    "area_sq_km": 2550,
+    "area_rural_sq_km": 2518,
+    "sub_divisions": 2,
+    "towns": 8,
+    "villages": 1012,
+    "inhabited_villages": 963,
+    "cd_blocks": 13,
+    "gaon_panchayats": 172,
+    "revenue_circles": 7,
+    "sc": 156913,
+    "sc_female": 77258,
+    "sc_sex_ratio": 970,
+    "st": 86422,
+    "st_female": 43303,
+    "st_sex_ratio": 1004,
+    "literacy": {
+     "total": 71.04,
+     "male": 74.59,
+     "female": 67.36,
+     "rural": 69.02,
+     "urban": 87.09,
+     "gender_gap": 7.23
+    }
+   }
+  },
+  {
+   "name": "Sonitpur",
+   "population": {
+    "2011_current_boundaries": 1533660,
+    "2024_projected": 1771661,
+    "2025_projected": 1788137,
+    "2026_projected": 1804588
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 6,
+    "model": 2,
+    "private": 6,
+    "commerce": 2
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": false,
+    "population": 1311619,
+    "female": 638949,
+    "male": 672670,
+    "rural": 1169142,
+    "urban": 142477,
+    "child_0_6": 189409,
+    "child_0_6_female": 93044,
+    "area_sq_km": 3409,
+    "area_rural_sq_km": 3368,
+    "sub_divisions": 2,
+    "towns": 6,
+    "villages": 1044,
+    "inhabited_villages": 1008,
+    "cd_blocks": 7,
+    "gaon_panchayats": 82,
+    "revenue_circles": 4,
+    "sc": 65367,
+    "sc_female": 31893,
+    "sc_sex_ratio": 953,
+    "st": 139033,
+    "st_female": 68698,
+    "st_sex_ratio": 977,
+    "literacy": {
+     "total": 68.56,
+     "male": 74.53,
+     "female": 62.26,
+     "rural": 65.8,
+     "urban": 89.85,
+     "gender_gap": 12.27
+    }
+   }
+  },
+  {
+   "name": "Lakhimpur",
+   "population": {
+    "2011_current_boundaries": 1042137,
+    "2024_projected": 1203861,
+    "2025_projected": 1215057,
+    "2026_projected": 1226235
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 16,
+    "model": 0,
+    "private": 5,
+    "commerce": 2
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 1042137,
+    "female": 512463,
+    "male": 529674,
+    "rural": 950804,
+    "urban": 91333,
+    "child_0_6": 156739,
+    "child_0_6_female": 76723,
+    "area_sq_km": 2277,
+    "area_rural_sq_km": 2241,
+    "sub_divisions": 3,
+    "towns": 4,
+    "villages": 1184,
+    "inhabited_villages": 1145,
+    "cd_blocks": 9,
+    "gaon_panchayats": 81,
+    "revenue_circles": 7,
+    "sc": 81840,
+    "sc_female": 40151,
+    "sc_sex_ratio": 963,
+    "st": 249426,
+    "st_female": 122710,
+    "st_sex_ratio": 968,
+    "literacy": {
+     "total": 77.2,
+     "male": 83.52,
+     "female": 70.67,
+     "rural": 76.22,
+     "urban": 86.93,
+     "gender_gap": 12.85
+    }
+   }
+  },
+  {
+   "name": "Dhemaji",
+   "population": {
+    "2011_current_boundaries": 686133,
+    "2024_projected": 792611,
+    "2025_projected": 799982,
+    "2026_projected": 807342
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 15,
+    "model": 0,
+    "private": 8,
+    "commerce": 2
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 686133,
+    "female": 334884,
+    "male": 351249,
+    "rural": 637848,
+    "urban": 48285,
+    "child_0_6": 104247,
+    "child_0_6_female": 50790,
+    "area_sq_km": 3237,
+    "area_rural_sq_km": 3221,
+    "sub_divisions": 2,
+    "towns": 4,
+    "villages": 1319,
+    "inhabited_villages": 1264,
+    "cd_blocks": 5,
+    "gaon_panchayats": 65,
+    "revenue_circles": 4,
+    "sc": 44225,
+    "sc_female": 21219,
+    "sc_sex_ratio": 922,
+    "st": 325560,
+    "st_female": 160111,
+    "st_sex_ratio": 968,
+    "literacy": {
+     "total": 72.7,
+     "male": 79.84,
+     "female": 65.21,
+     "rural": 71.81,
+     "urban": 84.02,
+     "gender_gap": 14.63
+    }
+   }
+  },
+  {
+   "name": "Tinsukia",
+   "population": {
+    "2011_current_boundaries": 1327929,
+    "2024_projected": 1534004,
+    "2025_projected": 1548270,
+    "2026_projected": 1562514
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 9,
+    "model": 2,
+    "private": 4,
+    "commerce": 5
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 1327929,
+    "female": 647698,
+    "male": 680231,
+    "rural": 1063186,
+    "urban": 264743,
+    "child_0_6": 181826,
+    "child_0_6_female": 89049,
+    "area_sq_km": 3790,
+    "area_rural_sq_km": 3728,
+    "sub_divisions": 3,
+    "towns": 13,
+    "villages": 1168,
+    "inhabited_villages": 1136,
+    "cd_blocks": 7,
+    "gaon_panchayats": 85,
+    "revenue_circles": 4,
+    "sc": 37688,
+    "sc_female": 18245,
+    "sc_sex_ratio": 938,
+    "st": 82066,
+    "st_female": 40297,
+    "st_sex_ratio": 965,
+    "literacy": {
+     "total": 69.66,
+     "male": 77.19,
+     "female": 61.73,
+     "rural": 65.05,
+     "urban": 87.22,
+     "gender_gap": 15.46
+    }
+   }
+  },
+  {
+   "name": "Dibrugarh",
+   "population": {
+    "2011_current_boundaries": 1326335,
+    "2024_projected": 1532162,
+    "2025_projected": 1546411,
+    "2026_projected": 1560638
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 15,
+    "model": 0,
+    "private": 5,
+    "commerce": 6
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 1326335,
+    "female": 649901,
+    "male": 676434,
+    "rural": 1082605,
+    "urban": 243730,
+    "child_0_6": 163210,
+    "child_0_6_female": 80042,
+    "area_sq_km": 3381,
+    "area_rural_sq_km": 3336,
+    "sub_divisions": 3,
+    "towns": 9,
+    "villages": 1348,
+    "inhabited_villages": 1318,
+    "cd_blocks": 7,
+    "gaon_panchayats": 93,
+    "revenue_circles": 7,
+    "sc": 58876,
+    "sc_female": 28359,
+    "sc_sex_ratio": 929,
+    "st": 102871,
+    "st_female": 51036,
+    "st_sex_ratio": 985,
+    "literacy": {
+     "total": 76.05,
+     "male": 82.82,
+     "female": 68.99,
+     "rural": 72.75,
+     "urban": 90.11,
+     "gender_gap": 13.83
+    }
+   }
+  },
+  {
+   "name": "Sivasagar",
+   "population": {
+    "2011_current_boundaries": 664823,
+    "2024_projected": 767994,
+    "2025_projected": 775136,
+    "2026_projected": 782267
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 12,
+    "model": 0,
+    "private": 1,
+    "commerce": 3
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": false,
+    "population": 692435,
+    "female": 337762,
+    "male": 354673,
+    "rural": 612062,
+    "urban": 80373,
+    "child_0_6": 78491,
+    "child_0_6_female": 38394,
+    "area_sq_km": 1581,
+    "area_rural_sq_km": 1551,
+    "sub_divisions": 2,
+    "towns": 4,
+    "villages": 531,
+    "inhabited_villages": 518,
+    "cd_blocks": 4,
+    "gaon_panchayats": 82,
+    "revenue_circles": 4,
+    "sc": 34847,
+    "sc_female": 17094,
+    "sc_sex_ratio": 963,
+    "st": 37334,
+    "st_female": 18235,
+    "st_sex_ratio": 955,
+    "literacy": {
+     "total": 84.49,
+     "male": 88.95,
+     "female": 79.81,
+     "rural": 83.51,
+     "urban": 91.86,
+     "gender_gap": 9.14
+    }
+   }
+  },
+  {
+   "name": "Jorhat",
+   "population": {
+    "2011_current_boundaries": 924952,
+    "2024_projected": 1068491,
+    "2025_projected": 1078428,
+    "2026_projected": 1088349
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 15,
+    "model": 0,
+    "private": 3,
+    "commerce": 4
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 924952,
+    "female": 453713,
+    "male": 471239,
+    "rural": 704418,
+    "urban": 220534,
+    "child_0_6": 102532,
+    "child_0_6_female": 50428,
+    "area_sq_km": 1758,
+    "area_rural_sq_km": 1666,
+    "sub_divisions": 2,
+    "towns": 11,
+    "villages": 600,
+    "inhabited_villages": 571,
+    "cd_blocks": 6,
+    "gaon_panchayats": 90,
+    "revenue_circles": 5,
+    "sc": 64787,
+    "sc_female": 31856,
+    "sc_sex_ratio": 967,
+    "st": 62368,
+    "st_female": 30901,
+    "st_sex_ratio": 982,
+    "literacy": {
+     "total": 82.78,
+     "male": 87.89,
+     "female": 77.48,
+     "rural": 80.35,
+     "urban": 90.39,
+     "gender_gap": 10.41
+    }
+   }
+  },
+  {
+   "name": "Golaghat",
+   "population": {
+    "2011_current_boundaries": 1066888,
+    "2024_projected": 1232453,
+    "2025_projected": 1243915,
+    "2026_projected": 1255359
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 15,
+    "model": 1,
+    "private": 1,
+    "commerce": 4
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 1066888,
+    "female": 523727,
+    "male": 543161,
+    "rural": 969152,
+    "urban": 97736,
+    "child_0_6": 134793,
+    "child_0_6_female": 66131,
+    "area_sq_km": 3502,
+    "area_rural_sq_km": 3466,
+    "sub_divisions": 4,
+    "towns": 7,
+    "villages": 1125,
+    "inhabited_villages": 1032,
+    "cd_blocks": 8,
+    "gaon_panchayats": 102,
+    "revenue_circles": 6,
+    "sc": 62298,
+    "sc_female": 30491,
+    "sc_sex_ratio": 959,
+    "st": 111765,
+    "st_female": 55345,
+    "st_sex_ratio": 981,
+    "literacy": {
+     "total": 77.43,
+     "male": 83.56,
+     "female": 71.09,
+     "rural": 75.94,
+     "urban": 91.74,
+     "gender_gap": 12.47
+    }
+   }
+  },
+  {
+   "name": "Karbi Anglong",
+   "population": {
+    "2011_current_boundaries": 643140,
+    "2024_projected": 742946,
+    "2025_projected": 749855,
+    "2026_projected": 756754
+   },
+   "colleges_2024_25": {
+    "government": 1,
+    "provincialised": 3,
+    "model": 1,
+    "private": 11,
+    "commerce": 1
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": false,
+    "population": 660955,
+    "female": 321975,
+    "male": 338980,
+    "rural": 565852,
+    "urban": 95103,
+    "child_0_6": 99546,
+    "child_0_6_female": 48621,
+    "area_sq_km": 7366,
+    "area_rural_sq_km": 7343,
+    "sub_divisions": 3,
+    "towns": 5,
+    "villages": 2353,
+    "inhabited_villages": 2165,
+    "cd_blocks": 7,
+    "gaon_panchayats": 0,
+    "revenue_circles": 3,
+    "sc": 33523,
+    "sc_female": 16021,
+    "sc_sex_ratio": 915,
+    "st": 345220,
+    "st_female": 170663,
+    "st_sex_ratio": 978,
+    "literacy": {
+     "total": 71.81,
+     "male": 78.74,
+     "female": 64.5,
+     "rural": 68.97,
+     "urban": 87.84,
+     "gender_gap": 14.23
+    }
+   }
+  },
+  {
+   "name": "Dima Hasao",
+   "population": {
+    "2011_current_boundaries": 214102,
+    "2024_projected": 247327,
+    "2025_projected": 249628,
+    "2026_projected": 251924
+   },
+   "colleges_2024_25": {
+    "government": 1,
+    "provincialised": 1,
+    "model": 1,
+    "private": 2,
+    "commerce": 1
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 214102,
+    "female": 103300,
+    "male": 110802,
+    "rural": 151613,
+    "urban": 62489,
+    "child_0_6": 32414,
+    "child_0_6_female": 15934,
+    "area_sq_km": 4888,
+    "area_rural_sq_km": 4866,
+    "sub_divisions": 3,
+    "towns": 4,
+    "villages": 695,
+    "inhabited_villages": 676,
+    "cd_blocks": 5,
+    "gaon_panchayats": 0,
+    "revenue_circles": 2,
+    "sc": 4337,
+    "sc_female": 1997,
+    "sc_sex_ratio": 853,
+    "st": 151843,
+    "st_female": 75323,
+    "st_sex_ratio": 984,
+    "literacy": {
+     "total": 77.54,
+     "male": 83.29,
+     "female": 71.33,
+     "rural": 71.13,
+     "urban": 92.24,
+     "gender_gap": 11.96
+    }
+   }
+  },
+  {
+   "name": "Cachar",
+   "population": {
+    "2011_current_boundaries": 1736617,
+    "2024_projected": 2006114,
+    "2025_projected": 2024771,
+    "2026_projected": 2043399
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 12,
+    "model": 1,
+    "private": 13,
+    "commerce": 2
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 1736617,
+    "female": 850333,
+    "male": 886284,
+    "rural": 1421153,
+    "urban": 315464,
+    "child_0_6": 256774,
+    "child_0_6_female": 125357,
+    "area_sq_km": 3786,
+    "area_rural_sq_km": 3721,
+    "sub_divisions": 4,
+    "towns": 19,
+    "villages": 1040,
+    "inhabited_villages": 998,
+    "cd_blocks": 15,
+    "gaon_panchayats": 162,
+    "revenue_circles": 5,
+    "sc": 264897,
+    "sc_female": 128846,
+    "sc_sex_ratio": 947,
+    "st": 17569,
+    "st_female": 8833,
+    "st_sex_ratio": 1011,
+    "literacy": {
+     "total": 79.34,
+     "male": 84.78,
+     "female": 73.68,
+     "rural": 77.08,
+     "urban": 88.99,
+     "gender_gap": 11.09
+    }
+   }
+  },
+  {
+   "name": "Sribhumi",
+   "population": {
+    "2011_current_boundaries": 1228686,
+    "2024_projected": 1419360,
+    "2025_projected": 1432560,
+    "2026_projected": 1445739
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 7,
+    "model": 1,
+    "private": 6,
+    "commerce": 2
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 1228686,
+    "female": 602822,
+    "male": 625864,
+    "rural": 1118986,
+    "urban": 109700,
+    "child_0_6": 211960,
+    "child_0_6_female": 104322,
+    "area_sq_km": 1809,
+    "area_rural_sq_km": 1790,
+    "sub_divisions": 3,
+    "towns": 7,
+    "villages": 936,
+    "inhabited_villages": 915,
+    "cd_blocks": 7,
+    "gaon_panchayats": 95,
+    "revenue_circles": 5,
+    "sc": 157890,
+    "sc_female": 76506,
+    "sc_sex_ratio": 940,
+    "st": 1940,
+    "st_female": 946,
+    "st_sex_ratio": 952,
+    "literacy": {
+     "total": 78.22,
+     "male": 84.12,
+     "female": 72.09,
+     "rural": 76.66,
+     "urban": 92.82,
+     "gender_gap": 12.03
+    }
+   }
+  },
+  {
+   "name": "Hailakandi",
+   "population": {
+    "2011_current_boundaries": 659296,
+    "2024_projected": 761609,
+    "2025_projected": 768692,
+    "2026_projected": 775764
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 6,
+    "model": 1,
+    "private": 1,
+    "commerce": 1
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 659296,
+    "female": 321406,
+    "male": 337890,
+    "rural": 611156,
+    "urban": 48140,
+    "child_0_6": 111278,
+    "child_0_6_female": 54342,
+    "area_sq_km": 1327,
+    "area_rural_sq_km": 1316,
+    "sub_divisions": 1,
+    "towns": 3,
+    "villages": 331,
+    "inhabited_villages": 330,
+    "cd_blocks": 5,
+    "gaon_panchayats": 62,
+    "revenue_circles": 4,
+    "sc": 70659,
+    "sc_female": 34290,
+    "sc_sex_ratio": 943,
+    "st": 691,
+    "st_female": 337,
+    "st_sex_ratio": 952,
+    "literacy": {
+     "total": 74.33,
+     "male": 80.74,
+     "female": 67.6,
+     "rural": 72.73,
+     "urban": 92.93,
+     "gender_gap": 13.14
+    }
+   }
+  },
+  {
+   "name": "Bongaigaon",
+   "population": {
+    "2011_current_boundaries": 738804,
+    "2024_projected": 853455,
+    "2025_projected": 861392,
+    "2026_projected": 869317
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 7,
+    "model": 1,
+    "private": 4,
+    "commerce": 2
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 738804,
+    "female": 362986,
+    "male": 375818,
+    "rural": 628994,
+    "urban": 109810,
+    "child_0_6": 116392,
+    "child_0_6_female": 57293,
+    "area_sq_km": 1093,
+    "area_rural_sq_km": 1061,
+    "sub_divisions": 2,
+    "towns": 5,
+    "villages": 563,
+    "inhabited_villages": 535,
+    "cd_blocks": 5,
+    "gaon_panchayats": 65,
+    "revenue_circles": 4,
+    "sc": 82784,
+    "sc_female": 40271,
+    "sc_sex_ratio": 947,
+    "st": 18835,
+    "st_female": 9458,
+    "st_sex_ratio": 1009,
+    "literacy": {
+     "total": 69.74,
+     "male": 74.87,
+     "female": 64.43,
+     "rural": 66.42,
+     "urban": 87.37,
+     "gender_gap": 10.43
+    }
+   }
+  },
+  {
+   "name": "Chirang",
+   "population": {
+    "2011_current_boundaries": 482162,
+    "2024_projected": 556986,
+    "2025_projected": 562166,
+    "2026_projected": 567338
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 5,
+    "model": 1,
+    "private": 2,
+    "commerce": 0
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 482162,
+    "female": 237302,
+    "male": 244860,
+    "rural": 446825,
+    "urban": 35337,
+    "child_0_6": 73215,
+    "child_0_6_female": 36014,
+    "area_sq_km": 1923,
+    "area_rural_sq_km": 1911,
+    "sub_divisions": 2,
+    "towns": 3,
+    "villages": 508,
+    "inhabited_villages": 501,
+    "cd_blocks": 2,
+    "gaon_panchayats": 0,
+    "revenue_circles": 3,
+    "sc": 35135,
+    "sc_female": 17030,
+    "sc_sex_ratio": 941,
+    "st": 178688,
+    "st_female": 89415,
+    "st_sex_ratio": 1002,
+    "literacy": {
+     "total": 63.55,
+     "male": 70.24,
+     "female": 56.65,
+     "rural": 62.08,
+     "urban": 81.28,
+     "gender_gap": 13.59
+    }
+   }
+  },
+  {
+   "name": "Kamrup",
+   "population": {
+    "2011_current_boundaries": 1517542,
+    "2024_projected": 1753042,
+    "2025_projected": 1769345,
+    "2026_projected": 1785623
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 25,
+    "model": 0,
+    "private": 38,
+    "commerce": 3
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 1517542,
+    "female": 739081,
+    "male": 778461,
+    "rural": 1375148,
+    "urban": 142394,
+    "child_0_6": 200061,
+    "child_0_6_female": 98345,
+    "area_sq_km": 3105,
+    "area_rural_sq_km": 3031,
+    "sub_divisions": 3,
+    "towns": 16,
+    "villages": 1068,
+    "inhabited_villages": 1037,
+    "cd_blocks": 14,
+    "gaon_panchayats": 139,
+    "revenue_circles": 11,
+    "sc": 107827,
+    "sc_female": 52590,
+    "sc_sex_ratio": 952,
+    "st": 182038,
+    "st_female": 89944,
+    "st_sex_ratio": 977,
+    "literacy": {
+     "total": 75.55,
+     "male": 81.3,
+     "female": 69.47,
+     "rural": 74.21,
+     "urban": 87.89,
+     "gender_gap": 11.84
+    }
+   }
+  },
+  {
+   "name": "Kamrup Metro",
+   "population": {
+    "2011_current_boundaries": 1253938,
+    "2024_projected": 1448530,
+    "2025_projected": 1462002,
+    "2026_projected": 1475452
+   },
+   "colleges_2024_25": {
+    "government": 2,
+    "provincialised": 21,
+    "model": 0,
+    "private": 13,
+    "commerce": 6
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 1253938,
+    "female": 606353,
+    "male": 647585,
+    "rural": 216927,
+    "urban": 1037011,
+    "child_0_6": 125386,
+    "child_0_6_female": 60942,
+    "area_sq_km": 955,
+    "area_rural_sq_km": 693,
+    "sub_divisions": 6,
+    "towns": 12,
+    "villages": 216,
+    "inhabited_villages": 204,
+    "cd_blocks": 3,
+    "gaon_panchayats": 21,
+    "revenue_circles": 5,
+    "sc": 101789,
+    "sc_female": 49683,
+    "sc_sex_ratio": 953,
+    "st": 75121,
+    "st_female": 37219,
+    "st_sex_ratio": 982,
+    "literacy": {
+     "total": 88.71,
+     "male": 92.13,
+     "female": 85.07,
+     "rural": 76.45,
+     "urban": 91.19,
+     "gender_gap": 7.06
+    }
+   }
+  },
+  {
+   "name": "Nalbari",
+   "population": {
+    "2011_current_boundaries": 771639,
+    "2024_projected": 891386,
+    "2025_projected": 899676,
+    "2026_projected": 907953
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 10,
+    "model": 0,
+    "private": 5,
+    "commerce": 1
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 771639,
+    "female": 375633,
+    "male": 396006,
+    "rural": 688909,
+    "urban": 82730,
+    "child_0_6": 95333,
+    "child_0_6_female": 46875,
+    "area_sq_km": 1052,
+    "area_rural_sq_km": 997,
+    "sub_divisions": 4,
+    "towns": 11,
+    "villages": 456,
+    "inhabited_villages": 455,
+    "cd_blocks": 7,
+    "gaon_panchayats": 65,
+    "revenue_circles": 7,
+    "sc": 60216,
+    "sc_female": 29562,
+    "sc_sex_ratio": 964,
+    "st": 23364,
+    "st_female": 11672,
+    "st_sex_ratio": 998,
+    "literacy": {
+     "total": 78.63,
+     "male": 84.36,
+     "female": 72.57,
+     "rural": 77.22,
+     "urban": 89.89,
+     "gender_gap": 11.79
+    }
+   }
+  },
+  {
+   "name": "Baksa",
+   "population": {
+    "2011_current_boundaries": 624173,
+    "2024_projected": 721035,
+    "2025_projected": 727741,
+    "2026_projected": 734436
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 4,
+    "model": 1,
+    "private": 4,
+    "commerce": 0
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": false,
+    "population": 950075,
+    "female": 468745,
+    "male": 481330,
+    "rural": 937833,
+    "urban": 12242,
+    "child_0_6": 122872,
+    "child_0_6_female": 60374,
+    "area_sq_km": 2457,
+    "area_rural_sq_km": 2451,
+    "sub_divisions": 3,
+    "towns": 2,
+    "villages": 690,
+    "inhabited_villages": 679,
+    "cd_blocks": 5,
+    "gaon_panchayats": 0,
+    "revenue_circles": 6,
+    "sc": 73083,
+    "sc_female": 35549,
+    "sc_sex_ratio": 947,
+    "st": 331007,
+    "st_female": 165373,
+    "st_sex_ratio": 998,
+    "literacy": {
+     "total": 69.25,
+     "male": 77.03,
+     "female": 61.27,
+     "rural": 69.18,
+     "urban": 74.54,
+     "gender_gap": 15.75
+    }
+   }
+  },
+  {
+   "name": "Darrang",
+   "population": {
+    "2011_current_boundaries": 928500,
+    "2024_projected": 1072589,
+    "2025_projected": 1082564,
+    "2026_projected": 1092524
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 5,
+    "model": 2,
+    "private": 12,
+    "commerce": 1
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 928500,
+    "female": 453227,
+    "male": 475273,
+    "rural": 873006,
+    "urban": 55494,
+    "child_0_6": 156408,
+    "child_0_6_female": 76971,
+    "area_sq_km": 1585,
+    "area_rural_sq_km": 1573,
+    "sub_divisions": 1,
+    "towns": 3,
+    "villages": 561,
+    "inhabited_villages": 552,
+    "cd_blocks": 5,
+    "gaon_panchayats": 75,
+    "revenue_circles": 4,
+    "sc": 40260,
+    "sc_female": 19694,
+    "sc_sex_ratio": 958,
+    "st": 8419,
+    "st_female": 4119,
+    "st_sex_ratio": 958,
+    "literacy": {
+     "total": 63.08,
+     "male": 67.87,
+     "female": 58.04,
+     "rural": 61.5,
+     "urban": 85.92,
+     "gender_gap": 9.83
+    }
+   }
+  },
+  {
+   "name": "Udalguri",
+   "population": {
+    "2011_current_boundaries": 831668,
+    "2024_projected": 960730,
+    "2025_projected": 969665,
+    "2026_projected": 978586
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 5,
+    "model": 1,
+    "private": 2,
+    "commerce": 1
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 831668,
+    "female": 410051,
+    "male": 421617,
+    "rural": 794094,
+    "urban": 37574,
+    "child_0_6": 113274,
+    "child_0_6_female": 55864,
+    "area_sq_km": 2012,
+    "area_rural_sq_km": 2002,
+    "sub_divisions": 2,
+    "towns": 3,
+    "villages": 800,
+    "inhabited_villages": 791,
+    "cd_blocks": 6,
+    "gaon_panchayats": 0,
+    "revenue_circles": 5,
+    "sc": 37844,
+    "sc_female": 18442,
+    "sc_sex_ratio": 951,
+    "st": 267372,
+    "st_female": 133822,
+    "st_sex_ratio": 1002,
+    "literacy": {
+     "total": 65.41,
+     "male": 72.58,
+     "female": 58.05,
+     "rural": 64.43,
+     "urban": 85.14,
+     "gender_gap": 14.53
+    }
+   }
+  },
+  {
+   "name": "Biswanath",
+   "population": {
+    "2011_current_boundaries": 390450,
+    "2024_projected": 451042,
+    "2025_projected": 455237,
+    "2026_projected": 459425
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 5,
+    "model": 1,
+    "private": 3,
+    "commerce": 0
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": false,
+    "population": 612491,
+    "female": 301257,
+    "male": 311234,
+    "rural": 581123,
+    "urban": 31368,
+    "child_0_6": 88453,
+    "child_0_6_female": 43465,
+    "area_sq_km": 1796,
+    "area_rural_sq_km": 1778,
+    "sub_divisions": 2,
+    "towns": 2,
+    "villages": 832,
+    "inhabited_villages": 790,
+    "cd_blocks": 7,
+    "gaon_panchayats": 76,
+    "revenue_circles": 4,
+    "sc": 43763,
+    "sc_female": 21420,
+    "sc_sex_ratio": 959,
+    "st": 93174,
+    "st_female": 45824,
+    "st_sex_ratio": 968,
+    "literacy": {
+     "total": 64.72,
+     "male": 71.73,
+     "female": 57.48,
+     "rural": 63.33,
+     "urban": 89.2,
+     "gender_gap": 14.25
+    }
+   }
+  },
+  {
+   "name": "Charaideo",
+   "population": {
+    "2011_current_boundaries": 486227,
+    "2024_projected": 561682,
+    "2025_projected": 566906,
+    "2026_projected": 572121
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 6,
+    "model": 0,
+    "private": 1,
+    "commerce": 1
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": false,
+    "population": 458615,
+    "female": 224072,
+    "male": 234543,
+    "rural": 428892,
+    "urban": 29723,
+    "child_0_6": 60889,
+    "child_0_6_female": 29884,
+    "area_sq_km": 1087,
+    "area_rural_sq_km": 1074,
+    "sub_divisions": 1,
+    "towns": 3,
+    "villages": 344,
+    "inhabited_villages": 344,
+    "cd_blocks": 5,
+    "gaon_panchayats": 36,
+    "revenue_circles": 3,
+    "sc": 7500,
+    "sc_female": 3685,
+    "sc_sex_ratio": 966,
+    "st": 11705,
+    "st_female": 5815,
+    "st_sex_ratio": 987,
+    "literacy": {
+     "total": 74.11,
+     "male": 81.04,
+     "female": 66.85,
+     "rural": 73.09,
+     "urban": 88.35,
+     "gender_gap": 14.2
+    }
+   }
+  },
+  {
+   "name": "Hojai",
+   "population": {
+    "2011_current_boundaries": 1048970,
+    "2024_projected": 1211754,
+    "2025_projected": 1223024,
+    "2026_projected": 1234276
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 7,
+    "model": 0,
+    "private": 4,
+    "commerce": 2
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": false,
+    "population": 931218,
+    "female": 454738,
+    "male": 476480,
+    "rural": 758868,
+    "urban": 172350,
+    "child_0_6": 151731,
+    "child_0_6_female": 74671,
+    "area_sq_km": 1422,
+    "area_rural_sq_km": 1374,
+    "sub_divisions": 1,
+    "towns": 9,
+    "villages": 400,
+    "inhabited_villages": 398,
+    "cd_blocks": 5,
+    "gaon_panchayats": 67,
+    "revenue_circles": 3,
+    "sc": 109437,
+    "sc_female": 52619,
+    "sc_sex_ratio": 926,
+    "st": 28731,
+    "st_female": 14091,
+    "st_sex_ratio": 963,
+    "literacy": {
+     "total": 75.08,
+     "male": 80.37,
+     "female": 69.52,
+     "rural": 72.05,
+     "urban": 87.39,
+     "gender_gap": 10.85
+    }
+   }
+  },
+  {
+   "name": "Majuli",
+   "population": {
+    "2011_current_boundaries": 167304,
+    "2024_projected": 193267,
+    "2025_projected": 195064,
+    "2026_projected": 196859
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 5,
+    "model": 0,
+    "private": 0,
+    "commerce": 0
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": true,
+    "population": 167304,
+    "female": 81738,
+    "male": 85566,
+    "rural": 167304,
+    "urban": 0,
+    "child_0_6": 22062,
+    "child_0_6_female": 10738,
+    "area_sq_km": 1093,
+    "area_rural_sq_km": 1093,
+    "sub_divisions": 1,
+    "towns": 0,
+    "villages": 248,
+    "inhabited_villages": 192,
+    "cd_blocks": 2,
+    "gaon_panchayats": 20,
+    "revenue_circles": 1,
+    "sc": 23878,
+    "sc_female": 11615,
+    "sc_sex_ratio": 947,
+    "st": 77603,
+    "st_female": 38275,
+    "st_sex_ratio": 973,
+    "literacy": {
+     "total": 78.56,
+     "male": 86.16,
+     "female": 70.62,
+     "rural": 78.56,
+     "urban": 0,
+     "gender_gap": 15.55
+    }
+   }
+  },
+  {
+   "name": "South Salmara-Mankachar",
+   "population": {
+    "2011_current_boundaries": 388669,
+    "2024_projected": 448985,
+    "2025_projected": 453160,
+    "2026_projected": 457329
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 4,
+    "model": 0,
+    "private": 1,
+    "commerce": 0
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": false,
+    "population": 555114,
+    "female": 273087,
+    "male": 282027,
+    "rural": 528952,
+    "urban": 26162,
+    "child_0_6": 118697,
+    "child_0_6_female": 58856,
+    "area_sq_km": 665,
+    "area_rural_sq_km": 661,
+    "sub_divisions": 1,
+    "towns": 0,
+    "villages": 314,
+    "inhabited_villages": 280,
+    "cd_blocks": 3,
+    "gaon_panchayats": 35,
+    "revenue_circles": 2,
+    "sc": 7767,
+    "sc_female": 3770,
+    "sc_sex_ratio": 943,
+    "st": 4032,
+    "st_female": 1978,
+    "st_sex_ratio": 963,
+    "literacy": {
+     "total": 50.76,
+     "male": 55.1,
+     "female": 46.26,
+     "rural": 49.61,
+     "urban": 71.94,
+     "gender_gap": 8.84
+    }
+   }
+  },
+  {
+   "name": "West Karbi Anglong",
+   "population": {
+    "2011_current_boundaries": 313173,
+    "2024_projected": 361773,
+    "2025_projected": 365137,
+    "2026_projected": 368496
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 1,
+    "model": 0,
+    "private": 0,
+    "commerce": 0
+   },
+   "census2011_table": {
+    "same_boundaries_as_current": false,
+    "population": 295358,
+    "female": 144171,
+    "male": 151187,
+    "rural": 277495,
+    "urban": 17863,
+    "child_0_6": 52135,
+    "child_0_6_female": 25632,
+    "area_sq_km": 3068,
+    "area_rural_sq_km": 3054,
+    "sub_divisions": 1,
+    "towns": 2,
+    "villages": 568,
+    "inhabited_villages": 547,
+    "cd_blocks": 4,
+    "gaon_panchayats": 0,
+    "revenue_circles": 1,
+    "sc": 11438,
+    "sc_female": 5504,
+    "sc_sex_ratio": 928,
+    "st": 193518,
+    "st_female": 95615,
+    "st_sex_ratio": 977,
+    "literacy": {
+     "total": 63.35,
+     "male": 70.13,
+     "female": 56.21,
+     "rural": 61.92,
+     "urban": 84.78,
+     "gender_gap": 13.92
+    }
+   }
+  },
+  {
+   "name": "Bajali",
+   "population": {
+    "2011_current_boundaries": 253816,
+    "2024_projected": 293204,
+    "2025_projected": 295931,
+    "2026_projected": 298654
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 4,
+    "model": 0,
+    "private": 2,
+    "commerce": 0
+   }
+  },
+  {
+   "name": "Tamulpur",
+   "population": {
+    "2011_current_boundaries": 325902,
+    "2024_projected": 376477,
+    "2025_projected": 379978,
+    "2026_projected": 383474
+   },
+   "colleges_2024_25": {
+    "government": 0,
+    "provincialised": 1,
+    "model": 0,
+    "private": 0,
+    "commerce": 0
+   }
+  }
+ ]
+}

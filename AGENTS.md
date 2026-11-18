@@ -5,6 +5,7 @@ Marketing and SEO blog for AxomRank. Part of AxomRank: see README.md for the ove
 ## Layout
 
 - `posts/*.md`: posts with front matter (see README)
+- `district_pages.py`: `/districts/` and `/district/<name>/` from `data/districts.json` (regenerate with `scripts/extract_handbook.py` from the DES Assam handbook PDF)
 - `exam_pages.py`: exam hubs (`/adre/` …) and syllabus pages; official text only from `data/apsc-official-syllabus/`
 - `pyq_pages.py`: question-paper and topic pages from ../assam-exam-pyq (or `--pyq-dir`)
 - `build.py`: static site builder

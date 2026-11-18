@@ -33,6 +33,7 @@ from urllib.parse import quote
 
 import markdown
 
+import district_pages
 import exam_pages
 import pyq_pages
 
@@ -121,6 +122,7 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
       <a href="{base}/adre/">ADRE</a>
       <a href="{base}/apsc-cce/">APSC</a>
       <a href="{base}/exams/">All exams</a>
+      <a href="{base}/districts/">Districts</a>
       <a href="{base}/question-papers/">Question papers</a>
       <a href="{base}/questions/">Topic-wise MCQs</a>
       <a class="cta-sm" href="{utm(app, 'nav', 'nav')}">Open the free app</a>
@@ -253,6 +255,7 @@ def build(base_url=None, pyq_dir=None):
     pyq_dir = pyq_dir or os.environ.get("PYQ_DIR") or (ROOT.parent / "assam-exam-pyq")
     papers = pyq_pages.build(site, page, OUT, urls, utm, pyq_dir)
     exam_pages.build(site, page, OUT, urls, utm, papers, posts, md)
+    district_pages.build(site, page, OUT, urls, utm, papers)
     pyq_strip = ""
     if papers:
         total = sum(len(x["qs"]) for x in papers)
