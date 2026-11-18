@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# Build the blog and publish _site to the gh-pages branch (used until the
-# GitHub Actions workflow in ci/pages.yml is enabled; see README).
+# Manual fallback: build the blog and publish _site to the gh-pages branch.
 set -euo pipefail
 BASE_URL="${BASE_URL:-https://axomrank.github.io/axomrank-blog}"
 python3 build.py --base-url "$BASE_URL"

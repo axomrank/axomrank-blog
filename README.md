@@ -10,9 +10,7 @@ The marketing and SEO blog for [AxomRank](https://axomrank.pages.dev), which off
 2. Use `{{app}}` for the app URL and `{{base}}` for the blog URL in links. Links to the app get UTM tags automatically.
 3. End with a `## Frequently asked questions` section using `### Question` headings. It becomes FAQ structured data.
 4. Add a **Sources** section. Every number must come from the real papers or a named source.
-5. Push to `main`, then run `./deploy.sh` to publish to the `gh-pages` branch.
-
-**Automatic deploys:** the account's token lacks the `workflow` scope. Run `gh auth refresh -h github.com -s workflow` as `axomrank`, move `ci/pages.yml` to `.github/workflows/pages.yml`, and switch Pages to the "GitHub Actions" source. After that, every push to `main` deploys.
+5. Push to `main`. GitHub Actions (`.github/workflows/pages.yml`) builds and deploys the site in about a minute. `./deploy.sh` is a manual fallback.
 
 ## Build locally
 
