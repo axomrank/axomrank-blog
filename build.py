@@ -35,6 +35,7 @@ import markdown
 
 import district_pages
 import exam_pages
+import post_images
 import pyq_pages
 
 ROOT = Path(__file__).resolve().parent
@@ -50,10 +51,28 @@ def parse(path):
     for line in m.group(1).splitlines():
         if ":" in line:
             k, v = line.split(":", 1)
+            if k.strip() in meta:
+                raise SystemExit(f"{path}: duplicate front-matter field '{k.strip()}'")
             meta[k.strip()] = v.strip()
     for key in ("title", "description", "date", "slug"):
         if not meta.get(key):
             raise SystemExit(f"{path}: front matter needs '{key}'")
+    for field in ("date", "updated"):
+        if field in meta:
+            try:
+                date = dt.date.fromisoformat(meta[field])
+                if date.isoformat() != meta[field]:
+                    raise ValueError
+            except ValueError:
+                raise SystemExit(f"{path}: '{field}' must be a date in YYYY-MM-DD format") from None
+    if meta.get("updated", meta["date"]) < meta["date"]:
+        raise SystemExit(f"{path}: updated date precedes publication date")
+    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", meta["slug"]):
+        raise SystemExit(f"{path}: slug must use lowercase letters, digits and hyphens")
+    if not 120 <= len(meta["description"]) <= 160:
+        raise SystemExit(f"{path}: description must be 120–160 characters")
+    if meta.get("lang", "en-IN") not in {"en", "en-IN", "as", "as-IN"}:
+        raise SystemExit(f"{path}: unsupported post language")
     meta["tags"] = [t.strip() for t in meta.get("tags", "").split(",") if t.strip()]
     meta["exam"] = [t.strip() for t in meta.get("exam", "").split(",") if t.strip()]
     meta["body_md"] = m.group(2)
@@ -83,7 +102,8 @@ def utm(url, slug, medium="blog"):
     return f"{url}{sep}utm_source=axomrank_blog&utm_medium={medium}&utm_campaign={quote(slug)}"
 
 
-def page(site, *, title, description, canonical, body, jsonld=(), og_type="website", lang=None):
+def page(site, *, title, description, canonical, body, jsonld=(), og_type="website", lang=None,
+         image=None, alternates=()):
     ld = "\n".join(
         f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in jsonld
     )
@@ -97,6 +117,10 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
         current = ' aria-current="page"' if canonical == url else ""
         nav_links.append(f'<a href="{url}"{current}>{label}</a>')
     footer_links = f'<a href="{base}/questions/">Questions by topic</a>' if site["has_papers"] else ""
+    hreflang = "\n".join(f'<link rel="alternate" hreflang="{language}" href="{url}">'
+                        for language, url in alternates)
+    image_size = (f'<meta property="og:image:width" content="{post_images.WIDTH}">\n'
+                  f'<meta property="og:image:height" content="{post_images.HEIGHT}">') if image else ""
     body = re.sub(
         r"(<table\b[^>]*>.*?</table>)",
         r'<div class="table-scroll" role="region" aria-label="Scrollable table" tabindex="0">\1</div>',
@@ -111,13 +135,15 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(description)}">
 <link rel="canonical" href="{canonical}">
+{hreflang}
 <meta property="og:type" content="{og_type}">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(description)}">
 <meta property="og:url" content="{canonical}">
 <meta property="og:site_name" content="{html.escape(site['title'])}">
-<meta property="og:image" content="{site['publisher_logo']}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{image or site['publisher_logo']}">
+{image_size}
+<meta name="twitter:card" content="{'summary_large_image' if image else 'summary'}">
 <meta name="theme-color" content="#fcfaf7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#191615" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="{site['publisher_logo']}">
@@ -165,7 +191,7 @@ def card(site, p, *, heading="h3"):
     exam_meta = f"<span>{exams}</span><span aria-hidden=\"true\">·</span>" if exams else ""
     return f"""<article class="card">
   <p class="meta">{exam_meta}<time datetime="{p['date']}">{fmt_date(p['date'])}</time></p>
-  <{heading}><a href="{site['base_url']}/{p['slug']}/">{html.escape(p['title'])}</a></{heading}>
+  <{heading}><a href="{site['base_url']}/{p['path']}/" lang="{p.get('lang', site['lang'])}">{html.escape(p['title'])}</a></{heading}>
   <p>{html.escape(p['description'])}</p>
 </article>"""
 
@@ -194,6 +220,25 @@ def build(base_url=None, pyq_dir=None):
     slugs = [p["slug"] for p in posts]
     if len(slugs) != len(set(slugs)):
         raise SystemExit("duplicate slug")
+    for p in posts:
+        section = "as/" if p.get("lang", "").startswith("as") else ""
+        p["path"] = section + p["slug"]
+    posts_by_slug = {p["slug"]: p for p in posts}
+    translations = {}
+    for p in posts:
+        if source_slug := p.get("translation_of"):
+            source = posts_by_slug.get(source_slug)
+            if (not source or source.get("lang", "en-IN").startswith("as")
+                    or not p.get("lang", "").startswith("as") or source_slug in translations):
+                raise SystemExit(f"{p['slug']}: expected one Assamese translation of an English post")
+            alternates = (
+                (source.get("lang", "en-IN"), f"{base}/{source_slug}/"),
+                (p["lang"], f"{base}/{p['path']}/"),
+            )
+            translations[source_slug] = translations[p["slug"]] = alternates
+
+    images = OUT / "assets" / "post-images"
+    images.mkdir()
 
     md = markdown.Markdown(extensions=["tables", "toc", "attr_list", "sane_lists"],
                            extension_configs={"toc": {"permalink": False}})
@@ -201,6 +246,9 @@ def build(base_url=None, pyq_dir=None):
     topics = {}
 
     for p in posts:
+        lang = p.get("lang", site["lang"])
+        image_path = images / f"{p['slug']}.jpg"
+        post_images.render(p, image_path)
         md.reset()
         body_html = md.convert(p["body_md"].replace("{{app}}", site["app_url"]).replace("{{base}}", base))
         # Tag outbound links to the app with UTM parameters so blog-driven sign-ups are measurable.
@@ -209,7 +257,7 @@ def build(base_url=None, pyq_dir=None):
             lambda m: f'href="{html.escape(utm(html.unescape(m.group(1)), p["slug"]))}"',
             body_html,
         )
-        canonical = f"{base}/{p['slug']}/"
+        canonical = f"{base}/{p['path']}/"
         updated = p.get("updated") or p["date"]
         cta_url = utm(site["app_url"] + p.get("cta", "/"), p["slug"], "cta")
         cta_text = p.get("cta_text", "Practise free on AxomRank")
@@ -244,7 +292,7 @@ def build(base_url=None, pyq_dir=None):
                 "description": p["description"],
                 "datePublished": p["date"],
                 "dateModified": updated,
-                "inLanguage": site["lang"],
+                "inLanguage": lang,
                 "mainEntityOfPage": canonical,
                 "author": {"@type": "Organization", "name": site["author"], "url": site["app_url"]},
                 "publisher": {"@type": "Organization", "name": "AxomRank",
@@ -268,10 +316,12 @@ def build(base_url=None, pyq_dir=None):
                 "mainEntity": [{"@type": "Question", "name": q,
                                 "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq],
             })
-        d = OUT / p["slug"]
+        d = OUT / p["path"]
         d.mkdir(parents=True)
         (d / "index.html").write_text(page(site, title=f"{p['title']} | AxomRank", description=p["description"],
-                                           canonical=canonical, body=body, jsonld=jsonld, og_type="article"),
+                                           canonical=canonical, body=body, jsonld=jsonld, og_type="article", lang=lang,
+                                           image=f"{base}/{image_path.relative_to(OUT).as_posix()}",
+                                           alternates=translations.get(p["slug"], ())),
                                       encoding="utf-8")
         urls.append((canonical, updated))
         for t in p["exam"] + p["tags"]:
@@ -357,8 +407,8 @@ def build(base_url=None, pyq_dir=None):
     (OUT / "sitemap.xml").write_text("\n".join(sm), encoding="utf-8")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n", encoding="utf-8")
     items = "".join(
-        f"<item><title>{html.escape(p['title'])}</title><link>{base}/{p['slug']}/</link>"
-        f"<guid>{base}/{p['slug']}/</guid><pubDate>{dt.datetime.fromisoformat(p['date']).strftime('%a, %d %b %Y 00:00:00 +0530')}</pubDate>"
+        f"<item><title>{html.escape(p['title'])}</title><link>{base}/{p['path']}/</link>"
+        f"<guid>{base}/{p['path']}/</guid><pubDate>{dt.datetime.fromisoformat(p['date']).strftime('%a, %d %b %Y 00:00:00 +0530')}</pubDate>"
         f"<description>{html.escape(p['description'])}</description></item>" for p in posts)
     (OUT / "rss.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>{html.escape(site["title"])}</title>'

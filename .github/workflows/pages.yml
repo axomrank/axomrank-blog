@@ -14,9 +14,15 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
+env:
+  BASE_URL: ${{ vars.BASE_URL || 'https://axomrank.github.io/axomrank-blog' }}
+  INDEXNOW_KEY: 2c859e69b0d1b787235cb93079a45d48
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      indexnow_payload: ${{ steps.indexnow.outputs.payload }}
     steps:
       - uses: actions/checkout@v4
       # PYQ dataset for /question-papers/ and /questions/ (only the data and figures, not the PDFs)
@@ -32,9 +38,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: sudo apt-get install -y fonts-dejavu-core fonts-noto-core
       - run: pip install -r requirements.txt
-      # Change BASE_URL (repo variable) to https://blog.axomrank.org once a custom domain is set.
-      - run: python build.py --pyq-dir pyq-data --base-url "${{ vars.BASE_URL || 'https://axomrank.github.io/axomrank-blog' }}"
+      - run: python build.py --pyq-dir pyq-data --base-url "$BASE_URL"
+      - run: python scripts/check_site.py "$BASE_URL"
+      - id: indexnow
+        name: Prepare IndexNow changes
+        run: |
+          payload=$(python scripts/indexnow.py "$BASE_URL" "$INDEXNOW_KEY")
+          printf 'payload=%s\n' "$payload" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
@@ -47,3 +59,18 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+      - name: Notify IndexNow of changed pages
+        if: needs.build.outputs.indexnow_payload != ''
+        continue-on-error: true
+        env:
+          INDEXNOW_PAYLOAD: ${{ needs.build.outputs.indexnow_payload }}
+        run: |
+          for attempt in 1 2 3 4 5; do
+            if test "$(curl -fsS --max-time 20 "${BASE_URL%/}/$INDEXNOW_KEY.txt?run=$GITHUB_RUN_ID")" = "$INDEXNOW_KEY"; then
+              curl --fail-with-body --retry 2 --max-time 30 --json "$INDEXNOW_PAYLOAD" https://api.indexnow.org/indexnow
+              exit 0
+            fi
+            sleep 8
+          done
+          echo 'IndexNow key is not yet reachable at the deployed site' >&2
+          exit 1

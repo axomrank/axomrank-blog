@@ -153,7 +153,7 @@ def build(site, page, out, urls, utm, papers, posts, md, published_topics):
             f'<li>{topic_reference(base, s, t, published_topics)} ({html.escape(s)}): {c} questions</li>'
             for (s, t), c in top_topics)
         rel_posts = [p for p in posts if hub["post_tag"] in p["exam"] + p["tags"]]
-        post_list = "".join(f'<li><a href="{base}/{p["slug"]}/">{html.escape(p["title"])}</a></li>' for p in rel_posts)
+        post_list = "".join(f'<li><a href="{base}/{p["path"]}/">{html.escape(p["title"])}</a></li>' for p in rel_posts)
         top_subj, top_c = collections.Counter(r["subject"] for r in qs).most_common(1)[0]
         faq = [
             (f"Who conducts the {hub['short']} exam?", f"The {hub['short']} papers analysed here were set by the {hub['body']}."),
