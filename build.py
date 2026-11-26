@@ -78,6 +78,9 @@ def parse(path):
         if (meta.get("notice_exam") not in {hub["slug"] for hub in exam_pages.HUBS}
                 or not meta.get("notice_date") or source.scheme != "https" or not source.hostname):
             raise SystemExit(f"{path}: a notice needs an exam hub, official HTTPS source and notice date")
+    if "current_affairs" in meta and (not re.fullmatch(r"\d{4}-(?:0[1-9]|1[0-2])", meta["current_affairs"])
+                                      or meta["current_affairs"] > meta["date"][:7]):
+        raise SystemExit(f"{path}: current_affairs must be a month in YYYY-MM format")
     meta["tags"] = [t.strip() for t in meta.get("tags", "").split(",") if t.strip()]
     meta["exam"] = [t.strip() for t in meta.get("exam", "").split(",") if t.strip()]
     meta["body_md"] = m.group(2)
@@ -88,9 +91,10 @@ def slugify(s):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
 
-def faq_from(md_text):
+def faq_from(md_text, lang="en-IN"):
     """Return [(question, answer_text)] from a '## Frequently asked questions' section."""
-    m = re.search(r"^## Frequently asked questions\s*$(.*?)(?=^## |\Z)", md_text, re.M | re.S)
+    heading = "সঘনে সোধা প্ৰশ্ন" if lang.startswith("as") else "Frequently asked questions"
+    m = re.search(rf"^## {heading}\s*$(.*?)(?=^## |\Z)", md_text, re.M | re.S)
     if not m:
         return []
     out = []
@@ -122,6 +126,11 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
         current = ' aria-current="page"' if canonical == url else ""
         nav_links.append(f'<a href="{url}"{current}>{label}</a>')
     footer_links = f'<a href="{base}/questions/">Questions by topic</a>' if site["has_papers"] else ""
+    verification = ""
+    if canonical == f"{base}/":
+        for name, env in [("google-site-verification", "GOOGLE_SITE_VERIFICATION"), ("msvalidate.01", "BING_SITE_VERIFICATION")]:
+            if token := os.environ.get(env):
+                verification += f'<meta name="{name}" content="{html.escape(token)}">\n'
     hreflang = "\n".join(f'<link rel="alternate" hreflang="{language}" href="{url}">'
                         for language, url in alternates)
     image_size = (f'<meta property="og:image:width" content="{post_images.WIDTH}">\n'
@@ -139,6 +148,7 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(description)}">
+{verification}
 <link rel="canonical" href="{canonical}">
 {hreflang}
 <meta property="og:type" content="{og_type}">
@@ -180,6 +190,7 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
       {footer_links}
       <a href="{base}/assam-gk/">Assam GK</a>
       <a href="{base}/jobs/">Recruitment notices</a>
+      <a href="{base}/current-affairs/">Current affairs</a>
       <a href="{base}/about/">About and corrections</a>
       <a href="{utm(app, 'footer', 'footer')}">AxomRank app</a>
       <a href="https://github.com/axomrank/assam-exam-pyq">Open PYQ dataset</a>
@@ -227,12 +238,16 @@ def build(base_url=None, pyq_dir=None):
     if len(slugs) != len(set(slugs)):
         raise SystemExit("duplicate slug")
     for p in posts:
-        section = ""
         if p.get("notice_exam"):
-            section = "jobs/"
+            p["path"] = f"jobs/{p['slug']}"
+        elif month := p.get("current_affairs"):
+            p["path"] = f"current-affairs/{month}"
         elif p.get("lang", "").startswith("as"):
-            section = "as/"
-        p["path"] = section + p["slug"]
+            p["path"] = f"as/{p['slug']}"
+        else:
+            p["path"] = p["slug"]
+    if len({p["path"] for p in posts}) != len(posts):
+        raise SystemExit("duplicate post route")
     posts_by_slug = {p["slug"]: p for p in posts}
     translations = {}
     for p in posts:
@@ -284,6 +299,13 @@ def build(base_url=None, pyq_dir=None):
                        f'{html.escape(primary_topic)}</a>') if primary_topic else ""
         if p.get("notice_exam"):
             topic_crumb = f' <span aria-hidden="true">/</span> <a href="{base}/jobs/">Recruitment notices</a>'
+        elif p.get("current_affairs"):
+            topic_crumb = f' <span aria-hidden="true">/</span> <a href="{base}/current-affairs/">Current affairs</a>'
+        alternate = ""
+        for language, url in translations.get(p["slug"], ()):
+            if language != lang:
+                label = "অসমীয়া" if language.startswith("as") else "English"
+                alternate = f'<p class="meta"><a href="{url}" lang="{language}" hreflang="{language}">{label}</a></p>'
         toc = md.toc if md.toc.count("<li>") >= 3 else ""
         body = f"""<article class="post wrap">
   <header class="post-header">
@@ -291,6 +313,7 @@ def build(base_url=None, pyq_dir=None):
     <h1>{html.escape(p['title'])}</h1>
     <p class="dek">{html.escape(p['description'])}</p>
     <p class="meta">By {html.escape(site['author'])} · <time datetime="{p['date']}">{fmt_date(p['date'])}</time>{' · updated ' + fmt_date(updated) if updated != p['date'] else ''}</p>
+    {alternate}
   </header>
   {f'<details class="toc"><summary>On this page</summary>{toc}</details>' if toc else ''}
   <div class="prose">{body_html}</div>
@@ -324,7 +347,7 @@ def build(base_url=None, pyq_dir=None):
                 ],
             },
         ]
-        faq = faq_from(p["body_md"])
+        faq = faq_from(p["body_md"], lang)
         if faq:
             jsonld.append({
                 "@context": "https://schema.org",
@@ -345,7 +368,7 @@ def build(base_url=None, pyq_dir=None):
 
     # Previous-year question pages from the assam-exam-pyq dataset
     if site["has_papers"]:
-        papers, published_topics = pyq_pages.build(site, page, OUT, urls, utm, pyq_data)
+        papers, published_topics = pyq_pages.build(site, page, OUT, urls, utm, pyq_data, posts)
     else:
         print(f"No PYQ papers found at {pyq_dir}: skipping question-paper pages")
         papers, published_topics = [], set()
@@ -397,11 +420,15 @@ def build(base_url=None, pyq_dir=None):
 
     gk = [p for p in guides if {"Assam History", "Assam GK"}.intersection(p["exam"] + p["tags"])]
     notices = sorted((p for p in posts if p.get("notice_exam")), key=lambda p: p["notice_date"], reverse=True)
+    monthly = sorted((p for p in guides if p.get("current_affairs")), key=lambda p: p["current_affairs"], reverse=True)
     gk_links = f'<p class="jump-link"><a href="{base}/districts/">Districts of Assam</a> · <a href="{base}/topics/assam-history/">Assam history</a></p>'
+    if (OUT / "assam-gk" / "culture-questions" / "index.html").exists():
+        gk_links += f'<p class="jump-link"><a href="{base}/assam-gk/culture-questions/">50 Assam culture questions</a></p>'
     collections = [
         ("guides", "Assam exam study guides", "Previous-year paper analysis, preparation plans and source-checked Assam GK.", "", guides),
         ("assam-gk", "Assam GK for government exams", "Study Assam history, geography and culture using named sources and questions from real papers.", gk_links, gk),
         ("jobs", "Assam government recruitment notices", "Summaries of official recruitment notices with links to the issuing board and relevant past papers.", "", notices),
+        ("current-affairs", "Assam current affairs by month", "Dated notes for Assam exams, with official sources and links to related practice questions.", "", monthly),
     ]
     for slug, title, description, links, items in collections:
         canonical = f"{base}/{slug}/"

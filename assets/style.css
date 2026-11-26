@@ -149,8 +149,10 @@ h3 { font-size: 1.125rem; }
 .resources strong { font-size: 1rem; font-weight: 650; }
 .resources span { color: var(--muted); font-size: .875rem; }
 .home-guides > h2 { font-family: var(--serif); font-size: 1.75rem; font-weight: 500; }
+.home-guides { padding-block-end: clamp(1.5rem, 4vw, 3rem); }
 
 .list { display: grid; padding-block-end: clamp(2.5rem, 6vw, 4.5rem); }
+.home-guides .list { padding-block-end: 1rem; }
 .list .sect { margin-block: 1.625rem .5rem; }
 .list .sect:first-child { margin-block-start: 0; }
 .card {

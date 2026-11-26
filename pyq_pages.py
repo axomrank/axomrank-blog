@@ -14,6 +14,7 @@ The dataset is read from a local checkout of github.com/axomrank/assam-exam-pyq
 import collections
 import csv
 import html
+import itertools
 import json
 import re
 import shutil
@@ -39,6 +40,17 @@ ANSWER_SOURCE = {
 
 MIN_TOPIC_QUESTIONS = 12
 GITHUB = "https://github.com/axomrank/assam-exam-pyq"
+FEATURED = [
+    ("saraighat-mughal-commander", "Who commanded the Mughal army at Saraighat?",
+     "Ram Singh of Amber commanded the Mughal expedition. Aurangzeb sent him, and Lachit Borphukan led the Ahom forces.",
+     "adre-2024-grade-3-driver-question-paper", "102", "battle-of-saraighat"),
+    ("brahmaputra-south-bank-dikhow", "Which bank of the Brahmaputra does Dikhow join?",
+     "Dikhow joins the Brahmaputra from the south. The Assam Water Resources Department includes Dikhow in its south-bank list.",
+     "adre-2022-grade-3-graduate-question-paper", "44", "rivers-of-assam"),
+    ("sankardeva-ankiya-nat", "What is Sankardeva’s one-act play form called?",
+     "The form is Ankiya Nat. The Barpeta district administration describes Ankiya Geet as songs composed for the plays.",
+     "adre-2022-grade-4-class-8-question-paper", "48", "sankardeva-and-sattras"),
+]
 
 
 def slugify(s):
@@ -167,7 +179,17 @@ def question_html(r, base, *, img_base, paper_link=None, published_topics=()):
 </li>"""
 
 
-def build(site, page, out, urls, utm, pyq_data):
+def practice_items(questions, paper_by_key, base, img_base):
+    items = []
+    for r in questions:
+        paper = paper_by_key[(r["exam"], str(r["year"]), r["paper_code"])]
+        link = f'<a href="{base}/question-papers/{paper["slug"]}/#q{r["q_no"]}">{html.escape(paper["name"])}, Q{r["q_no"]}</a>'
+        items.append(question_html(r, base, img_base=img_base, paper_link=link)
+                     .replace(f'id="q{r["q_no"]}" value="{r["q_no"]}"', ""))
+    return "".join(items)
+
+
+def build(site, page, out, urls, utm, pyq_data, posts):
     pyq, papers, rows = pyq_data
     base = site["base_url"]
     img_base = f"{base}/pyq-img"
@@ -294,6 +316,63 @@ def build(site, page, out, urls, utm, pyq_data):
         encoding="utf-8")
     urls.append((canonical, None))
 
+    post_by_slug = {post["slug"]: post for post in posts}
+    paper_by_slug = {p["slug"]: p for p in papers}
+    featured_links = collections.defaultdict(list)
+    for slug, title, explanation, paper_slug, number, guide in FEATURED:
+        paper = paper_by_slug.get(paper_slug)
+        guide_post = post_by_slug.get(guide)
+        if not paper or not guide_post:
+            continue
+        source = next((r for r in paper["qs"] if r["q_no"] == number), None)
+        if not source:
+            continue
+        canonical = f"{base}/question/{slug}/"
+        related = topic_slug(source["subject"], source["topic"])
+        featured_links[related].append(f'<li><a href="{canonical}">{html.escape(title)}</a></li>')
+        body = f'''<article class="post wrap pyq">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/questions/">Questions by topic</a></nav>
+  <h1>{html.escape(title)}</h1>
+  <p class="dek">{html.escape(explanation)}</p>
+  <h2>Try the original exam question</h2>
+  <ol class="qs">{practice_items([source], paper_by_key, base, img_base)}</ol>
+  <p class="jump-link"><a href="{base}/{guide_post['path']}/">{html.escape(guide_post['title'])}</a></p>
+</article>'''
+        folder = out / "question" / slug
+        folder.mkdir(parents=True)
+        (folder / "index.html").write_text(page(
+            site, title=f"{title} | AxomRank", description=explanation, canonical=canonical, body=body,
+            jsonld=[{"@context": "https://schema.org", "@type": "LearningResource", "name": title,
+                     "description": explanation, "url": canonical, "isAccessibleForFree": True}]),
+            encoding="utf-8")
+        urls.append((canonical, None))
+
+    culture = collections.defaultdict(list)
+    for (_, topic), qs in topics.items():
+        if topic == "Assam Culture":
+            for r in qs:
+                culture[r["exam"]].append(r)
+    mixed_culture = (r for group in itertools.zip_longest(*culture.values()) for r in group if r)
+    culture_sample = list(itertools.islice(mixed_culture, 50))
+    culture_url = ""
+    if len(culture_sample) == 50:
+        culture_url = f"{base}/assam-gk/culture-questions/"
+        title = "50 Assam culture questions from previous-year papers"
+        description = "Practise a mixed set of 50 Assam culture questions from past recruitment papers, with answer sources and links to the original booklets."
+        body = f'''<article class="post wrap pyq">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/assam-gk/">Assam GK</a> › <a href="{base}/questions/assam-culture/">Assam culture</a></nav>
+  <h1>{title}</h1><p class="dek">{description}</p>
+  <ol class="qs">{practice_items(culture_sample, paper_by_key, base, img_base)}</ol>
+</article>'''
+        folder = out / "assam-gk" / "culture-questions"
+        folder.mkdir(parents=True)
+        (folder / "index.html").write_text(page(
+            site, title=f"{title} | AxomRank", description=description, canonical=culture_url, body=body,
+            jsonld=[{"@context": "https://schema.org", "@type": "LearningResource", "name": title,
+                     "url": culture_url, "isAccessibleForFree": True, "numberOfQuestions": 50}]),
+            encoding="utf-8")
+        urls.append((culture_url, None))
+
     # ---- topic pages ----
     topic_cards = collections.defaultdict(list)
     for (subject, topic), qs in sorted(topics.items(), key=lambda kv: -len(kv[1])):
@@ -310,25 +389,25 @@ def build(site, page, out, urls, utm, pyq_data):
         sub = collections.Counter(r["subtopic"] for r in qs if r["subtopic"])
         sub_rows = "".join(f"<tr><td>{html.escape(s)}</td><td>{c}</td></tr>" for s, c in sub.most_common(15))
         ex_rows = "".join(f"<tr><td>{html.escape(e)}</td><td>{c}</td></tr>" for e, c in collections.Counter(EXAMS[r['exam']][2] for r in qs).most_common())
-        items = []
-        for r in qs_sorted:
-            pp = paper_by_key[(r["exam"], str(r["year"]), r["paper_code"])]
-            link = f'<a href="{base}/question-papers/{pp["slug"]}/#q{r["q_no"]}">{html.escape(pp["name"])}, Q{r["q_no"]}</a>'
-            items.append(question_html(r, base, img_base=img_base, paper_link=link)
-                         .replace(f'id="q{r["q_no"]}" value="{r["q_no"]}"', ""))
+        focused = ""
+        if featured_links[slug]:
+            focused = f'<h2>Questions to review</h2><ul>{"".join(featured_links[slug])}</ul>'
+        culture_link = f'<li><a href="{culture_url}">Practise a set of 50 Assam culture questions</a></li>' if topic == "Assam Culture" and culture_url else ""
         body = f"""<article class="post wrap pyq">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/">Blog</a> › <a href="{base}/questions/">Questions by topic</a> › {html.escape(subject)}</nav>
   <h1>{html.escape(title)}</h1>
   <p class="dek">Every {html.escape(topic.lower())} question from {len({(r['exam'], r['year'], r['paper_code']) for r in qs})} real Assam recruitment papers, in one place. Use it to see which facts come up again and again.</p>
   <p class="jump-link"><a href="#questions">Jump to the questions</a></p>
   <div class="prose">
+  {focused}
+  {f'<ul>{culture_link}</ul>' if culture_link else ''}
   <h2>Where these questions were asked</h2>
   <table><thead><tr><th>Exam</th><th>Questions</th></tr></thead><tbody>{ex_rows}</tbody></table>
   {'<h2>Most-asked subtopics</h2><table><thead><tr><th>Subtopic</th><th>Questions</th></tr></thead><tbody>' + sub_rows + '</tbody></table>' if sub_rows else ''}
   </div>
   <aside class="cta"><p><strong>Learn this topic properly.</strong> AxomRank has free bilingual lessons with spaced review. It works offline, and you don't need a login to start.</p><a class="btn" href="{utm(site['app_url'] + '/', 'topic-' + slug, 'cta')}">Open the free lessons</a></aside>
   <h2 id="questions">All {n} questions</h2>
-  <ol class="qs">{''.join(items)}</ol>
+  <ol class="qs">{practice_items(qs_sorted, paper_by_key, base, img_base)}</ol>
   <div class="prose"><h2>Sources and corrections</h2><p>From the open <a href="{GITHUB}">AxomRank PYQ dataset</a>. Each question links back to its paper. See <a href="{base}/about/">how to report a correction</a>.</p></div>
 </article>"""
         jsonld = [
