@@ -55,7 +55,7 @@ def mentions(papers, names):
     return out
 
 
-def build(site, page, out, urls, utm, papers):
+def build(site, page, out, urls, utm, papers, published_topics):
     data = json.loads((ROOT / "data" / "districts.json").read_text(encoding="utf-8"))
     base = site["base_url"]
     src = data["source"]
@@ -207,13 +207,16 @@ def build(site, page, out, urls, utm, papers):
         ("Which district of Assam has the highest literacy rate?",
          f"{top_lit['name']} ({lit(top_lit)}% in Census 2011). The lowest is {low_lit['name']} ({lit(low_lit)}%)."),
     ]
+    practice = ""
+    if "assam-geography" in published_topics:
+        practice = f'''<aside class="cta"><p><strong>District questions come up in ADRE and APSC.</strong> Practise real Assam geography questions free.</p><a class="btn" href="{base}/questions/assam-geography/">Assam geography questions</a></aside>'''
     body = f"""<article class="post wrap district">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/">Blog</a> › Districts of Assam</nav>
   <h1>Districts of Assam: list of all {len(ds)} districts with population, area and literacy</h1>
   <p class="dek">All {len(ds)} districts of Assam with figures from the official Statistical Handbook, Assam 2025. Assam's projected population for 2026 is {inr(st['population_2026_projected'])}; its area is {inr(st['area_sq_km'])} sq km and its Census 2011 literacy rate {st['literacy_2011']}%.</p>
   <div class="prose">
   <h2>List of districts</h2>
-  <table class="sortable"><thead><tr><th>District</th><th>Population 2026 (projected)</th><th>Population 2011</th><th>Area (sq km)*</th><th>Literacy 2011 (%)*</th><th>Colleges</th></tr></thead>
+  <table class="sortable"><thead><tr><th aria-sort="ascending">District</th><th>Population 2026 (projected)</th><th>Population 2011</th><th>Area (sq km)*</th><th>Literacy 2011 (%)*</th><th>Colleges</th></tr></thead>
   <tbody>{rows}</tbody></table>
   <p class="src">* From the handbook's Census 2011 tables, which list 33 districts, some with older boundaries. Bajali and Tamulpur are not listed separately there. Population 2011 is for current boundaries (Table 1.01).</p>
   <h2>Quick facts for exams</h2>
@@ -225,27 +228,32 @@ def build(site, page, out, urls, utm, papers):
     <li>Highest literacy: <a href="{base}/district/{top_lit['slug']}/">{top_lit['name']}</a> ({lit(top_lit)}%); lowest: <a href="{base}/district/{low_lit['slug']}/">{low_lit['name']}</a> ({lit(low_lit)}%)</li>
   </ul>
   </div>
-  <aside class="cta"><p><strong>District questions come up in ADRE and APSC.</strong> Practise real Assam geography questions free.</p><a class="btn" href="{base}/questions/assam-geography/">Assam geography questions</a></aside>
+  {practice}
   <div class="prose">
   <h2>Frequently asked questions</h2>{''.join(f'<h3>{html.escape(q)}</h3><p>{html.escape(a)}</p>' for q, a in faq)}
   <h2>Sources</h2><p>{src_line}, Tables 1.01–1.05 and 22.08 (<a href="{src['pdf']}" rel="nofollow">PDF</a>). The handbook notes that these figures are provisionally estimated from Census of India 2011. Extracted with a script whose checks confirm that district figures add up to the handbook's state totals.</p>
   </div>
 </article>
 <script>
-// Sort the table by clicking a column header.
-document.querySelectorAll('table.sortable th').forEach(function (th, i) {{
-  th.style.cursor = 'pointer';
-  th.addEventListener('click', function () {{
-    var tb = th.closest('table').tBodies[0], asc = th.dataset.asc !== '1';
-    var rows = Array.prototype.slice.call(tb.rows);
+const table = document.querySelector('table.sortable');
+table.querySelectorAll('th').forEach(function (th, i) {{
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.textContent = th.textContent;
+  th.replaceChildren(button);
+  button.addEventListener('click', function () {{
+    const tb = table.tBodies[0];
+    const asc = th.getAttribute('aria-sort') !== 'ascending';
+    const rows = Array.from(tb.rows);
     rows.sort(function (a, b) {{
-      var x = a.cells[i].innerText.replace(/,/g, ''), y = b.cells[i].innerText.replace(/,/g, '');
-      var nx = parseFloat(x), ny = parseFloat(y);
+      const x = a.cells[i].textContent.replace(/,/g, ''), y = b.cells[i].textContent.replace(/,/g, '');
+      const nx = parseFloat(x), ny = parseFloat(y);
       if (isNaN(nx) || isNaN(ny)) return asc ? x.localeCompare(y) : y.localeCompare(x);
       return asc ? nx - ny : ny - nx;
     }});
     rows.forEach(function (r) {{ tb.appendChild(r); }});
-    th.dataset.asc = asc ? '1' : '0';
+    table.querySelector('[aria-sort]').removeAttribute('aria-sort');
+    th.setAttribute('aria-sort', asc ? 'ascending' : 'descending');
   }});
 }});
 </script>"""

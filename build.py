@@ -89,6 +89,20 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
     )
     base = site["base_url"]
     app = site["app_url"]
+    nav_items = [("exams", "Exams"), ("question-papers", "Papers")] if site["has_papers"] else []
+    nav_items.append(("districts", "Districts"))
+    nav_links = []
+    for path, label in nav_items:
+        url = f"{base}/{path}/"
+        current = ' aria-current="page"' if canonical == url else ""
+        nav_links.append(f'<a href="{url}"{current}>{label}</a>')
+    footer_links = f'<a href="{base}/questions/">Questions by topic</a>' if site["has_papers"] else ""
+    body = re.sub(
+        r"(<table\b[^>]*>.*?</table>)",
+        r'<div class="table-scroll" role="region" aria-label="Scrollable table" tabindex="0">\1</div>',
+        body,
+        flags=re.S,
+    )
     return f"""<!doctype html>
 <html lang="{lang or site['lang']}">
 <head>
@@ -104,12 +118,13 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
 <meta property="og:site_name" content="{html.escape(site['title'])}">
 <meta property="og:image" content="{site['publisher_logo']}">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#80151A">
+<meta name="theme-color" content="#fcfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191615" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="{site['publisher_logo']}">
 <link rel="alternate" type="application/rss+xml" title="{html.escape(site['title'])}" href="{base}/rss.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{base}/assets/style.css">
 {ld}
 </head>
@@ -117,26 +132,27 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
 <a class="skip" href="#main">Skip to content</a>
 <header class="masthead">
   <div class="wrap bar">
-    <a class="brand" href="{base}/"><span class="mark" aria-hidden="true">A</span><span>AxomRank <em>Blog</em></span></a>
-    <nav aria-label="Main">
-      <a href="{base}/adre/">ADRE</a>
-      <a href="{base}/apsc-cce/">APSC</a>
-      <a href="{base}/exams/">All exams</a>
-      <a href="{base}/districts/">Districts</a>
-      <a href="{base}/question-papers/">Question papers</a>
-      <a href="{base}/questions/">Topic-wise MCQs</a>
-      <a class="cta-sm" href="{utm(app, 'nav', 'nav')}">Open the free app</a>
+    <a class="brand" href="{base}/">AxomRank <span>Blog</span></a>
+    <nav class="main-nav" aria-label="Main">
+      {''.join(nav_links)}
+      <a class="app-link" href="{utm(app, 'nav', 'nav')}">Free app</a>
     </nav>
   </div>
 </header>
-<main id="main">
+<main id="main" tabindex="-1">
 {body}
 </main>
 <footer class="foot">
   <div class="wrap">
-    <p><strong>AxomRank</strong> · free, bilingual (English and Assamese) lessons and previous-year questions for ADRE, APSC CCE, Assam TET and Assam Police.</p>
-    <p><a href="{base}/exams/">Exams</a> · <a href="{base}/syllabus/adre/">ADRE syllabus</a> · <a href="{base}/syllabus/apsc-cce/">APSC syllabus</a> · <a href="{base}/question-papers/">Previous year papers</a> · <a href="{base}/questions/">Questions by topic</a> · <a href="{base}/topics/assam-history/">Assam history</a></p>
-    <p><a href="{utm(app, 'footer', 'footer')}">AxomRank app</a> · <a href="https://github.com/axomrank/assam-exam-pyq">Open PYQ dataset</a> · <a href="{base}/rss.xml">RSS</a> · <a href="{base}/about/">About and corrections</a></p>
+    <p>Free exam preparation in English and Assamese.</p>
+    <nav aria-label="Footer">
+      {footer_links}
+      <a href="{base}/topics/assam-history/">Assam history</a>
+      <a href="{base}/about/">About and corrections</a>
+      <a href="{utm(app, 'footer', 'footer')}">AxomRank app</a>
+      <a href="https://github.com/axomrank/assam-exam-pyq">Open PYQ dataset</a>
+      <a href="{base}/rss.xml">RSS</a>
+    </nav>
   </div>
 </footer>
 </body>
@@ -144,11 +160,12 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
 """
 
 
-def card(site, p):
-    exams = " ".join(f'<span class="chip">{html.escape(e)}</span>' for e in p["exam"])
+def card(site, p, *, heading="h3"):
+    exams = html.escape(" · ".join(p["exam"]))
+    exam_meta = f"<span>{exams}</span><span aria-hidden=\"true\">·</span>" if exams else ""
     return f"""<article class="card">
-  <p class="meta">{exams}<time datetime="{p['date']}">{fmt_date(p['date'])}</time></p>
-  <h2><a href="{site['base_url']}/{p['slug']}/">{html.escape(p['title'])}</a></h2>
+  <p class="meta">{exam_meta}<time datetime="{p['date']}">{fmt_date(p['date'])}</time></p>
+  <{heading}><a href="{site['base_url']}/{p['slug']}/">{html.escape(p['title'])}</a></{heading}>
   <p>{html.escape(p['description'])}</p>
 </article>"""
 
@@ -162,6 +179,9 @@ def build(base_url=None, pyq_dir=None):
     if base_url:
         site["base_url"] = base_url.rstrip("/")
     base = site["base_url"]
+    pyq_dir = pyq_dir or os.environ.get("PYQ_DIR") or (ROOT.parent / "assam-exam-pyq")
+    pyq_data = pyq_pages.load(pyq_dir)
+    site["has_papers"] = bool(pyq_data and pyq_data[1])
 
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -193,22 +213,28 @@ def build(base_url=None, pyq_dir=None):
         updated = p.get("updated") or p["date"]
         cta_url = utm(site["app_url"] + p.get("cta", "/"), p["slug"], "cta")
         cta_text = p.get("cta_text", "Practise free on AxomRank")
-        chips = " ".join(
-            f'<a class="chip" href="{base}/topics/{slugify(t)}/">{html.escape(t)}</a>' for t in p["exam"] + p["tags"]
+        tags = "".join(
+            f'<li><a href="{base}/topics/{slugify(t)}/">{html.escape(t)}</a></li>'
+            for t in dict.fromkeys(p["exam"] + p["tags"])
         )
+        primary_topic = next(iter(p["exam"]), None)
+        topic_crumb = (f' <span aria-hidden="true">/</span> <a href="{base}/topics/{slugify(primary_topic)}/">'
+                       f'{html.escape(primary_topic)}</a>') if primary_topic else ""
         toc = md.toc if md.toc.count("<li>") >= 3 else ""
         body = f"""<article class="post wrap">
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/">Blog</a> › {' › '.join(f'<a href="{base}/topics/{slugify(e)}/">{html.escape(e)}</a>' for e in p['exam'][:1])}</nav>
-  <h1>{html.escape(p['title'])}</h1>
-  <p class="dek">{html.escape(p['description'])}</p>
-  <p class="meta">By {html.escape(site['author'])} · <time datetime="{p['date']}">{fmt_date(p['date'])}</time>{' · updated ' + fmt_date(updated) if updated != p['date'] else ''}</p>
-  <p class="chips">{chips}</p>
+  <header class="post-header">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/">Blog</a>{topic_crumb}</nav>
+    <h1>{html.escape(p['title'])}</h1>
+    <p class="dek">{html.escape(p['description'])}</p>
+    <p class="meta">By {html.escape(site['author'])} · <time datetime="{p['date']}">{fmt_date(p['date'])}</time>{' · updated ' + fmt_date(updated) if updated != p['date'] else ''}</p>
+  </header>
   {f'<details class="toc"><summary>On this page</summary>{toc}</details>' if toc else ''}
   <div class="prose">{body_html}</div>
   <aside class="cta">
     <p><strong>Practise this for free.</strong> AxomRank has bilingual lessons, spaced review and previous-year questions that work offline on modest phones. No login needed to start.</p>
     <a class="btn" href="{cta_url}">{html.escape(cta_text)}</a>
   </aside>
+  {f'<nav class="post-topics" aria-label="Related topics"><ul>{tags}</ul></nav>' if tags else ''}
 </article>"""
         jsonld = [
             {
@@ -252,25 +278,45 @@ def build(base_url=None, pyq_dir=None):
             topics.setdefault(t, []).append(p)
 
     # Previous-year question pages from the assam-exam-pyq dataset
-    pyq_dir = pyq_dir or os.environ.get("PYQ_DIR") or (ROOT.parent / "assam-exam-pyq")
-    papers = pyq_pages.build(site, page, OUT, urls, utm, pyq_dir)
-    exam_pages.build(site, page, OUT, urls, utm, papers, posts, md)
-    district_pages.build(site, page, OUT, urls, utm, papers)
-    pyq_strip = ""
+    if site["has_papers"]:
+        papers, published_topics = pyq_pages.build(site, page, OUT, urls, utm, pyq_data)
+    else:
+        print(f"No PYQ papers found at {pyq_dir}: skipping question-paper pages")
+        papers, published_topics = [], set()
+    exam_pages.build(site, page, OUT, urls, utm, papers, posts, md, published_topics)
+    district_pages.build(site, page, OUT, urls, utm, papers, published_topics)
+
+    resources = []
     if papers:
         total = sum(len(x["qs"]) for x in papers)
-        pyq_strip = f'''<section class="wrap strip"><div><h2>{len(papers)} real question papers, {total:,} questions, all with answers</h2>
-<p>ADRE, APSC CCE Prelims, Assam Police, Assam TET and DME papers as text instead of blurry PDFs.</p></div>
-<p><a class="btn" href="{base}/question-papers/">Browse question papers</a> <a class="btn ghost" href="{base}/questions/">Questions by topic</a></p></section>'''
+        resources.extend([
+            ("exams", "Exams and syllabi", "Exam patterns, syllabus topics and past papers"),
+            ("question-papers", "Previous-year papers", f"{len(papers)} papers and {total:,} questions with answers"),
+            ("questions", "Questions by topic", "Practise Assam GK, maths, reasoning and more"),
+        ])
+    resources.append(("districts", "Districts of Assam", "Population, area and literacy from official sources"))
+    resource_links = "".join(
+        f'<li><a href="{base}/{path}/"><strong>{label}</strong><span>{detail}</span></a></li>'
+        for path, label, detail in resources
+    )
 
     # Home
-    home = f"""<section class="hero wrap">
-  <h1>{html.escape(site['tagline'])}</h1>
-  <p class="dek">Exam analysis built from real previous-year papers, Assam history checked against named sources, and study plans that do not need a coaching fee. Every post links to free practice in the AxomRank app.</p>
-  <a class="btn" href="{utm(site['app_url'], 'home_hero', 'hero')}">Start practising free</a>
+    home = f"""<div class="wrap home-intro">
+  <section class="hero">
+    <h1>Prepare for Assam government exams</h1>
+    <p class="dek">Free study guides, real previous-year questions and source-checked Assam history for ADRE, APSC CCE, Assam TET and Assam Police.</p>
+    <a class="btn" href="{utm(site['app_url'], 'home_hero', 'hero')}">Practise in the free app</a>
+  </section>
+  <nav class="resources" aria-labelledby="study-resources">
+    <h2 id="study-resources">Study resources</h2>
+    <ul>{resource_links}</ul>
+  </nav>
+</div>
+<section class="wrap home-guides" aria-labelledby="latest-guides">
+  <h2 id="latest-guides">Latest guides</h2>
+  <div class="list">{''.join(card(site, p) for p in posts)}</div>
 </section>
-{pyq_strip}
-<section class="wrap list">{''.join(card(site, p) for p in posts)}</section>"""
+"""
     (OUT / "index.html").write_text(page(site, title=f"{site['title']}: Assam govt exam preparation (ADRE, APSC, TET)",
                                          description="Free, source-checked guides for ADRE, APSC CCE, Assam TET and Assam Police: previous-year question analysis, Assam history and study plans.",
                                          canonical=f"{base}/", body=home,
@@ -284,8 +330,8 @@ def build(base_url=None, pyq_dir=None):
     for t, ps in topics.items():
         d = OUT / "topics" / slugify(t)
         d.mkdir(parents=True, exist_ok=True)
-        inner = "".join(card(site, p) for p in ps) or "<p>Posts on this topic are coming soon.</p>"
-        body = f'<section class="wrap list"><h1>{html.escape(t)}</h1>{inner}</section>'
+        inner = "".join(card(site, p, heading="h2") for p in ps) or "<p>Posts on this topic are coming soon.</p>"
+        body = f'<header class="wrap hero"><h1>{html.escape(t)}</h1></header><div class="wrap list">{inner}</div>'
         (d / "index.html").write_text(page(site, title=f"{t} preparation articles | AxomRank Blog",
                                            description=f"AxomRank articles on {t}: previous-year question analysis, notes and free practice.",
                                            canonical=f"{base}/topics/{slugify(t)}/", body=body), encoding="utf-8")

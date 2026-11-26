@@ -112,13 +112,23 @@ def load(pyq_dir):
     return pyq, papers, rows
 
 
-def question_html(r, base, *, img_base, paper_link=None, topic_link=True):
+def topic_reference(base, subject, topic, published_topics, *, bold=False):
+    slug = topic_slug(subject, topic)
+    label = html.escape(topic)
+    if bold:
+        label = f"<strong>{label}</strong>"
+    if slug in published_topics:
+        return f'<a href="{base}/questions/{slug}/">{label}</a>'
+    return label
+
+
+def question_html(r, base, *, img_base, paper_link=None, published_topics=()):
     opts = []
     letters = answer_letters(r["answer"])
     for L in "abcd":
         v = r.get(f"option_{L}", "")
         if v:
-            opts.append(f'<li><span class="ol">{L.upper()}</span> {text(v)}</li>')
+            opts.append(f'<li><span class="ol">{L.upper()}.</span><span>{text(v)}</span></li>')
     imgs = "".join(
         f'<img src="{img_base}/{html.escape(p.split("exams/", 1)[-1])}" alt="Figure for question {r["q_no"]}" loading="lazy">'
         for p in r["images"].split("|") if p
@@ -139,27 +149,29 @@ def question_html(r, base, *, img_base, paper_link=None, topic_link=True):
     where = []
     if paper_link:
         where.append(paper_link)
-    if topic_link and r["topic"]:
-        where.append(f'<a href="{base}/questions/{topic_slug(r["subject"], r["topic"])}/">{html.escape(r["topic"])}</a>')
+    if not paper_link and r["topic"]:
+        where.append(topic_reference(base, r["subject"], r["topic"], published_topics))
     else:
         where.append(html.escape(r["subject"]))
     ctx = f'<p class="ctx">{text(r["context"])}</p>' if r["context"] else ""
     return f"""<li class="q" id="q{r['q_no']}" value="{r['q_no']}">
   {ctx}<p class="qt">{text(r['question'])}</p>{imgs}
   <ol class="opts">{''.join(opts)}</ol>
-  <details><summary>Show answer</summary><p class="ans"><strong>Answer:</strong> {ans}</p>{note}{rev}<p class="src">{html.escape(src)}</p></details>
+  <details><summary><span class="answer-closed">Show answer</span><span class="answer-open">Hide answer</span></summary><p class="ans"><strong>Answer:</strong> {ans}</p>{note}{rev}<p class="src">{html.escape(src)}</p></details>
   <p class="qmeta">{' · '.join(where)}</p>
 </li>"""
 
 
-def build(site, page, out, urls, utm, pyq_dir):
-    loaded = load(pyq_dir)
-    if not loaded:
-        print(f"PYQ data not found at {pyq_dir}: skipping question-paper pages")
-        return []
-    pyq, papers, rows = loaded
+def build(site, page, out, urls, utm, pyq_data):
+    pyq, papers, rows = pyq_data
     base = site["base_url"]
     img_base = f"{base}/pyq-img"
+    paper_by_key = {(p["exam"], p["year"], p["paper_code"]): p for p in papers}
+    topics = collections.defaultdict(list)
+    for r in rows:
+        if r["topic"] and (r["exam"], str(r["year"]), r["paper_code"]) in paper_by_key:
+            topics[(r["subject"], r["topic"])].append(r)
+    published_topics = {topic_slug(s, t) for (s, t), qs in topics.items() if len(qs) >= MIN_TOPIC_QUESTIONS}
 
     # Copy only the figures the pages use.
     for r in rows:
@@ -168,8 +180,6 @@ def build(site, page, out, urls, utm, pyq_dir):
                 dst = out / "pyq-img" / p.split("exams/", 1)[-1]
                 dst.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(pyq / p, dst)
-
-    nav_items = []
 
     # ---- one page per paper ----
     for p in papers:
@@ -189,7 +199,7 @@ def build(site, page, out, urls, utm, pyq_dir):
         app_cta = utm(site["app_url"] + "/", p["slug"], "cta")
         others = [o for o in papers if o["exam"] == p["exam"] and o is not p]
         related = "".join(f'<li><a href="{base}/question-papers/{o["slug"]}/">{html.escape(o["name"])} paper</a></li>' for o in others)
-        qlist = "".join(question_html(r, base, img_base=img_base) for r in qs)
+        qlist = "".join(question_html(r, base, img_base=img_base, published_topics=published_topics) for r in qs)
         pdf = f"{GITHUB}/blob/main/{p['source_pdf']}"
         faq = [
             (f"How many questions are in the {p['name']} paper?",
@@ -204,6 +214,7 @@ def build(site, page, out, urls, utm, pyq_dir):
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/">Blog</a> › <a href="{base}/question-papers/">Question papers</a> › <a href="{base}/question-papers/#{EXAMS[p['exam']][1]}">{html.escape(EXAMS[p['exam']][2])}</a></nav>
   <h1>{html.escape(title)}</h1>
   <p class="dek">{html.escape(p['paper_title'])}. Every question is typed out below with its four options. Tap <em>Show answer</em> to check yourself, so you can use the page as a practice test.</p>
+  <p class="jump-link"><a href="#questions">Jump to the questions</a></p>
   <div class="prose">
   <h2>About this paper</h2>
   <table><tbody>
@@ -246,23 +257,26 @@ def build(site, page, out, urls, utm, pyq_dir):
         (d / "index.html").write_text(page(site, title=f"{title} | AxomRank", description=desc, canonical=canonical,
                                            body=body, jsonld=jsonld, og_type="article"), encoding="utf-8")
         urls.append((canonical, None))
-        nav_items.append(p)
 
     # ---- papers hub ----
     sections = []
+    exam_links = []
     for ex in EXAM_ORDER:
         ps = [p for p in papers if p["exam"] == ex]
         if not ps:
             continue
         items = "".join(
-            f'<article class="card"><p class="meta"><span class="chip">{p["year"]}</span>{len(p["qs"])} questions</p>'
-            f'<h2><a href="{base}/question-papers/{p["slug"]}/">{html.escape(p["name"])} question paper</a></h2>'
+            f'<article class="card"><p class="meta">{len(p["qs"])} questions</p>'
+            f'<h3><a href="{base}/question-papers/{p["slug"]}/">{html.escape(p["name"])} question paper</a></h3>'
             f'<p>{html.escape(p["paper_title"])}</p></article>' for p in ps)
-        sections.append(f'<h2 id="{EXAMS[ex][1]}" class="sect">{html.escape(EXAMS[ex][0])}</h2>{items}')
+        name, slug, _ = EXAMS[ex]
+        sections.append(f'<h2 id="{slug}" class="sect">{html.escape(name)}</h2>{items}')
+        exam_links.append(f'<li><a href="#{slug}">{html.escape(name)}</a></li>')
     total = sum(len(p["qs"]) for p in papers)
     body = f"""<section class="hero wrap"><h1>Assam exam previous year question papers with answers</h1>
 <p class="dek">{len(papers)} real papers and {total:,} questions from ADRE, APSC CCE Prelims, Assam Police, Assam TET and DME. Every question is typed out as text with its answer, and every answer says where it comes from. All free, with no PDF to download.</p>
-<p><a href="{base}/questions/">Or browse questions by topic →</a></p></section>
+<p class="jump-link"><a href="{base}/questions/">Browse questions by topic</a></p>
+<details class="toc"><summary>Find papers by exam</summary><ul>{''.join(exam_links)}</ul></details></section>
 <section class="wrap list">{''.join(sections)}</section>"""
     canonical = f"{base}/question-papers/"
     (out / "question-papers" / "index.html").write_text(page(
@@ -274,11 +288,6 @@ def build(site, page, out, urls, utm, pyq_dir):
     urls.append((canonical, None))
 
     # ---- topic pages ----
-    paper_by_key = {(p["exam"], p["year"], p["paper_code"]): p for p in papers}
-    topics = collections.defaultdict(list)
-    for r in rows:
-        if r["topic"] and (r["exam"], str(r["year"]), r["paper_code"]) in paper_by_key:
-            topics[(r["subject"], r["topic"])].append(r)
     topic_cards = collections.defaultdict(list)
     for (subject, topic), qs in sorted(topics.items(), key=lambda kv: -len(kv[1])):
         if len(qs) < MIN_TOPIC_QUESTIONS:
@@ -298,19 +307,20 @@ def build(site, page, out, urls, utm, pyq_dir):
         for r in qs_sorted:
             pp = paper_by_key[(r["exam"], str(r["year"]), r["paper_code"])]
             link = f'<a href="{base}/question-papers/{pp["slug"]}/#q{r["q_no"]}">{html.escape(pp["name"])}, Q{r["q_no"]}</a>'
-            items.append(question_html(r, base, img_base=img_base, paper_link=link, topic_link=False)
+            items.append(question_html(r, base, img_base=img_base, paper_link=link)
                          .replace(f'id="q{r["q_no"]}" value="{r["q_no"]}"', ""))
         body = f"""<article class="post wrap pyq">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/">Blog</a> › <a href="{base}/questions/">Questions by topic</a> › {html.escape(subject)}</nav>
   <h1>{html.escape(title)}</h1>
   <p class="dek">Every {html.escape(topic.lower())} question from {len({(r['exam'], r['year'], r['paper_code']) for r in qs})} real Assam recruitment papers, in one place. Use it to see which facts come up again and again.</p>
+  <p class="jump-link"><a href="#questions">Jump to the questions</a></p>
   <div class="prose">
   <h2>Where these questions were asked</h2>
   <table><thead><tr><th>Exam</th><th>Questions</th></tr></thead><tbody>{ex_rows}</tbody></table>
   {'<h2>Most-asked subtopics</h2><table><thead><tr><th>Subtopic</th><th>Questions</th></tr></thead><tbody>' + sub_rows + '</tbody></table>' if sub_rows else ''}
   </div>
   <aside class="cta"><p><strong>Learn this topic properly.</strong> AxomRank has free bilingual lessons with spaced review. It works offline, and you don't need a login to start.</p><a class="btn" href="{utm(site['app_url'] + '/', 'topic-' + slug, 'cta')}">Open the free lessons</a></aside>
-  <h2>All {n} questions</h2>
+  <h2 id="questions">All {n} questions</h2>
   <ol class="qs">{''.join(items)}</ol>
   <div class="prose"><h2>Sources and corrections</h2><p>From the open <a href="{GITHUB}">AxomRank PYQ dataset</a>. Each question links back to its paper. See <a href="{base}/about/">how to report a correction</a>.</p></div>
 </article>"""
@@ -331,15 +341,19 @@ def build(site, page, out, urls, utm, pyq_dir):
         topic_cards[subject].append((topic, slug, n, exam_list))
 
     sections = []
+    subject_links = []
     for subject in sorted(topic_cards, key=lambda s: -sum(t[2] for t in topic_cards[s])):
         cards = "".join(
-            f'<article class="card"><p class="meta">{n} questions</p><h2><a href="{base}/questions/{slug}/">{html.escape(t)} questions</a></h2><p>Asked in {html.escape(ex)}</p></article>'
+            f'<article class="card"><p class="meta">{n} questions</p><h3><a href="{base}/questions/{slug}/">{html.escape(t)} questions</a></h3><p>Asked in {html.escape(ex)}</p></article>'
             for t, slug, n, ex in topic_cards[subject])
-        sections.append(f'<h2 class="sect">{html.escape(subject)}</h2>{cards}')
+        slug = slugify(subject)
+        sections.append(f'<h2 id="{slug}" class="sect">{html.escape(subject)}</h2>{cards}')
+        subject_links.append(f'<li><a href="#{slug}">{html.escape(subject)}</a></li>')
     canonical = f"{base}/questions/"
     body = f"""<section class="hero wrap"><h1>Assam exam questions by topic</h1>
 <p class="dek">Real previous-year questions grouped by topic across ADRE, APSC, Assam Police, TET and DME papers. Start with the topics that carry the most marks.</p>
-<p><a href="{base}/question-papers/">Or browse full question papers →</a></p></section>
+<p class="jump-link"><a href="{base}/question-papers/">Browse full question papers</a></p>
+<details class="toc"><summary>Find topics by subject</summary><ul>{''.join(subject_links)}</ul></details></section>
 <section class="wrap list">{''.join(sections)}</section>"""
     (out / "questions").mkdir(exist_ok=True)
     (out / "questions" / "index.html").write_text(page(
@@ -351,4 +365,4 @@ def build(site, page, out, urls, utm, pyq_dir):
     urls.append((canonical, None))
     n_topics = sum(len(v) for v in topic_cards.values())
     print(f"built {len(papers)} question-paper pages, {n_topics} topic pages")
-    return papers
+    return papers, published_topics

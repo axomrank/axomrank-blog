@@ -10,7 +10,7 @@ import html
 import re
 from pathlib import Path
 
-from pyq_pages import EXAMS, topic_slug
+from pyq_pages import EXAMS, topic_reference
 
 ROOT = Path(__file__).resolve().parent
 
@@ -80,18 +80,13 @@ def _faq_ld(faq):
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
 
 
-def _subject_table(base, qs, *, with_topics=False):
+def _subject_table(qs):
     n = len(qs)
     rows = []
     by_subject = collections.Counter(r["subject"] for r in qs)
     for subj, c in by_subject.most_common():
-        line = f"<tr><td><strong>{html.escape(subj)}</strong></td><td>{c}</td><td>{_pct(c, n)}</td>"
-        if with_topics:
-            tops = collections.Counter(r["topic"] for r in qs if r["subject"] == subj and r["topic"]).most_common(6)
-            line += "<td>" + ", ".join(
-                f'<a href="{base}/questions/{topic_slug(subj, t)}/">{html.escape(t)}</a> ({tc})' for t, tc in tops) + "</td>"
-        rows.append(line + "</tr>")
-    head = "<th>Subject</th><th>Questions</th><th>Share</th>" + ("<th>Main topics (questions)</th>" if with_topics else "")
+        rows.append(f"<tr><td><strong>{html.escape(subj)}</strong></td><td>{c}</td><td>{_pct(c, n)}</td></tr>")
+    head = "<th>Subject</th><th>Questions</th><th>Share</th>"
     return f"<table><thead><tr>{head}</tr></thead><tbody>{''.join(rows)}</tbody></table>"
 
 
@@ -126,7 +121,7 @@ def _official_syllabus_html(folder, md):
     return "".join(parts)
 
 
-def build(site, page, out, urls, utm, papers, posts, md):
+def build(site, page, out, urls, utm, papers, posts, md, published_topics):
     if not papers:
         return
     base = site["base_url"]
@@ -155,7 +150,7 @@ def build(site, page, out, urls, utm, papers, posts, md):
                                   f"<td>{' or '.join(str(s) for s in sizes)}</td></tr>")
         top_topics = collections.Counter((r["subject"], r["topic"]) for r in qs if r["topic"]).most_common(10)
         topic_list = "".join(
-            f'<li><a href="{base}/questions/{topic_slug(s, t)}/">{html.escape(t)}</a> ({html.escape(s)}): {c} questions</li>'
+            f'<li>{topic_reference(base, s, t, published_topics)} ({html.escape(s)}): {c} questions</li>'
             for (s, t), c in top_topics)
         rel_posts = [p for p in posts if hub["post_tag"] in p["exam"] + p["tags"]]
         post_list = "".join(f'<li><a href="{base}/{p["slug"]}/">{html.escape(p["title"])}</a></li>' for p in rel_posts)
@@ -185,7 +180,7 @@ def build(site, page, out, urls, utm, papers, posts, md):
   <h3>Questions per paper, from the real papers</h3>
   <table><thead><tr><th>Paper</th><th>Papers held</th><th>Questions per paper</th></tr></thead><tbody>{''.join(group_rows)}</tbody></table>
   <h2>What the papers ask: subject-wise</h2>
-  {_subject_table(base, qs)}
+  {_subject_table(qs)}
   <h2>Most-asked topics</h2>
   <ol>{topic_list}</ol>
   <h2>Previous year question papers</h2>
@@ -232,12 +227,12 @@ def build(site, page, out, urls, utm, papers, posts, md):
                 for t, tc in tops:
                     subs = collections.Counter(r["subtopic"] for r in gq if r["subject"] == subj and r["topic"] == t and r["subtopic"]).most_common(8)
                     sub_txt = ", ".join(f"{html.escape(s)} ({c})" for s, c in subs)
-                    items.append(f'<li><a href="{base}/questions/{topic_slug(subj, t)}/"><strong>{html.escape(t)}</strong></a> · {tc} questions'
+                    items.append(f'<li>{topic_reference(base, subj, t, published_topics, bold=True)} · {tc} questions'
                                  + (f'<br><span class="subs">{sub_txt}</span>' if sub_txt else "") + "</li>")
                 sub.append(f"<h4>{html.escape(subj)} <span class=\"count\">{sc} questions, {_pct(sc, len(gq))}</span></h4><ul>{''.join(items)}</ul>")
             sections.append(f'<h2 id="{re.sub(r"[^a-z0-9]+", "-", gname.lower()).strip("-")}">{html.escape(gname)}</h2>'
                             f"<p>{measured_intro} {ng} paper{'s' if ng > 1 else ''}, {len(gq)} questions.</p>"
-                            f"{_subject_table(base, gq)}{''.join(sub)}")
+                            f"{_subject_table(gq)}{''.join(sub)}")
         faq_s = [
             (f"What is the {hub['short']} syllabus?",
              f"The papers analysed here cover {', '.join(s for s, _ in collections.Counter(r['subject'] for r in qs).most_common(6))}. "
@@ -256,7 +251,7 @@ def build(site, page, out, urls, utm, papers, posts, md):
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/">Blog</a> › <a href="{hub_url}">{html.escape(hub['short'])}</a> › Syllabus</nav>
   <h1>{html.escape(hub['syllabus_title'])}</h1>
   <p class="dek">Subject-wise and topic-wise {html.escape(hub['short'])} syllabus, with the number of questions each topic carried in {len(hp)} real papers ({years[0]}–{years[-1]}). Tap a topic to practise its real questions.</p>
-  <details class="toc" open><summary>On this page</summary><ul>{toc}</ul></details>
+  <details class="toc"><summary>On this page</summary><ul>{toc}</ul></details>
   <div class="prose">{''.join(sections)}</div>
   <aside class="cta"><p><strong>Turn the syllabus into a study plan.</strong> AxomRank's free lessons follow these topics, with spaced review and real questions.</p><a class="btn" href="{utm(site['app_url'] + '/', 'syllabus-' + hub['slug'], 'cta')}">Start the free lessons</a></aside>
   <div class="prose">
