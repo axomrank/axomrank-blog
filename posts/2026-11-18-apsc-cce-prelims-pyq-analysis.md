@@ -64,6 +64,8 @@ CSAT is qualifying, but you still have to clear the cut-off. Reading comprehensi
 
 AxomRank's free [Assam History course]({{app}}/) (93 lessons) and [Indian Polity course]({{app}}/) (60 lessons) cover the first two steps, in English and Assamese.
 
+If you are considering a paid batch, use your Prelims practice to identify the help you need. The [APSC coaching guide]({{base}}/apsc-coaching-in-assam/) compares published course formats and shows how to check CSAT practice and Mains feedback.
+
 ## Frequently asked questions
 
 ### Is APSC CSAT qualifying?

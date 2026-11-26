@@ -46,6 +46,8 @@ Grade IV aspirants can swap half the English time for extra reasoning, because G
 
 Free self-study works best for people who can keep a routine. A paid batch can help if you need daily accountability, live doubt-clearing, or offline classes for the computer skill test. If you do pay, ask the institute for its past results and a free demo class, and keep using the real papers alongside.
 
+Use a recent Grade III or Grade IV paper to decide what help you need. See the [ADRE coaching comparison]({{base}}/adre-coaching-in-assam/) for batch formats, published fees and questions to ask before you enrol.
+
 ## Frequently asked questions
 
 ### Can I crack ADRE without coaching?
