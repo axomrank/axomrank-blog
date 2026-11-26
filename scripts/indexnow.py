@@ -42,7 +42,7 @@ def sitemap_hashes(root, base):
     return hashes
 
 
-def prepare(root, base, key):
+def prepare(root, base, key, *, resubmit=False):
     if not re.fullmatch(r"[A-Za-z0-9-]{8,128}", key):
         raise ValueError("Invalid IndexNow key")
     base = base.rstrip("/")
@@ -50,7 +50,7 @@ def prepare(root, base, key):
     current = sitemap_hashes(root, base)
     (root / MANIFEST).write_text(json.dumps(current, sort_keys=True), encoding="utf-8")
     try:
-        previous = read_live_manifest(f"{base}/{MANIFEST}")
+        previous = {} if resubmit else read_live_manifest(f"{base}/{MANIFEST}")
     except (URLError, TimeoutError, ValueError) as error:
         print(f"IndexNow skipped: unable to read the live manifest ({error})", file=sys.stderr)
         return ""
@@ -69,5 +69,6 @@ if __name__ == "__main__":
     parser.add_argument("base_url")
     parser.add_argument("key")
     parser.add_argument("--root", type=Path, default=Path("_site"))
+    parser.add_argument("--resubmit", action="store_true")
     args = parser.parse_args()
-    print(prepare(args.root, args.base_url, args.key))
+    print(prepare(args.root, args.base_url, args.key, resubmit=args.resubmit))

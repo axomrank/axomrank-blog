@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      indexnow_resubmit:
+        description: Resubmit the entire sitemap to IndexNow
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -41,11 +46,18 @@ jobs:
       - run: sudo apt-get install -y fonts-dejavu-core fonts-noto-core
       - run: pip install -r requirements.txt
       - run: python build.py --pyq-dir pyq-data --base-url "$BASE_URL"
+        env:
+          GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
+          BING_SITE_VERIFICATION: ${{ vars.BING_SITE_VERIFICATION }}
       - run: python scripts/check_site.py "$BASE_URL"
       - id: indexnow
         name: Prepare IndexNow changes
+        env:
+          RESUBMIT: ${{ inputs.indexnow_resubmit }}
         run: |
-          payload=$(python scripts/indexnow.py "$BASE_URL" "$INDEXNOW_KEY")
+          args=()
+          if [ "$RESUBMIT" = true ]; then args+=(--resubmit); fi
+          payload=$(python scripts/indexnow.py "$BASE_URL" "$INDEXNOW_KEY" "${args[@]}")
           printf 'payload=%s\n' "$payload" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -67,8 +79,9 @@ jobs:
         run: |
           for attempt in 1 2 3 4 5; do
             if test "$(curl -fsS --max-time 20 "${BASE_URL%/}/$INDEXNOW_KEY.txt?run=$GITHUB_RUN_ID")" = "$INDEXNOW_KEY"; then
-              curl --fail-with-body --retry 2 --max-time 30 --json "$INDEXNOW_PAYLOAD" https://api.indexnow.org/indexnow
-              exit 0
+              status=$(curl -fsS --retry 2 --max-time 30 -o /dev/null -w '%{http_code}' --json "$INDEXNOW_PAYLOAD" https://api.indexnow.org/indexnow)
+              echo "IndexNow response: $status"
+              case "$status" in 200|202) exit 0 ;; *) exit 1 ;; esac
             fi
             sleep 8
           done
