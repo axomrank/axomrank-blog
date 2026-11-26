@@ -1,6 +1,6 @@
 # AxomRank sales and marketing plan
 
-*Written 18 November 2026, from a review of all 35 repositories on the `axomrank` GitHub account and a web review of the competitors. The OpenSEO data tools (search volumes and ranking data) were not connected for this review, so keyword priorities here are **directional**. Re-run with the OpenSEO MCP connected to get volumes.*
+*Written 18 November 2026 from a review of the GitHub account and competitors. The [26 November OpenSEO report](https://app.openseo.so/p/e2bc49dc-15ea-4cb2-9d9f-f5355eea1fc2/reports/8c60ba08-22bf-440d-a207-b8befb51911c) adds India search estimates and mobile result samples for the first content batch.*
 
 ## 1. What AxomRank has today
 
@@ -120,3 +120,25 @@ Rules for every post: real data or a named source, a clear table, an FAQ section
 2. **Clean up the GitHub profile** (see [ACCOUNT-ORGANISATION.md](ACCOUNT-ORGANISATION.md)). Badge-farming repos look bad to partners and journalists.
 3. **Search Console + OpenSEO.** Verify axomrank.org, the pages.dev site and the blog in Google Search Console. Connect the OpenSEO MCP so the next review has real search volumes.
 4. **Consistent contact details** across the app, blog, Odoo site and social bios.
+
+## 9. Launch material
+
+Use the [live blog](https://axomrank.github.io/axomrank-blog/) for distribution until the custom domain is active. The following drafts can be posted from the relevant AxomRank accounts.
+
+**Telegram or WhatsApp quiz**
+
+ADRE practice question. Who led the Mughal forces at the Battle of Saraighat? Try the real Driver paper question and tap Show answer when you're ready. [Try the question](https://axomrank.github.io/axomrank-blog/question/saraighat-mughal-commander/)
+
+**Instagram caption**
+
+Revising Assam's national parks? The 2025–26 Economic Survey lists eight, including Sikhna Jwhwlao in Kokrajhar and Chirang. Save the list and try the linked APSC questions. [Read the guide](https://axomrank.github.io/axomrank-blog/national-parks-of-assam/)
+
+**Short video script**
+
+ADRE can ask you for the Mughal commander or the emperor at Saraighat. The commander was Ram Singh of Amber. The emperor who sent him was Aurangzeb. Lachit Borphukan commanded the Ahoms. Test yourself on the three linked ADRE questions. [Read the guide](https://axomrank.github.io/axomrank-blog/battle-of-saraighat/)
+
+**Classroom resource**
+
+Ask learners to try one section of the culture set and note any guesses. In the discussion, open the original question and compare its answer source with the relevant guide. [Open the practice set](https://axomrank.github.io/axomrank-blog/assam-gk/culture-questions/)
+
+Channel posting, partner outreach, external directory submissions and book pre-orders require access to the relevant accounts or a release decision. Use the [SEO growth plan](SEO-GROWTH-PLAN.md) for domain, Search Console and publishing status.

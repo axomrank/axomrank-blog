@@ -26,15 +26,22 @@ The marketing and SEO blog for [AxomRank](https://axomrank.pages.dev), which off
 4. Add a **Sources** section. Every number must come from the real papers or a named source.
 5. Push to `main`. GitHub Actions (`.github/workflows/pages.yml`) builds and deploys the site in about a minute. `./deploy.sh` is a manual fallback.
 
+For a recruitment notice, add `notice_exam` (the exam hub slug), `notice_date` (`YYYY-MM-DD`) and `notice_source` (the official notice URL). The post appears under `/jobs/` and its exam hub. Give historical notices a clear archive label and cite any later corrigendum.
+
+For a monthly current-affairs post, set `current_affairs` to the covered month (`YYYY-MM`). The post is published at `/current-affairs/<month>/`.
+
+For Assamese, use `lang: as-IN`, `translation_of` with the matching English slug, and `draft: true` until a human editor approves the copy. Published translations use `/as/` and link back to the English article through `hreflang` and a visible language link. Use `## সঘনে সোধা প্ৰশ্ন` for Assamese FAQs.
+
 ## Build locally
 
 ```bash
 pip install -r requirements.txt
-python build.py --base-url http://localhost:8765
+python build.py --pyq-dir ../assam-exam-pyq --base-url http://localhost:8765
+python scripts/check_site.py http://localhost:8765
 python -m http.server 8765 -d _site
 ```
 
-The build writes post pages, topic pages, `sitemap.xml`, `rss.xml`, `robots.txt` and JSON-LD (Article, BreadcrumbList, FAQPage).
+Install DejaVu Serif, DejaVu Sans and Noto Serif Bengali fonts for social-card rendering. GitHub Actions installs these automatically on Linux. The build writes HTML, article preview images, `sitemap.xml`, `rss.xml`, `robots.txt` and JSON-LD.
 
 ## Plans
 
@@ -44,12 +51,15 @@ The build writes post pages, topic pages, `sitemap.xml`, `rss.xml`, `robots.txt`
 
 ## Roadmap: future improvements
 
-- [ ] Paper pages: one indexable HTML page per previous-year paper, with answers (generated from assam-exam-pyq)
-- [ ] Assamese-language posts, after human editorial review
+- [x] Paper and topic pages with answer provenance from `assam-exam-pyq`
+- [x] Five exam hubs, Assam GK, recruitment notices and a monthly current-affairs collection
+- [x] Social preview images per post and link and front-matter checks in CI
+- [x] IndexNow notification on deployment
+- [ ] Human editorial review and release of the first Assamese post
 - [ ] Custom domain `blog.axomrank.org` (set the `BASE_URL` repository variable)
-- [ ] Open Graph images generated per post from the brand templates
-- [ ] Internal-link checker and front-matter linter in CI
-- [ ] Search Console and OpenSEO connected for keyword tracking
+- [ ] Verify the blog in Search Console and Bing Webmaster Tools, then submit the sitemap
+
+The OpenSEO [AxomRank Blog project](https://app.openseo.so/p/e2bc49dc-15ea-4cb2-9d9f-f5355eea1fc2) holds the keyword research. If a publisher uses HTML meta verification, set `GOOGLE_SITE_VERIFICATION` or `BING_SITE_VERIFICATION` in the repository's Actions variables and redeploy. The workflow can also be dispatched with `indexnow_resubmit` after a failed notification or host migration.
 
 ## For AI agents and contributors
 

@@ -1,6 +1,6 @@
 # AxomRank blog: SEO growth plan to out-rank Assam job and exam-prep sites
 
-*Written 18 November 2026. It builds on [MARKETING-PLAN.md](MARKETING-PLAN.md). Competitors come from a web review (the local notes file `assam-coaching-institutes.md`). Search volumes were **not** measured: the OpenSEO data tools are not connected, so the priorities here are directional.*
+*Written 18 November 2026 and updated 26 November 2026. It builds on [MARKETING-PLAN.md](MARKETING-PLAN.md). The [OpenSEO keyword report](https://app.openseo.so/p/e2bc49dc-15ea-4cb2-9d9f-f5355eea1fc2/reports/8c60ba08-22bf-440d-a207-b8befb51911c) records the India search estimates and sampled mobile results behind the first articles.*
 
 ## 1. Who we are competing with
 
@@ -22,13 +22,13 @@ Each silo has a hub page that links down to its pages, and every page links back
 |---|---|---|---|
 | Question papers | `/question-papers/` + 23 paper pages | **Built** | "adre 2024 grade 3 question paper with answer", "apsc prelims 2024 gs 2 question paper" |
 | Questions by topic | `/questions/` + 50 topic pages | **Built** | "assam history mcq for adre", "number system questions adre" |
-| Exam hubs | `/adre/`, `/apsc-cce/`, `/assam-police/`, `/assam-tet/`, `/dme/` | Next | "ADRE 2026", "APSC CCE 2026": notification, syllabus, pattern, dates, admit card and result on **one updating page** |
-| Syllabus and pattern | `/syllabus/<exam>/` | Next, from `assam-exam-syllabus` | "adre grade 3 syllabus pdf", "apsc cce syllabus" |
-| Jobs and notifications | `/jobs/` + one post per official notice | Next | "assam govt job 2026", "<department> recruitment 2026" |
-| Assam GK | `/assam-gk/` | Partly (Ahom kings post) | "ahom kings list", "national parks of assam", "rivers of assam" |
-| Assam current affairs | `/current-affairs/<yyyy-mm>/` | Later | "assam current affairs november 2026" |
+| Exam hubs | `/adre/`, `/apsc-cce/`, `/assam-police/`, `/assam-tet/`, `/dme/` | Built with links to issuing boards and dated notice coverage | "ADRE 2026", "APSC CCE 2026" |
+| Syllabus and pattern | `/syllabus/<exam>/` | Built from available papers, with official APSC syllabus text | "adre grade 3 syllabus pdf", "apsc cce syllabus" |
+| Jobs and notifications | `/jobs/` + one post per official notice | Built with an archived SLPRB notice and corrigendum | "assam govt job 2026", "<department> recruitment 2026" |
+| Assam GK | `/assam-gk/` | Built with districts, map access, guides and a 50-question culture set | "ahom kings list", "national parks of assam", "rivers of assam" |
+| Assam current affairs | `/current-affairs/<yyyy-mm>/` | Built with a November roundup through 26 November | "assam current affairs november 2026" |
 | Study plans | posts | Partly | "adre preparation without coaching" |
-| Assamese | `/as/…` with `hreflang` | Later, after editorial review | Assamese-script queries, where there is little competition |
+| Assamese | `/as/…` with `hreflang` | Routing tested. First draft awaits human editorial review | Assamese-script queries |
 
 ## 3. Category A playbook: beating the job-alert sites
 
@@ -52,12 +52,15 @@ Each silo has a hub page that links down to its pages, and every page links back
 | Canonical URLs, Open Graph, sitemap, RSS, robots | Done |
 | JSON-LD: Article, Breadcrumb, FAQPage, LearningResource, CollectionPage | Done |
 | Fast static pages, readable on phones, dark mode | Done |
-| **Custom domain** (`blog.axomrank.org` or `axomrank.org/blog`) | **To do. Highest priority:** links earned on the github.io URL are hard to move later. Set it now, then set the `BASE_URL` repo variable |
-| Google Search Console + Bing Webmaster Tools, submit the sitemap | To do (needs the owner's Google account) |
-| IndexNow ping on deploy | To do |
-| Exam hub pages + jobs silo templates in `build.py` | To do |
-| `hreflang` for Assamese pages | Later |
-| Open Graph image per page (not just the logo) | Later |
+| **Custom domain** (`blog.axomrank.org`) | Awaiting Gandi LiveDNS access. The subdomain has no DNS record. |
+| Google Search Console + Bing Webmaster Tools, submit the sitemap | Awaiting verification of the blog property. The GitHub Pages project URL is the live property. |
+| IndexNow ping on deploy | Implemented. The workflow submits changed sitemap URLs after Pages deploys. |
+| Exam hubs and jobs archive | Built |
+| `hreflang` for Assamese pages | Implemented and tested with the draft in an isolated build |
+| Open Graph images for articles | Generated during the build |
+| Internal links and post front matter | Checked during the Pages workflow |
+
+For the domain migration, verify domain ownership in GitHub Pages using its DNS challenge, configure the blog's Pages custom domain and add the `blog` CNAME to `axomrank.github.io` in Gandi. After HTTPS is active, set the `BASE_URL` repository variable to `https://blog.axomrank.org`, redeploy and check the redirect, canonical URLs, sitemap and IndexNow key. The apex site's migration requires coordination with the current site owner. [GitHub Pages custom domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
 
 ## 6. Off-page: links and distribution
 
@@ -85,6 +88,10 @@ Each silo has a hub page that links down to its pages, and every page links back
 | 12 | Review in Search Console, refresh the top 10 pages | Year in review: Assam GK 2026 |
 
 Notification posts are published whenever an official notice appears, on top of this calendar.
+
+The evergreen articles were prepared in advance of their calendar slots. The Assam GK collection carries the Saraighat, parks, rivers, Kamarupa, Sankardeva, freedom fighters and Sixth Schedule guides. The exam collections carry the Assam Police, TET and ADRE maths articles. The question collection includes exact-question pages, a repeated Ahom facts guide and a 50-question Assam culture practice set.
+
+The Assamese release still requires an editor. Budget coverage needs the official budget document for the relevant year. The year-in-review requires a complete year, and the planned performance review requires first-party data after verification. Publish subsequent notices and current-affairs entries when official updates are available.
 
 ## 8. Measures (monthly)
 
