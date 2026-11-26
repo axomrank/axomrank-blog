@@ -32,6 +32,8 @@ The board's 12 November 2026 notice refers to a departmental written examination
 - Keep the original documents required by your advertisement available. Check the identity, education and category documents that apply to your application before relying on any third-party list.
 - Read the [Assam Police syllabus and paper analysis]({{base}}/syllabus/assam-police/) and attempt the [official-source 2025 Constable paper]({{base}}/question-papers/assam-police-constable-2025-question-paper/). It comes from an earlier written test and is useful for practice.
 
+Use the [AB vs UB comparison]({{base}}/assam-police-constable-ab-vs-ub/) to check the difference between the branches, the [PST and PET guide]({{base}}/assam-police-constable-pst-pet/) for physical standards, and the [written-test practice plan]({{base}}/assam-police-constable-written-exam-preparation/) for exact questions to try first.
+
 ## Frequently asked questions
 
 ### Has SLPRB announced the next Assam Police Constable examination date?
@@ -49,5 +51,6 @@ Use the State Level Police Recruitment Board website. Open the dated notice and 
 ## Sources
 
 - [SLPRB Constable AB and UB advertisement, 5 December 2025](https://www.slprbassam.in/pdf/Notice2025/05122025/Advertisement-Constable-%28AB-UB%29.pdf).
+- [Archived copy of the 5 December 2025 SLPRB advertisement](https://indiajobtoday.in/wp-content/uploads/2025/12/Assam-Police-Post-Details.pdf).
 - [SLPRB corrigendum and reopening notice, 13 February 2026](https://slprbassam.in/pdf/Notice2026/13022026/si_ub-notice-13022026.pdf).
 - [SLPRB official recruitment notice board](https://slprbassam.in/), including the 12 November 2026 departmental examination entry.
