@@ -214,6 +214,7 @@ def build(site, page, out, urls, utm, papers, published_topics):
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/">Blog</a> › Districts of Assam</nav>
   <h1>Districts of Assam: list of all {len(ds)} districts with population, area and literacy</h1>
   <p class="dek">All {len(ds)} districts of Assam with figures from the official Statistical Handbook, Assam 2025. Assam's projected population for 2026 is {inr(st['population_2026_projected'])}; its area is {inr(st['area_sq_km'])} sq km and its Census 2011 literacy rate {st['literacy_2011']}%.</p>
+  <p class="jump-link"><a href="https://axomrank.github.io/assam-maps/">Explore the interactive Assam district map</a></p>
   <div class="prose">
   <h2>List of districts</h2>
   <table class="sortable"><thead><tr><th aria-sort="ascending">District</th><th>Population 2026 (projected)</th><th>Population 2011</th><th>Area (sq km)*</th><th>Literacy 2011 (%)*</th><th>Colleges</th></tr></thead>

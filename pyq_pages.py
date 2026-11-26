@@ -74,6 +74,9 @@ def paper_name(p):
     if p["exam"] == "APSC-CCE-Prelims":
         return f"{short} {p['year']} {p['paper_code'].replace('-', ' ')}"
     if p["exam"] == "TET":
+        if p["year"] == "2021" and p["paper_code"] in {"Paper-I", "Paper-II"}:
+            label = "Paper I" if p["paper_code"] == "Paper-I" else "Paper II (Commerce)"
+            return f"Assam Higher Secondary TET {p['year']} {label}"
         return f"{short} {p['year']} {p['paper_code'].replace('-', ' ')}"
     if p["exam"] == "DME":
         return f"{short} {p['year']} Grade III {'Technical' if 'Technical' == p['paper_code'].split('-')[-1] else 'Non-Technical'}"
@@ -106,6 +109,8 @@ def load(pyq_dir):
             c = dict(c, year=str(c["year"]))
             c["slug"] = paper_slug(c)
             c["name"] = paper_name(c)
+            if c["name"].startswith("Assam Higher Secondary TET"):
+                c["paper_title"] = c["name"]
             c["qs"] = by_paper[key]
             papers.append(c)
     papers.sort(key=lambda p: (EXAM_ORDER.index(p["exam"]), -int(p["year"]), p["paper_code"]))
@@ -194,16 +199,17 @@ def build(site, page, out, urls, utm, pyq_data):
         has_official = any(k.startswith("official") for k in sources)
         key_word = "official answer key" if has_official else "answers and explanations"
         title = f"{p['name']} Question Paper with Answers ({n} Questions)"
-        desc = (f"All {n} questions from the {p['name']} paper as text, with the {key_word}, "
+        desc = (f"{n} available questions from the {p['name']} paper, with {key_word}, "
                 f"subject-wise breakdown and free practice. Conducted by {qs[0]['conducting_body'] or 'the board'}.")[:160]
+        coverage = f'<aside class="note"><p>{html.escape(p["note"])}</p></aside>' if p.get("note") else ""
         app_cta = utm(site["app_url"] + "/", p["slug"], "cta")
         others = [o for o in papers if o["exam"] == p["exam"] and o is not p]
         related = "".join(f'<li><a href="{base}/question-papers/{o["slug"]}/">{html.escape(o["name"])} paper</a></li>' for o in others)
         qlist = "".join(question_html(r, base, img_base=img_base, published_topics=published_topics) for r in qs)
         pdf = f"{GITHUB}/blob/main/{p['source_pdf']}"
         faq = [
-            (f"How many questions are in the {p['name']} paper?",
-             f"The paper has {n} multiple-choice questions. The largest subject is {subj.most_common(1)[0][0]} with {subj.most_common(1)[0][1]} questions."),
+            (f"How many questions are available for {p['name']}?",
+             f"This page has {n} questions. The most common subject here is {subj.most_common(1)[0][0]} with {subj.most_common(1)[0][1]} questions."),
             (f"Where do the answers for the {p['name']} paper come from?",
              "; ".join(f"{ANSWER_SOURCE.get(k, k)} for {v} questions" for k, v in sources.most_common()) + "."),
             (f"Can I download the original {p['name']} question paper PDF?",
@@ -213,8 +219,9 @@ def build(site, page, out, urls, utm, pyq_data):
         body = f"""<article class="post wrap pyq">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/">Blog</a> › <a href="{base}/question-papers/">Question papers</a> › <a href="{base}/question-papers/#{EXAMS[p['exam']][1]}">{html.escape(EXAMS[p['exam']][2])}</a></nav>
   <h1>{html.escape(title)}</h1>
-  <p class="dek">{html.escape(p['paper_title'])}. Every question is typed out below with its four options. Tap <em>Show answer</em> to check yourself, so you can use the page as a practice test.</p>
+  <p class="dek">{html.escape(p['paper_title'])}. Practise the available questions below and tap <em>Show answer</em> to check each response.</p>
   <p class="jump-link"><a href="#questions">Jump to the questions</a></p>
+  {coverage}
   <div class="prose">
   <h2>About this paper</h2>
   <table><tbody>
@@ -230,7 +237,7 @@ def build(site, page, out, urls, utm, pyq_data):
   <table><thead><tr><th>Subject</th><th>Questions</th><th>Share</th></tr></thead><tbody>{subj_rows}</tbody></table>
   </div>
   <aside class="cta"><p><strong>Want a timed test instead?</strong> Practise these questions with spaced review in the free AxomRank app. It works offline, and you don't need a login to start.</p><a class="btn" href="{app_cta}">Practise free on AxomRank</a></aside>
-  <h2 id="questions">All {n} questions with answers</h2>
+  <h2 id="questions">{n} questions with answers</h2>
   <ol class="qs">{qlist}</ol>
   <div class="prose">
   <h2>Frequently asked questions</h2>{faq_html}
@@ -274,7 +281,7 @@ def build(site, page, out, urls, utm, pyq_data):
         exam_links.append(f'<li><a href="#{slug}">{html.escape(name)}</a></li>')
     total = sum(len(p["qs"]) for p in papers)
     body = f"""<section class="hero wrap"><h1>Assam exam previous year question papers with answers</h1>
-<p class="dek">{len(papers)} real papers and {total:,} questions from ADRE, APSC CCE Prelims, Assam Police, Assam TET and DME. Every question is typed out as text with its answer, and every answer says where it comes from. All free, with no PDF to download.</p>
+<p class="dek">{total:,} questions from {len(papers)} booklets across ADRE, APSC CCE Prelims, Assam Police, Assam TET and DME. Read the available questions with their answers and sources.</p>
 <p class="jump-link"><a href="{base}/questions/">Browse questions by topic</a></p>
 <details class="toc"><summary>Find papers by exam</summary><ul>{''.join(exam_links)}</ul></details></section>
 <section class="wrap list">{''.join(sections)}</section>"""

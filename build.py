@@ -29,7 +29,7 @@ import os
 import re
 import shutil
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit
 
 import markdown
 
@@ -57,7 +57,7 @@ def parse(path):
     for key in ("title", "description", "date", "slug"):
         if not meta.get(key):
             raise SystemExit(f"{path}: front matter needs '{key}'")
-    for field in ("date", "updated"):
+    for field in ("date", "updated", "notice_date"):
         if field in meta:
             try:
                 date = dt.date.fromisoformat(meta[field])
@@ -73,6 +73,11 @@ def parse(path):
         raise SystemExit(f"{path}: description must be 120–160 characters")
     if meta.get("lang", "en-IN") not in {"en", "en-IN", "as", "as-IN"}:
         raise SystemExit(f"{path}: unsupported post language")
+    if any(field in meta for field in ("notice_exam", "notice_date", "notice_source")):
+        source = urlsplit(meta.get("notice_source", ""))
+        if (meta.get("notice_exam") not in {hub["slug"] for hub in exam_pages.HUBS}
+                or not meta.get("notice_date") or source.scheme != "https" or not source.hostname):
+            raise SystemExit(f"{path}: a notice needs an exam hub, official HTTPS source and notice date")
     meta["tags"] = [t.strip() for t in meta.get("tags", "").split(",") if t.strip()]
     meta["exam"] = [t.strip() for t in meta.get("exam", "").split(",") if t.strip()]
     meta["body_md"] = m.group(2)
@@ -173,7 +178,8 @@ def page(site, *, title, description, canonical, body, jsonld=(), og_type="websi
     <p>Free exam preparation in English and Assamese.</p>
     <nav aria-label="Footer">
       {footer_links}
-      <a href="{base}/topics/assam-history/">Assam history</a>
+      <a href="{base}/assam-gk/">Assam GK</a>
+      <a href="{base}/jobs/">Recruitment notices</a>
       <a href="{base}/about/">About and corrections</a>
       <a href="{utm(app, 'footer', 'footer')}">AxomRank app</a>
       <a href="https://github.com/axomrank/assam-exam-pyq">Open PYQ dataset</a>
@@ -221,7 +227,11 @@ def build(base_url=None, pyq_dir=None):
     if len(slugs) != len(set(slugs)):
         raise SystemExit("duplicate slug")
     for p in posts:
-        section = "as/" if p.get("lang", "").startswith("as") else ""
+        section = ""
+        if p.get("notice_exam"):
+            section = "jobs/"
+        elif p.get("lang", "").startswith("as"):
+            section = "as/"
         p["path"] = section + p["slug"]
     posts_by_slug = {p["slug"]: p for p in posts}
     translations = {}
@@ -232,7 +242,7 @@ def build(base_url=None, pyq_dir=None):
                     or not p.get("lang", "").startswith("as") or source_slug in translations):
                 raise SystemExit(f"{p['slug']}: expected one Assamese translation of an English post")
             alternates = (
-                (source.get("lang", "en-IN"), f"{base}/{source_slug}/"),
+                (source.get("lang", "en-IN"), f"{base}/{source['path']}/"),
                 (p["lang"], f"{base}/{p['path']}/"),
             )
             translations[source_slug] = translations[p["slug"]] = alternates
@@ -251,6 +261,10 @@ def build(base_url=None, pyq_dir=None):
         post_images.render(p, image_path)
         md.reset()
         body_html = md.convert(p["body_md"].replace("{{app}}", site["app_url"]).replace("{{base}}", base))
+        if not site["has_papers"]:
+            data_routes = ["question-papers", "questions", "syllabus", *(hub["slug"] for hub in exam_pages.HUBS)]
+            body_html = re.sub(r'href="' + re.escape(base) + rf'/(?:{"|".join(data_routes)})/[^\"]*"',
+                               f'href="{pyq_pages.GITHUB}"', body_html)
         # Tag outbound links to the app with UTM parameters so blog-driven sign-ups are measurable.
         body_html = re.sub(
             r'href="(' + re.escape(site["app_url"]) + r'[^"]*)"',
@@ -268,6 +282,8 @@ def build(base_url=None, pyq_dir=None):
         primary_topic = next(iter(p["exam"]), None)
         topic_crumb = (f' <span aria-hidden="true">/</span> <a href="{base}/topics/{slugify(primary_topic)}/">'
                        f'{html.escape(primary_topic)}</a>') if primary_topic else ""
+        if p.get("notice_exam"):
+            topic_crumb = f' <span aria-hidden="true">/</span> <a href="{base}/jobs/">Recruitment notices</a>'
         toc = md.toc if md.toc.count("<li>") >= 3 else ""
         body = f"""<article class="post wrap">
   <header class="post-header">
@@ -350,6 +366,10 @@ def build(base_url=None, pyq_dir=None):
         for path, label, detail in resources
     )
 
+    guides = [p for p in posts if not p.get("notice_exam")]
+    latest = "".join(card(site, p) for p in guides[:6])
+    more_guides = f'<p><a href="{base}/guides/">All study guides</a></p>' if len(guides) > 6 else ""
+
     # Home
     home = f"""<div class="wrap home-intro">
   <section class="hero">
@@ -364,7 +384,8 @@ def build(base_url=None, pyq_dir=None):
 </div>
 <section class="wrap home-guides" aria-labelledby="latest-guides">
   <h2 id="latest-guides">Latest guides</h2>
-  <div class="list">{''.join(card(site, p) for p in posts)}</div>
+  <div class="list">{latest}</div>
+  {more_guides}
 </section>
 """
     (OUT / "index.html").write_text(page(site, title=f"{site['title']}: Assam govt exam preparation (ADRE, APSC, TET)",
@@ -373,6 +394,26 @@ def build(base_url=None, pyq_dir=None):
                                          jsonld=[{"@context": "https://schema.org", "@type": "WebSite",
                                                   "name": site["title"], "url": f"{base}/"}]),
                                     encoding="utf-8")
+
+    gk = [p for p in guides if {"Assam History", "Assam GK"}.intersection(p["exam"] + p["tags"])]
+    notices = sorted((p for p in posts if p.get("notice_exam")), key=lambda p: p["notice_date"], reverse=True)
+    gk_links = f'<p class="jump-link"><a href="{base}/districts/">Districts of Assam</a> · <a href="{base}/topics/assam-history/">Assam history</a></p>'
+    collections = [
+        ("guides", "Assam exam study guides", "Previous-year paper analysis, preparation plans and source-checked Assam GK.", "", guides),
+        ("assam-gk", "Assam GK for government exams", "Study Assam history, geography and culture using named sources and questions from real papers.", gk_links, gk),
+        ("jobs", "Assam government recruitment notices", "Summaries of official recruitment notices with links to the issuing board and relevant past papers.", "", notices),
+    ]
+    for slug, title, description, links, items in collections:
+        canonical = f"{base}/{slug}/"
+        listing = "".join(card(site, p, heading="h2") for p in items)
+        body = f'<header class="wrap hero"><h1>{title}</h1><p class="dek">{description}</p>{links}</header><div class="wrap list">{listing}</div>'
+        folder = OUT / slug
+        folder.mkdir(exist_ok=True)
+        (folder / "index.html").write_text(page(
+            site, title=f"{title} | AxomRank", description=description, canonical=canonical, body=body,
+            jsonld=[{"@context": "https://schema.org", "@type": "CollectionPage", "name": title, "url": canonical}]),
+            encoding="utf-8")
+        urls.append((canonical, None))
 
     # Topic pages (always create the nav targets)
     for t in ["ADRE", "APSC", "Assam History"]:

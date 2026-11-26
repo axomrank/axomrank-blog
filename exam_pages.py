@@ -18,7 +18,7 @@ HUBS = [
     {
         "slug": "adre", "short": "ADRE", "name": "ADRE (Assam Direct Recruitment Exam)",
         "exams": ["ADRE"], "body": "State Level Recruitment Commission (SLRC), Assam",
-        "official": None,
+        "official": ("Government of Assam SLRC recruitment page", "https://directoradulteducation.assam.gov.in/latest/recruitment-of-grade-iii-and-grade-iv-through-slrc"),
         "about": "ADRE is the common written exam for Grade III and Grade IV posts in Assam government departments. "
                  "Grade III has separate papers for HSSLC, graduate and driver posts; Grade IV has papers for HSLC and Class VIII posts.",
         "groups": [("Grade III", lambda p: p["paper_code"].startswith("G3")),
@@ -52,15 +52,25 @@ HUBS = [
     {
         "slug": "assam-tet", "short": "Assam TET", "name": "Assam TET (Teacher Eligibility Test)",
         "exams": ["TET"], "body": "Samagra Shiksha, Assam",
-        "official": None,
-        "about": "Assam TET decides eligibility for teacher posts in government schools. "
-                 "Paper I is for lower primary (Classes I–V) and Paper II for upper primary (Classes VI–VIII); "
-                 "a Special TET has been held for specific mediums.",
-        "groups": [("Paper I (Lower Primary)", lambda p: p["paper_code"] == "Paper-I"),
-                   ("Paper II (Upper Primary)", lambda p: p["paper_code"] == "Paper-II"),
+        "official": ("Samagra Shiksha Axom", "https://ssa.assam.gov.in/"),
+        "about": "Assam holds separate teacher eligibility examinations for different levels. "
+                 "The historical booklets below include Higher Secondary TET and Special TET.",
+        "groups": [("Higher Secondary TET Paper I", lambda p: p["paper_code"] == "Paper-I"),
+                   ("Higher Secondary TET Paper II, Commerce", lambda p: p["paper_code"] == "Paper-II"),
                    ("Special TET Paper I", lambda p: p["paper_code"] == "Special-Paper-I")],
         "post_tag": "Assam TET",
-        "syllabus_title": "Assam TET Syllabus for Paper 1 and Paper 2: Topic-wise, from Real Papers",
+        "syllabus_title": "Assam Higher Secondary and Special TET: Topic-wise Analysis of Past Papers",
+    },
+    {
+        "slug": "dme", "short": "DME Assam", "name": "DME Assam Grade III",
+        "exams": ["DME"], "body": "Directorate of Medical Education (DME), Assam",
+        "official": ("DME Assam recruitment notices", "https://dme.assam.gov.in/documents-detail/recruitment"),
+        "about": "DME Assam publishes separate notices for Grade III technical and non-technical recruitment. "
+                 "The practice questions here cover the readable parts of two past booklets.",
+        "groups": [("Grade III Technical", lambda p: p["paper_code"] == "G3-Technical"),
+                   ("Grade III Non-Technical", lambda p: p["paper_code"] == "G3-NonTechnical")],
+        "post_tag": "DME Assam",
+        "syllabus_title": "DME Assam Grade III Syllabus and Topics from Previous-Year Papers",
     },
 ]
 
@@ -152,7 +162,19 @@ def build(site, page, out, urls, utm, papers, posts, md, published_topics):
         topic_list = "".join(
             f'<li>{topic_reference(base, s, t, published_topics)} ({html.escape(s)}): {c} questions</li>'
             for (s, t), c in top_topics)
-        rel_posts = [p for p in posts if hub["post_tag"] in p["exam"] + p["tags"]]
+        notices = sorted((p for p in posts if p.get("notice_exam") == hub["slug"]),
+                         key=lambda p: p["notice_date"], reverse=True)
+        latest_notice = ""
+        if notices:
+            latest, *older = notices
+            earlier = "".join(f'<li><a href="{base}/{p["path"]}/">{html.escape(p["title"])}</a></li>' for p in older)
+            history = f'<h3>Earlier notices</h3><ul>{earlier}</ul>' if earlier else ""
+            latest_notice = f'''<aside class="note">
+  <p><strong>Latest notice covered</strong> <time datetime="{latest['notice_date']}">{latest['notice_date']}</time></p>
+  <p><a href="{base}/{latest['path']}/">{html.escape(latest['title'])}</a>
+  · <a href="{html.escape(latest['notice_source'])}">Official notice</a></p>{history}
+</aside>'''
+        rel_posts = [p for p in posts if hub["post_tag"] in p["exam"] + p["tags"] and not p.get("notice_exam")]
         post_list = "".join(f'<li><a href="{base}/{p["path"]}/">{html.escape(p["title"])}</a></li>' for p in rel_posts)
         top_subj, top_c = collections.Counter(r["subject"] for r in qs).most_common(1)[0]
         faq = [
@@ -169,6 +191,7 @@ def build(site, page, out, urls, utm, papers, posts, md, published_topics):
   <h1>{html.escape(hub['name'])}: syllabus, previous year papers and preparation</h1>
   <p class="dek">{html.escape(hub['about'])} This page brings together everything AxomRank has on {html.escape(hub['short'])}, built from {len(hp)} real papers ({n:,} questions, {years[0]}–{years[-1]}).</p>
   {_official_box(hub)}
+  {latest_notice}
   <p><a class="btn" href="{syl_url}">{html.escape(hub['short'])} syllabus</a> <a class="btn ghost" href="{base}/question-papers/#{EXAMS[hub['exams'][0]][1]}">Previous year papers</a></p>
   <div class="prose">
   <h2>Exam at a glance</h2>
@@ -213,7 +236,7 @@ def build(site, page, out, urls, utm, papers, posts, md, published_topics):
 {_official_syllabus_html(hub['official_syllabus'], md)}""")
             measured_intro = "How the official syllabus is actually tested, counted from the real prelims papers:"
         else:
-            sections.append(f"""<aside class="note"><p><strong>How this syllabus was made.</strong> The {html.escape(hub['body'])} publishes the syllabus inside each recruitment notice. Instead of copying an unverified list, this page shows <strong>the syllabus as it was actually tested</strong>: every subject, topic and subtopic in {len(hp)} real papers, with the number of questions. Check the latest official notice for any changes.</p></aside>""")
+            sections.append(f"""<aside class="note"><p><strong>What these papers cover.</strong> These topic counts come from the available questions in {len(hp)} past papers. Check the current official notice for the exam pattern and complete syllabus.</p></aside>""")
             measured_intro = "Subjects and topics as they appear in the real papers:"
         for gname, pred in hub["groups"]:
             gq = [r for p in hp if pred(p) for r in p["qs"]]
