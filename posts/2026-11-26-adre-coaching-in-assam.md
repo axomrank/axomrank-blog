@@ -18,7 +18,6 @@ These are examples from provider listings checked on 26 November 2026. Ask about
 | Provider and option | What the provider lists | What to verify for your batch |
 | --- | --- | --- |
 | [eKuhipath ADRE New Foundation Batch](https://www.ekuhipath.com/course/adre-3-new-foundation-batch) | Online and offline options listed at ₹3,999, with mock tests and English and Assamese listed | Request the timetable for the next intake and a mock for your grade and post. |
-| [CSAP IAS Academy ADRE online batch](https://csapiasacademy.akamai.net.in/new-courses/216-adre-30-batch) | An online foundation listing at ₹2,999, with live and recorded classes, mock tests and both Assamese and English | Ask what happens after you take a mock. Check whether the answers show how to solve the questions. |
 | [Majestic Academy, Guwahati or online](https://lp.majesticacademy.in/adre) | Classroom and online ADRE batches, with paper-based or digital mocks depending on the format | Try the demo and request a sample test for your grade, along with the written fee. |
 | [Scholar Academy of Learning, Dibrugarh or online](https://salcoaching.in/adre-mock-test-assam.html) | A classroom mock series in Dibrugarh listed at ₹150 per test, plus online mock practice through its app | Ask which paper each mock follows and what is included in the test review. |
 
@@ -51,7 +50,7 @@ You can prepare with the official notice, real past papers and regular timed pra
 
 ### How much does ADRE coaching cost?
 
-The two online examples above list ₹2,999 and ₹3,999. Ask for the full fee and confirm the tests, materials and feedback included in the exact batch you plan to join.
+The examples above list ₹3,999 for a foundation batch and ₹150 per test for a classroom mock series. Ask for the full fee and confirm the tests, materials and feedback included in the exact batch you plan to join.
 
 ### Is online or classroom ADRE coaching better?
 
@@ -65,4 +64,4 @@ Look for a timed test at the correct grade and post level, an answer key and exp
 
 - [Government of Assam SLRC recruitment page](https://directoradulteducation.assam.gov.in/latest/recruitment-of-grade-iii-and-grade-iv-through-slrc) and the [AxomRank ADRE syllabus and past-paper analysis]({{base}}/syllabus/adre/).
 - [AxomRank previous-year question dataset](https://github.com/axomrank/assam-exam-pyq), the ADRE booklets named above.
-- Provider listings from [eKuhipath](https://www.ekuhipath.com/course/adre-3-new-foundation-batch), [CSAP IAS Academy](https://csapiasacademy.akamai.net.in/new-courses/216-adre-30-batch), [Majestic Academy](https://lp.majesticacademy.in/adre) and [Scholar Academy of Learning](https://salcoaching.in/adre-mock-test-assam.html).
+- Provider listings from [eKuhipath](https://www.ekuhipath.com/course/adre-3-new-foundation-batch), [Majestic Academy](https://lp.majesticacademy.in/adre) and [Scholar Academy of Learning](https://salcoaching.in/adre-mock-test-assam.html).

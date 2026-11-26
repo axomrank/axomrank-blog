@@ -20,10 +20,10 @@ These are examples from providers' own pages, checked on 26 November 2026. A lis
 | [SPM IAS Academy, Guwahati or online](https://lp.spmiasacademy.com/apsc) | An integrated CCE course with classroom and live online options, both Prelims papers and Mains preparation | Request the fee, evaluation schedule and a marked answer for the specific batch. |
 | [Attempt IAS, Guwahati](https://attemptias.com/) | APSC foundation classes and separate answer-writing, mentorship and GS-V programmes | Which Mains evaluations are included in the foundation fee, and who marks them? |
 | [AXIA IAS Academy, Jorhat](https://axiaiasacademy.com/) | APSC foundation coaching, with online, offline and hybrid options listed on its site | Which sessions are taught at the Jorhat centre, and how are missed classes handled? |
-| [Scholar Academy of Learning, Dibrugarh and Tezpur](https://salcoaching.in/courses/apsc/) | An online or offline APSC/UPSC **Prelims** course listed at ₹20,000 | Get a separate quote for Mains evaluation if you want it. Confirm which centre runs the batch. |
+| [Scholar Academy of Learning, Dibrugarh and Tezpur](https://salcoaching.in/apsc-coaching/) | A classroom foundation course covering Prelims, Mains and interview, with a listed fee of ₹45,000 | Ask which centre runs the batch and check the terms for online backup and Mains evaluation. |
 | [eKuhipath, online or classroom](https://www.ekuhipath.com/course/apsc-cce-2026-27-foundation-course) | A foundation listing covering Prelims, Mains and interview at ₹34,999, with English and Assamese listed | Try the demo in your preferred language and ask how individual Mains feedback is delivered. |
 
-The two listed prices cover different stages. Before comparing fees, ask for the price including applicable taxes, tests, marked copies, materials and any extension you would need. For a classroom course, factor in travel over a normal study week.
+Before comparing fees, ask for the price including applicable taxes, tests, marked copies, materials and any extension you would need. For a classroom course, factor in travel over a normal study week.
 
 ## What to check in an APSC demo
 
@@ -54,7 +54,7 @@ Choose the institute that can show the APSC syllabus coverage, sample evaluation
 
 ### How much does APSC coaching cost?
 
-Fees depend on the course scope. The listings above give ₹20,000 for a Prelims course and ₹34,999 for a foundation course covering Prelims, Mains and interview. Ask for a written quote covering the stages and services you need.
+The two foundation listings above quote ₹34,999 and ₹45,000. Both cover Prelims, Mains and interview. Ask for a written quote covering the feedback, tests and access you need.
 
 ### Can I prepare for APSC CCE without coaching?
 
@@ -68,4 +68,4 @@ Request a sample lecture, test and evaluated answer in Assamese. Confirm the lan
 
 - [Assam Public Service Commission](https://apsc.nic.in/) and the [APSC CCE syllabus with official PDFs]({{base}}/syllabus/apsc-cce/).
 - [AxomRank previous-year question dataset](https://github.com/axomrank/assam-exam-pyq), APSC CCE Prelims 2024 booklets.
-- Provider listings from [SPM IAS Academy](https://lp.spmiasacademy.com/apsc), [Attempt IAS](https://attemptias.com/), [AXIA IAS Academy](https://axiaiasacademy.com/), [Scholar Academy of Learning](https://salcoaching.in/courses/apsc/) and [eKuhipath](https://www.ekuhipath.com/course/apsc-cce-2026-27-foundation-course).
+- Provider listings from [SPM IAS Academy](https://lp.spmiasacademy.com/apsc), [Attempt IAS](https://attemptias.com/), [AXIA IAS Academy](https://axiaiasacademy.com/), [Scholar Academy of Learning](https://salcoaching.in/apsc-coaching/) and [eKuhipath](https://www.ekuhipath.com/course/apsc-cce-2026-27-foundation-course).
