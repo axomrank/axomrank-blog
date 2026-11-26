@@ -13,6 +13,7 @@ Posts live in posts/*.md with a small front-matter block:
     tags: PYQ, ADRE Grade III   (comma-separated)
     cta: /                      (path in the AxomRank app for the call to action)
     cta_text: Practise ...      (button text)
+    cover_image: ...            (optional 1200×630 JPEG filename in assets/)
     draft: false                (optional)
     ---
 
@@ -69,6 +70,8 @@ def parse(path):
         raise SystemExit(f"{path}: updated date precedes publication date")
     if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", meta["slug"]):
         raise SystemExit(f"{path}: slug must use lowercase letters, digits and hyphens")
+    if "cover_image" in meta and not re.fullmatch(r"[a-z0-9-]+\.jpg", meta["cover_image"]):
+        raise SystemExit(f"{path}: cover_image must be a JPEG filename in assets/")
     if not 120 <= len(meta["description"]) <= 160:
         raise SystemExit(f"{path}: description must be 120–160 characters")
     if meta.get("lang", "en-IN") not in {"en", "en-IN", "as", "as-IN"}:
@@ -272,12 +275,18 @@ def build(base_url=None, pyq_dir=None):
 
     for p in posts:
         lang = p.get("lang", site["lang"])
-        image_path = images / f"{p['slug']}.jpg"
-        post_images.render(p, image_path)
+        if cover := p.get("cover_image"):
+            image_path = OUT / "assets" / cover
+            if not image_path.is_file():
+                raise SystemExit(f"{p['slug']}: missing cover image {cover}")
+        else:
+            image_path = images / f"{p['slug']}.jpg"
+            post_images.render(p, image_path)
+        image_url = f"{base}/{image_path.relative_to(OUT).as_posix()}"
         md.reset()
         body_html = md.convert(p["body_md"].replace("{{app}}", site["app_url"]).replace("{{base}}", base))
         if not site["has_papers"]:
-            data_routes = ["question-papers", "questions", "syllabus", *(hub["slug"] for hub in exam_pages.HUBS)]
+            data_routes = ["exams", "question-papers", "questions", "syllabus", *(hub["slug"] for hub in exam_pages.HUBS)]
             body_html = re.sub(r'href="' + re.escape(base) + rf'/(?:{"|".join(data_routes)})/[^\"]*"',
                                f'href="{pyq_pages.GITHUB}"', body_html)
         # Tag outbound links to the app with UTM parameters so blog-driven sign-ups are measurable.
@@ -333,6 +342,7 @@ def build(base_url=None, pyq_dir=None):
                 "dateModified": updated,
                 "inLanguage": lang,
                 "mainEntityOfPage": canonical,
+                "image": image_url,
                 "author": {"@type": "Organization", "name": site["author"], "url": site["app_url"]},
                 "publisher": {"@type": "Organization", "name": "AxomRank",
                               "logo": {"@type": "ImageObject", "url": site["publisher_logo"]}},
@@ -359,7 +369,7 @@ def build(base_url=None, pyq_dir=None):
         d.mkdir(parents=True)
         (d / "index.html").write_text(page(site, title=f"{p['title']} | AxomRank", description=p["description"],
                                            canonical=canonical, body=body, jsonld=jsonld, og_type="article", lang=lang,
-                                           image=f"{base}/{image_path.relative_to(OUT).as_posix()}",
+                                           image=image_url,
                                            alternates=translations.get(p["slug"], ())),
                                       encoding="utf-8")
         urls.append((canonical, updated))

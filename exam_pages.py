@@ -64,7 +64,7 @@ HUBS = [
     {
         "slug": "dme", "short": "DME Assam", "name": "DME Assam Grade III",
         "exams": ["DME"], "body": "Directorate of Medical Education (DME), Assam",
-        "official": ("DME Assam recruitment notices", "https://dme.assam.gov.in/documents-detail/recruitment"),
+        "official": ("DME Assam recruitment notices", "https://dme.assam.gov.in/document-details/recruitment"),
         "about": "DME Assam publishes separate notices for Grade III technical and non-technical recruitment. "
                  "The practice questions here cover the readable parts of two past booklets.",
         "groups": [("Grade III Technical", lambda p: p["paper_code"] == "G3-Technical"),
@@ -298,8 +298,12 @@ def build(site, page, out, urls, utm, papers, posts, md, published_topics):
                      f'<p><a href="{syl_url}">Syllabus</a> · <a href="{hub_url}">Papers and preparation</a></p></article>')
 
     exams_url = f"{base}/exams/"
+    guide = next((p for p in posts if p["slug"] == "assam-government-exams"), None)
+    guide_link = (f'<p><a href="{base}/{guide["path"]}/">Compare Assam exams by qualification and career path</a></p>'
+                  if guide else "")
     body = f"""<section class="hero wrap"><h1>Assam government exams: syllabus, papers and preparation</h1>
-<p class="dek">One page per exam, built from real papers: what each exam asks, its syllabus topic by topic, and every previous year paper with answers.</p></section>
+<p class="dek">One page per exam, built from real papers: what each exam asks, its syllabus topic by topic, and every previous year paper with answers.</p>
+{guide_link}</section>
 <section class="wrap list">{''.join(cards)}</section>"""
     (out / "exams").mkdir(exist_ok=True)
     (out / "exams" / "index.html").write_text(page(
