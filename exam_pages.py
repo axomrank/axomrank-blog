@@ -252,7 +252,7 @@ def build(site, page, out, urls, utm, papers, posts, md, published_topics):
                     sub_txt = ", ".join(f"{html.escape(s)} ({c})" for s, c in subs)
                     items.append(f'<li>{topic_reference(base, subj, t, published_topics, bold=True)} · {tc} questions'
                                  + (f'<br><span class="subs">{sub_txt}</span>' if sub_txt else "") + "</li>")
-                sub.append(f"<h4>{html.escape(subj)} <span class=\"count\">{sc} questions, {_pct(sc, len(gq))}</span></h4><ul>{''.join(items)}</ul>")
+                sub.append(f"<h3>{html.escape(subj)} <span class=\"count\">{sc} questions, {_pct(sc, len(gq))}</span></h3><ul>{''.join(items)}</ul>")
             sections.append(f'<h2 id="{re.sub(r"[^a-z0-9]+", "-", gname.lower()).strip("-")}">{html.escape(gname)}</h2>'
                             f"<p>{measured_intro} {ng} paper{'s' if ng > 1 else ''}, {len(gq)} questions.</p>"
                             f"{_subject_table(gq)}{''.join(sub)}")

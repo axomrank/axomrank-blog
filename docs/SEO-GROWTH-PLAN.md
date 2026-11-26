@@ -55,6 +55,7 @@ Each silo has a hub page that links down to its pages, and every page links back
 | **Custom domain** (`blog.axomrank.org`) | Awaiting Gandi LiveDNS access. The subdomain has no DNS record. |
 | Google Search Console + Bing Webmaster Tools, submit the sitemap | Awaiting verification of the blog property. The GitHub Pages project URL is the live property. |
 | IndexNow ping on deploy | Implemented. The workflow submits changed sitemap URLs after Pages deploys. |
+| Sitemap discovery | The GitHub Pages host's root `robots.txt` advertises the blog sitemap. |
 | Exam hubs and jobs archive | Built |
 | `hreflang` for Assamese pages | Implemented and tested with the draft in an isolated build |
 | Open Graph images for articles | Generated during the build |

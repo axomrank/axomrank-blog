@@ -444,7 +444,7 @@ def build(site, page, out, urls, utm, pyq_data, posts):
     (out / "questions").mkdir(exist_ok=True)
     (out / "questions" / "index.html").write_text(page(
         site, title="Assam Exam Questions by Topic: Previous Year MCQs with Answers | AxomRank",
-        description="Assam history, culture, geography, polity, maths, reasoning and English questions from real ADRE, APSC, Assam Police and TET papers, grouped by topic, with answers.",
+        description="Practise questions by topic from ADRE, APSC, Assam Police and TET papers. Browse Assam history, geography, maths and reasoning, with answer sources.",
         canonical=canonical, body=body,
         jsonld=[{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Assam exam questions by topic", "url": canonical}]),
         encoding="utf-8")
