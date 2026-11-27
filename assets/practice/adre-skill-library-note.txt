@@ -1,0 +1,8 @@
+Library lending review
+
+The district library team is reviewing the lending return for four branches.
+Use the accompanying spreadsheet to summarise the books and the total due
+back. Report which branch has the most books due back and suggest one action
+the team can take before the next review.
+
+This is fictional data for an AxomRank computer practice exercise.

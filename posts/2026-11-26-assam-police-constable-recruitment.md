@@ -34,6 +34,8 @@ The board's 12 November 2026 notice refers to a departmental written examination
 
 Use the [AB vs UB comparison]({{base}}/assam-police-constable-ab-vs-ub/) to check the difference between the branches, the [PST and PET guide]({{base}}/assam-police-constable-pst-pet/) for physical standards, and the [written-test practice plan]({{base}}/assam-police-constable-written-exam-preparation/) for exact questions to try first.
 
+Before reporting, use the [document verification checklist]({{base}}/assam-police-constable-document-verification/). To calculate how each stage contributes to your branch, check the [AB and UB final merit examples]({{base}}/assam-police-constable-final-merit/).
+
 ## Frequently asked questions
 
 ### Has SLPRB announced the next Assam Police Constable examination date?

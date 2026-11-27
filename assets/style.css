@@ -315,3 +315,23 @@ h3 { font-size: 1.125rem; }
   }
   .resources { margin-block-start: .5rem; padding-inline-start: 1.75rem; border-inline-start: 1px solid var(--line); }
 }
+
+.adre-score select,
+.adre-score input {
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+  min-height: 2.75rem;
+  padding: .375rem .5rem;
+  border: 1px solid var(--muted);
+  border-radius: .25rem;
+}
+.adre-score fieldset {
+  min-inline-size: 0;
+  margin: .75rem 0;
+  padding: .5rem .75rem;
+  border: 1px solid var(--line);
+}
+.adre-score fieldset label { display: inline-block; margin: .25rem .5rem .25rem 0; }
+.adre-score input { width: 4.5rem; }
+.adre-score output { display: block; margin-top: .65rem; font-weight: 650; }

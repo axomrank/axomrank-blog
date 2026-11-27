@@ -30,6 +30,8 @@ The [Special TET 2021 practice booklet, Q1]({{base}}/question-papers/assam-tet-2
 
 Practise older questions for concepts. Use the 2026 source files to decide what the official syllabus covers. The [Assam TET paper guide]({{base}}/assam-tet-2021-previous-year-papers/) explains the different booklets available.
 
+For an example of how TET results were weighted after an application, see the [DEE LP and UP teacher merit guide]({{base}}/dee-assam-teacher-merit-calculation/).
+
 ## Frequently asked questions
 
 ### What distinguishes Assam Special TET Paper I and Paper II?

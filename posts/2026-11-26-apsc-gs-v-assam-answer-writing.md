@@ -32,6 +32,8 @@ cta_text: Build your Assam knowledge in AxomRank
 
 Practise once with your notes, then rewrite from memory. On review, underline every Assam-specific example and check that each paragraph answers the prompt.
 
+Build an economy example with the [Assam Economic Survey figures and practice questions]({{base}}/assam-economic-survey-2025-26-for-exams/).
+
 ## Frequently asked questions
 
 ### What is APSC GS-V?

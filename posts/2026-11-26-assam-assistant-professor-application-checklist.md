@@ -28,6 +28,8 @@ Review the [SLET vs UGC NET guide]({{base}}/slet-ne-vs-ugc-net/) if you are unsu
 
 Start with the issuer named in the current vacancy. Match the form and return address or online submission link to that notice, then check which certifying authority it names for any supporting records. For the board's statutory role, see the [ACSRB recruitment guide]({{base}}/acsrb-recruitment-assam/).
 
+Once you have the documents, use the [worked Assistant Professor selection marks example]({{base}}/assam-assistant-professor-selection-marks/) to read the applicable academic scoring bands.
+
 ## Frequently asked questions
 
 ### Where is the Assam Assistant Professor application form?

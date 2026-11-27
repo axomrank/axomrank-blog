@@ -31,6 +31,8 @@ Take the [2024 HSSLC paper]({{base}}/question-papers/adre-2024-grade-3-hsslc-que
 
 The same question number can test different topics. [HSSLC Q12]({{base}}/question-papers/adre-2024-grade-3-hsslc-question-paper/#q12) is world geography. [Graduate Q12]({{base}}/question-papers/adre-2024-grade-3-graduate-question-paper/#q12) asks about the Mughal emperor at Saraighat. Sort by topic when choosing a revision set.
 
+Score your completed paper with the [ADRE Grade III OMR calculator]({{base}}/adre-grade-3-negative-marking-calculator/). For the next stage, try the [computer skill test practice exercise]({{base}}/adre-grade-3-computer-skill-test/).
+
 ## Frequently asked questions
 
 ### Are the Grade III HSSLC and Graduate papers the same?
