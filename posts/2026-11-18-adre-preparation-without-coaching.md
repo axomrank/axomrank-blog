@@ -36,6 +36,8 @@ In the 2022 and 2024 papers, [maths, English and reasoning were 57% of Grade III
 
 Grade IV aspirants can swap half the English time for extra reasoning, because Grade IV papers carried far less English.
 
+If you are preparing specifically for Grade IV, the [Class 8 and HSLC study plan]({{base}}/adre-grade-4-preparation-class-8-hslc/) has separate tracks and worked examples.
+
 ## Three habits that matter more than hours
 
 1. **Review mistakes the next day and again a week later.** Spaced review is the most reliable way to remember facts. The AxomRank app schedules this for you.

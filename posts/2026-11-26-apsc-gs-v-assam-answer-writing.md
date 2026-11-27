@@ -34,6 +34,8 @@ Practise once with your notes, then rewrite from memory. On review, underline ev
 
 Build an economy example with the [Assam Economic Survey figures and practice questions]({{base}}/assam-economic-survey-2025-26-for-exams/).
 
+For the governance and polity paper, try the [APSC Mains GS-II model answers]({{base}}/apsc-gs-2-answer-writing/).
+
 ## Frequently asked questions
 
 ### What is APSC GS-V?

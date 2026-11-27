@@ -28,6 +28,8 @@ Attempt the full [Constable Set A paper]({{base}}/question-papers/assam-police-c
 
 Work through the exact weak topic, such as [number system]({{base}}/questions/number-system/), [grammar]({{base}}/questions/grammar/) or [Assam geography]({{base}}/questions/assam-geography/). Retake the missed questions before attempting a fresh mock. Compare the reasons for your errors as well as the score.
 
+Use the [Assam Police Constable GK practice set]({{base}}/assam-police-constable-gk-questions/) to check your recall across Assam history, geography, polity and economy.
+
 ## Frequently asked questions
 
 ### How many marks was the written test in the December 2025 advertisement?
