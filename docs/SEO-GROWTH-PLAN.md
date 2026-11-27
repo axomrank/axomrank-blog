@@ -30,6 +30,8 @@ Each silo has a hub page that links down to its pages, and every page links back
 | Study plans | posts | Partly | "adre preparation without coaching" |
 | Assamese | `/as/…` with `hreflang` | Routing tested. First draft awaits human editorial review | Assamese-script queries |
 
+The [programmatic SEO pilot](PROGRAMMATIC-SEO-PLAN.md) maps exam-specific practice guides to verified question sets and existing search intents.
+
 ## 3. Category A playbook: beating the job-alert sites
 
 1. **One evergreen hub per exam.** Job blogs create a new URL every cycle ("ADRE 2.0 notification", "ADRE 3.0 notification"), so their authority is split. AxomRank keeps `/adre/` and adds a dated "Latest" box at the top. Old cycles stay on the same page as history.
