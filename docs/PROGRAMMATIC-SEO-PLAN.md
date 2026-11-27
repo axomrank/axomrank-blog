@@ -22,6 +22,8 @@ The candidate counts below come from the 2,398-row question dataset at revision 
 
 The proposed counts are the candidate pool before manual deduplication and review. The first ADRE guides cover multiple levels within one examination year. Display that year explicitly. Keep the [ADRE Number System article](https://axomrank.github.io/axomrank-blog/adre-number-system-questions/) as the target for the existing number-system intent, and put improvements there. The current English Grammar pool has no ADRE rows that pass both review flags, so that subject is a candidate for data review before a guide is proposed. An APSC CSAT practice page serves selected passages. The [APSC CSAT syllabus guide](https://axomrank.github.io/axomrank-blog/apsc-csat-syllabus-practice/) remains the place to check the syllabus and study plan.
 
+The first release uses 12 reviewed questions per ADRE guide and adds six worked solutions to each of the existing 2024 Grade IV paper pages. Edit the selection and explanations in [the editorial manifest](../data/pyq-guides.json). Each entry records the dataset ID and its checked SLRC Set A answer. The build rejects an entry if the answer or review status changes.
+
 ## How a generated guide will work
 
 | Part | Implementation |

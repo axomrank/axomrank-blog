@@ -1,0 +1,331 @@
+{
+  "guides": [
+    {
+      "exam": "ADRE",
+      "subject": "Reasoning",
+      "topic": "Verbal Reasoning",
+      "updated": "2026-11-27",
+      "title": "ADRE Verbal Reasoning Previous-Year Questions with Solutions",
+      "description": "Practise ADRE verbal reasoning questions from Grade III and IV papers. Learn coding-decoding, letter series and word order with worked solutions.",
+      "intro": "Start with the rule behind each question. This set uses the 2024 ADRE papers to practise letter codes, word order, word formation and pattern recognition across Grade III and Grade IV.",
+      "methods": [
+        "For a letter code, align each original letter with its coded position. Test the rule on the whole example before applying it.",
+        "For word order, compare letters until the first difference. For a series, write the alphabet positions or the gaps between terms."
+      ],
+      "faq": [
+        [
+          "How should I start an ADRE coding-decoding question?",
+          "Write the two strings under each other. Check for letter shifts, a reversal or swaps between positions before choosing an option."
+        ],
+        [
+          "Which ADRE papers does this verbal reasoning set use?",
+          "The set uses the 2024 HSSLC, Graduate, Driver, Grade IV HSLC and Grade IV Class VIII booklets. Each question links to the exact booklet entry."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "ADRE-2024-G3-P3-HSSLC-Q064",
+          "answer": "B",
+          "explanation": "Split ROBOTICS into RO, BO, TI and CS. Swap the letters inside each pair to get OR, OB, IT and SC. For PROJECTS, the pairs PR, OJ, EC and TS therefore become RP, JO, CE and ST, giving RPJOCEST."
+        },
+        {
+          "id": "ADRE-2024-G3-P4-Degree-Q076",
+          "answer": "B",
+          "explanation": "SATURN becomes TZUTSM by alternately moving one letter forward and one back. A wraps back to Z. Applying +1, −1, +1, −1, +1, −1 to URANUS gives V, Q, B, M, V, R."
+        },
+        {
+          "id": "ADRE-2024-G3-P3-HSSLC-Q067",
+          "answer": "D",
+          "explanation": "All four words start ADVE. Compare the next letters. ADVENT and ADVENTURE continue with N, then ADVERSE and ADVERTISE continue with R. After ADVER, S in ADVERSE comes before T in ADVERTISE."
+        },
+        {
+          "id": "ADRE-2024-G3-P3-HSSLC-Q069",
+          "answer": "A",
+          "explanation": "MENDICANT contains no L. MEDICAL requires an L, while MEDIAN, DETAIN and ANCIENT use only letters available in MENDICANT. Check repeated letters as well as presence."
+        },
+        {
+          "id": "ADRE-2024-G3-P4-Degree-Q043",
+          "answer": "B",
+          "explanation": "The differences should be successive odd numbers: 3, 5, 7, 9, 11 and 13. After 20 the next term is 29, which then leads to 40. The printed 31 is the incorrect term."
+        },
+        {
+          "id": "ADRE-2024-G3-P5-Driver-Q036",
+          "answer": "C",
+          "explanation": "TANK becomes KNAT by reversing the whole word. Reverse PROCESS to get SSECORP. The fifth letter is O."
+        },
+        {
+          "id": "ADRE-2024-G3-P5-Driver-Q071",
+          "answer": "D",
+          "explanation": "B, E, J and Q occupy positions 2, 5, 10 and 17. The gaps are 3, 5 and 7. Add the next gap, 9, to reach position 26, which is Z."
+        },
+        {
+          "id": "ADRE-2024-G4-P1-HSLC-Q124",
+          "answer": "B",
+          "explanation": "ROCKET becomes TQEMGV by moving every letter two places forward. The final letter W in RAINBOW moves through X to Y."
+        },
+        {
+          "id": "ADRE-2024-G4-P1-HSLC-Q131",
+          "answer": "C",
+          "explanation": "Use the reverse alphabet values S = 8, T = 7, A = 26 and R = 9. Their sum is 50."
+        },
+        {
+          "id": "ADRE-2024-G4-P1-HSLC-Q134",
+          "answer": "A",
+          "explanation": "Start with the smallest unit and move outwards: room, house, street, town, district. These are items 3, 1, 2, 4 and 5."
+        },
+        {
+          "id": "ADRE-2024-G4-P2-ClassVIII-Q102",
+          "answer": "D",
+          "explanation": "POND becomes ONMC by moving each letter one place back. LAKE becomes KZJD because A wraps back to Z."
+        },
+        {
+          "id": "ADRE-2024-G4-P2-ClassVIII-Q112",
+          "answer": "A",
+          "explanation": "Read the positions in each column: A, C, E advance to G, and N, P, R advance to T. The next pair is GT."
+        }
+      ]
+    },
+    {
+      "exam": "ADRE",
+      "subject": "English",
+      "topic": "Vocabulary",
+      "updated": "2026-11-27",
+      "title": "ADRE Vocabulary Questions with Explanations from 2024 Papers",
+      "description": "Practise ADRE vocabulary questions on synonyms, antonyms, idioms and spelling, with worked explanations and links to the 2024 Grade III and IV papers.",
+      "intro": "Use these 2024 ADRE vocabulary questions to practise reading the instruction and using context. The set covers synonyms, antonyms, idioms, spelling, a collective noun and a one-word substitution.",
+      "methods": [
+        "Identify whether the question wants the same meaning, the opposite meaning, a fixed expression or a correct spelling.",
+        "Substitute the option into the sentence where possible. For idioms, check whether the expression describes an idea beyond its literal words."
+      ],
+      "faq": [
+        [
+          "Which vocabulary skills can I practise here?",
+          "The set includes meanings in context, synonyms, antonyms, idioms, spelling, collective nouns and one-word substitutions."
+        ],
+        [
+          "How do I use sentence context to answer an ADRE vocabulary question?",
+          "Use the surrounding words to infer the meaning. In the gullible example, believing implausible excuses is the clue that points to naive."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "ADRE-2024-G3-P4-Degree-Q137",
+          "answer": "B",
+          "explanation": "The clue is that Mr. Powers believes even implausible excuses. Gullible means easily persuaded to believe something, so naive fits this context."
+        },
+        {
+          "id": "ADRE-2024-G3-P3-HSSLC-Q141",
+          "answer": "C",
+          "explanation": "In a nutshell means stated briefly or in a few words. You could replace “in a nutshell” with “to put it briefly” in “In a nutshell, the plan worked.”"
+        },
+        {
+          "id": "ADRE-2024-G3-P3-HSSLC-Q117",
+          "answer": "C",
+          "explanation": "The question asks for the opposite. Cheap means low in price in this comparison, so expensive is the antonym."
+        },
+        {
+          "id": "ADRE-2024-G3-P3-HSSLC-Q118",
+          "answer": "D",
+          "explanation": "Furious means very angry. Angry is therefore the closest option."
+        },
+        {
+          "id": "ADRE-2024-G3-P4-Degree-Q100",
+          "answer": "C",
+          "explanation": "Affluent means wealthy or well-off. The option poverty denotes the opposite condition."
+        },
+        {
+          "id": "ADRE-2024-G3-P4-Degree-Q128",
+          "answer": "C",
+          "explanation": "To beckon is to signal with a hand or other gesture. Here motion is used as a verb meaning to gesture."
+        },
+        {
+          "id": "ADRE-2024-G3-P5-Driver-Q018",
+          "answer": "B",
+          "explanation": "In a fair match, play takes place within the rules. The sentence gives fair the sense of proper and impartial conduct."
+        },
+        {
+          "id": "ADRE-2024-G3-P5-Driver-Q039",
+          "answer": "B",
+          "explanation": "The apple of someone’s eye is a person or thing they especially cherish. The expression conveys affection."
+        },
+        {
+          "id": "ADRE-2024-G4-P1-HSLC-Q003",
+          "answer": "B",
+          "explanation": "A swarm is the conventional collective noun for a group of bees."
+        },
+        {
+          "id": "ADRE-2024-G4-P1-HSLC-Q006",
+          "answer": "B",
+          "explanation": "Calendar is the spelling for a list of days and dates. Check the ending: it is spelled with -ar."
+        },
+        {
+          "id": "ADRE-2024-G4-P2-ClassVIII-Q026",
+          "answer": "B",
+          "explanation": "An entrepreneur sets up a business and takes on the associated financial risk. The clue combines starting the business with taking that risk."
+        },
+        {
+          "id": "ADRE-2024-G4-P2-ClassVIII-Q131",
+          "answer": "B",
+          "explanation": "Exterior means the outside. Interior is its opposite and means the inside."
+        }
+      ]
+    },
+    {
+      "exam": "ADRE",
+      "subject": "Mathematics",
+      "topic": "Arithmetic",
+      "updated": "2026-11-27",
+      "title": "ADRE Arithmetic Previous-Year Questions with Worked Solutions",
+      "description": "Solve ADRE arithmetic questions on percentages, averages, ratios, discounts and more, with worked solutions from official-key Grade III and IV papers.",
+      "intro": "Practise percentages, averages and ratios using the 2024 ADRE papers. Start by writing the base value, total or unit for the calculation. Check your reasoning against the worked solutions after each attempt.",
+      "methods": [
+        "For successive percentages, use multipliers or a starting value of 100. The base changes after the first step.",
+        "For averages, recover the total before correcting a value. For ratios and rates, write what one unit costs or represents."
+      ],
+      "faq": [
+        [
+          "How do I solve successive percentage questions for ADRE?",
+          "Apply each percentage to the current amount. Increasing 100 by 40% and then decreasing the result by 40% leaves 84, which is a 16% decrease."
+        ],
+        [
+          "What should I check before scoring a full ADRE paper?",
+          "Match the grade, level, year and booklet series to the final key. Use the relevant paper instructions for its marking scheme."
+        ]
+      ],
+      "questions": [
+        {
+          "id": "ADRE-2024-G3-P3-HSSLC-Q081",
+          "answer": "B",
+          "explanation": "Start at 100. A 40% increase takes it to 140. The decrease is 40% of 140, which is 56, leaving 84. Compare 84 to the original 100 for a 16% decrease."
+        },
+        {
+          "id": "ADRE-2024-G4-P1-HSLC-Q043",
+          "answer": "C",
+          "explanation": "The ratio 3:4 gives seven equal parts. Divide 49 by 7 to get 7 per part. The numbers are 3 × 7 = 21 and 4 × 7 = 28."
+        },
+        {
+          "id": "ADRE-2024-G3-P3-HSSLC-Q066",
+          "answer": "C",
+          "explanation": "Fifteen minutes is one quarter of an hour. Speed equals distance divided by time, so 12 ÷ 0.25 = 48 km/h."
+        },
+        {
+          "id": "ADRE-2024-G3-P3-HSSLC-Q101",
+          "answer": "C",
+          "explanation": "100% of 100 is 100. 200% of 200 is twice 200, or 400. Add them to get 500."
+        },
+        {
+          "id": "ADRE-2024-G3-P4-Degree-Q020",
+          "answer": "C",
+          "explanation": "The total is 9 × 9 = 81. The first five sum to 50 and the last five sum to 40. Adding those group totals counts the fifth value twice, so that value is 50 + 40 − 81 = 9."
+        },
+        {
+          "id": "ADRE-2024-G3-P4-Degree-Q078",
+          "answer": "B",
+          "explanation": "For the same tank and identical pipes, the required work is 6 × 80 = 480 pipe-minutes. With eight pipes, 480 ÷ 8 gives 60 minutes."
+        },
+        {
+          "id": "ADRE-2024-G3-P4-Degree-Q105",
+          "answer": "B",
+          "explanation": "Correct the total by adding 85 − 58 = 27. The average for 50 students therefore rises by 27 ÷ 50 = 0.54, from 45.5 to 46.04."
+        },
+        {
+          "id": "ADRE-2024-G3-P5-Driver-Q011",
+          "answer": "D",
+          "explanation": "The increased amount is 111% of the original. Solve 1.11 × original = 777 to get 700."
+        },
+        {
+          "id": "ADRE-2024-G3-P5-Driver-Q069",
+          "answer": "D",
+          "explanation": "Divide ₹91 by seven to get ₹13 per mango. Three mangoes cost 3 × ₹13 = ₹39."
+        },
+        {
+          "id": "ADRE-2024-G4-P1-HSLC-Q050",
+          "answer": "C",
+          "explanation": "A 10% annual rate compounded every six months gives 5% per period. After two periods ₹1,000 becomes ₹1,000 × 1.05² = ₹1,102.50. Subtract the principal to get ₹102.50 interest."
+        },
+        {
+          "id": "ADRE-2024-G4-P2-ClassVIII-Q066",
+          "answer": "D",
+          "explanation": "Start with a price of 100. The first discount leaves 90 and the second leaves 90 × 0.95 = 85.50. The total saving is 14.50% of the original price."
+        },
+        {
+          "id": "ADRE-2024-G4-P2-ClassVIII-Q077",
+          "answer": "B",
+          "explanation": "The cost is ₹900 + ₹100 = ₹1,000. Selling at ₹1,800 gives ₹800 profit. Divide by the total cost to get 80%."
+        }
+      ]
+    }
+  ],
+  "paper_solutions": {
+    "adre-2024-grade-4-hslc-question-paper": {
+      "updated": "2026-11-27",
+      "questions": [
+        {
+          "id": "ADRE-2024-G4-P1-HSLC-Q041",
+          "answer": "D",
+          "explanation": "Let the son’s present age be s, so the father is 60 − s. In 15 years, 75 − s = 2(s + 15). That gives 45 = 3s, so the son is 15 years old."
+        },
+        {
+          "id": "ADRE-2024-G4-P1-HSLC-Q052",
+          "answer": "B",
+          "explanation": "A square’s diagonal joins the ends of two equal perpendicular sides. By Pythagoras, 10² = 2 × side². Its area, side², is therefore 50 cm²."
+        },
+        {
+          "id": "ADRE-2024-G4-P1-HSLC-Q054",
+          "answer": "D",
+          "explanation": "2⁶ is 64. The largest multiple of 5 below 64 is 60, leaving a remainder of 4."
+        },
+        {
+          "id": "ADRE-2024-G4-P1-HSLC-Q057",
+          "answer": "B",
+          "explanation": "For two positive integers, their product equals their HCF times their LCM. The product is 4 × 24 = 96. Divide by 12 to get the other number, 8."
+        },
+        {
+          "id": "ADRE-2024-G4-P1-HSLC-Q102",
+          "answer": "B",
+          "explanation": "Subtract each top face from 7 to find the opposite face. The bottom faces show 4, 4, 5 and 1. Their total is 14."
+        },
+        {
+          "id": "ADRE-2024-G4-P1-HSLC-Q129",
+          "answer": "D",
+          "explanation": "Draw the first 9 metres as a line. The second right turn takes Lohit 9 metres in the opposite direction, cancelling that first leg. The 4-metre leg and the final 2-metre leg point in the same direction, leaving him 6 metres from Black."
+        }
+      ]
+    },
+    "adre-2024-grade-4-class-8-question-paper": {
+      "updated": "2026-11-27",
+      "questions": [
+        {
+          "id": "ADRE-2024-G4-P2-ClassVIII-Q069",
+          "answer": "C",
+          "explanation": "At 3:00 the minute hand points at 12 and the hour hand at 3. Each hour mark spans 30°, so the three gaps make 90°."
+        },
+        {
+          "id": "ADRE-2024-G4-P2-ClassVIII-Q070",
+          "answer": "D",
+          "explanation": "The three angles total 180°. Subtract 75° and 65° to get the third angle, 40°. The question asks for twice that angle, which is 80°."
+        },
+        {
+          "id": "ADRE-2024-G4-P2-ClassVIII-Q073",
+          "answer": "C",
+          "explanation": "Use B’s share as the middle value. A gets B + ₹2 and C gets B − ₹2, so the total is three times B. B gets ₹30 and A therefore gets ₹32."
+        },
+        {
+          "id": "ADRE-2024-G4-P2-ClassVIII-Q074",
+          "answer": "A",
+          "explanation": "The primes between 1 and 20 are 2, 3, 5, 7, 11, 13, 17 and 19. Adding them gives 77."
+        },
+        {
+          "id": "ADRE-2024-G4-P2-ClassVIII-Q082",
+          "answer": "B",
+          "explanation": "The sides are 4k and 3k, so the diagonal is 5k by the 3–4–5 triangle. The given diagonal is 5 cm, making the sides 4 cm and 3 cm. The perimeter is 14 cm."
+        },
+        {
+          "id": "ADRE-2024-G4-P2-ClassVIII-Q106",
+          "answer": "A",
+          "explanation": "The four walls total 2 × (8 + 6) = 28 m. The diagonal is √(8² + 6²) = 10 m. Add them to get 38 m."
+        }
+      ]
+    }
+  }
+}

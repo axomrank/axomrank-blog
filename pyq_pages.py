@@ -5,6 +5,7 @@ Pages built:
   /question-papers/<paper-slug>/         one full paper: every question, options, answer, explanation
   /questions/                            hub of topic pages
   /questions/<topic-slug>/               every question on one topic, across all exams
+  /questions/<exam>/<topic-slug>/        curated practice guides with worked solutions
 
 Competitors mostly host scanned PDFs. These pages are text, so every question is indexable.
 
@@ -139,7 +140,7 @@ def topic_reference(base, subject, topic, published_topics, *, bold=False):
     return label
 
 
-def question_html(r, base, *, img_base, paper_link=None, published_topics=()):
+def question_html(r, base, *, img_base, paper_link=None, published_topics=(), show_answer=False):
     opts = []
     letters = answer_letters(r["answer"])
     for L in "abcd":
@@ -160,7 +161,11 @@ def question_html(r, base, *, img_base, paper_link=None, published_topics=()):
         ans = " · ".join(parts)
     else:
         ans = "No single answer could be confirmed"
-    note = f'<p class="why">{text(r["answer_note"])}</p>' if r["answer_note"] else ""
+    explanation = r.get("editorial_explanation")
+    if explanation:
+        note = f'<p class="why"><strong>Worked solution.</strong> {text(explanation)}</p>'
+    else:
+        note = f'<p class="why">{text(r["answer_note"])}</p>' if r["answer_note"] else ""
     src = ANSWER_SOURCE.get(r["answer_source"], r["answer_source"])
     rev = f'<p class="flag">{text(r["revision_note"].split(".")[0])}.</p>' if r["editorially_revised"] == "1" else ""
     where = []
@@ -174,22 +179,100 @@ def question_html(r, base, *, img_base, paper_link=None, published_topics=()):
     return f"""<li class="q" id="q{r['q_no']}" value="{r['q_no']}">
   {ctx}<p class="qt">{text(r['question'])}</p>{imgs}
   <ol class="opts">{''.join(opts)}</ol>
-  <details><summary><span class="answer-closed">Show answer</span><span class="answer-open">Hide answer</span></summary><p class="ans"><strong>Answer:</strong> {ans}</p>{note}{rev}<p class="src">{html.escape(src)}</p></details>
+  <details{' open' if show_answer else ''}><summary><span class="answer-closed">Show answer</span><span class="answer-open">Hide answer</span></summary><p class="ans"><strong>Answer:</strong> {ans}</p>{note}{rev}<p class="src">{html.escape(src)}</p></details>
   <p class="qmeta">{' · '.join(where)}</p>
 </li>"""
 
 
-def practice_items(questions, paper_by_key, base, img_base):
+def practice_items(questions, paper_by_key, base, img_base, *, show_answers=False):
     items = []
     for r in questions:
         paper = paper_by_key[(r["exam"], str(r["year"]), r["paper_code"])]
         link = f'<a href="{base}/question-papers/{paper["slug"]}/#q{r["q_no"]}">{html.escape(paper["name"])}, Q{r["q_no"]}</a>'
-        items.append(question_html(r, base, img_base=img_base, paper_link=link)
+        items.append(question_html(r, base, img_base=img_base, paper_link=link, show_answer=show_answers)
                      .replace(f'id="q{r["q_no"]}" value="{r["q_no"]}"', ""))
     return "".join(items)
 
 
-def build(site, page, out, urls, utm, pyq_data, posts, paper_downloads):
+def reviewed_questions(entries, eligible_rows, label):
+    """Resolve curated IDs and reject changes that would invalidate their explanations."""
+    reviewed = {}
+    for entry in entries:
+        question_id = entry["id"]
+        row = eligible_rows.get(question_id)
+        answer = entry["answer"]
+        if (question_id in reviewed or row is None or answer not in "ABCD" or len(answer) != 1
+                or row["answer_source"] != "official_final_key" or row["answer"] != answer
+                or not row[f"option_{answer.lower()}"] or not row["question"].strip()
+                or any(row[field] != "0" for field in ("needs_review", "classification_needs_review", "editorially_revised"))
+                or not entry["explanation"].strip()):
+            raise ValueError(f"{label}: invalid reviewed question {question_id}")
+        reviewed[question_id] = {**row, "editorial_explanation": entry["explanation"]}
+    return reviewed
+
+
+def guide_links(guides, base, heading):
+    if not guides:
+        return ""
+    links = "".join(f'<li><a href="{base}/{g["path"]}/">{html.escape(g["title"])}</a></li>' for g in guides)
+    return f'<h2>{heading}</h2><ul>{links}</ul>'
+
+
+def render_guide(guide, site, page, out, urls, paper_by_key, paper_downloads):
+    base = site["base_url"]
+    canonical = f"{base}/{guide['path']}/"
+    parent = f"{base}/questions/{guide['topic_slug']}/"
+    questions = guide["reviewed"]
+    img_base = f"{base}/pyq-img"
+    counts = collections.Counter((q["exam"], q["year"], q["paper_code"]) for q in questions)
+    coverage = []
+    for key, n in sorted(counts.items()):
+        paper = paper_by_key[key]
+        slug = paper["slug"]
+        key_url = html.escape(paper_downloads[slug]["key"]["url"])
+        coverage.append(f'<tr><td><a href="{base}/question-papers/{slug}/">{html.escape(paper["name"])}</a></td>'
+                        f'<td>{n}</td><td><a href="{key_url}" aria-label="{html.escape(paper["name"])} final key PDF">PDF</a></td></tr>')
+    methods = "".join(f'<li>{text(item)}</li>' for item in guide["methods"])
+    faq = "".join(f'<h3>{text(q)}</h3><p>{text(a)}</p>' for q, a in guide["faq"])
+    title = guide["title"]
+    body = f'''<article class="post wrap pyq">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/">Blog</a> › <a href="{base}/questions/">Questions by topic</a> › <a href="{parent}">{text(guide["topic"])}</a></nav>
+  <h1>{text(title)}</h1>
+  <p class="dek">{text(guide["intro"])}</p>
+  <p class="jump-link"><a href="#practice">Jump to the practice questions</a></p>
+  <div class="prose"><h2>How to approach these questions</h2><ul>{methods}</ul></div>
+  <h2>Worked examples</h2>
+  <ol class="qs">{practice_items(questions[:2], paper_by_key, base, img_base, show_answers=True)}</ol>
+  <h2 id="practice">Try the remaining {len(questions) - 2} questions</h2>
+  <ol class="qs" start="3">{practice_items(questions[2:], paper_by_key, base, img_base)}</ol>
+  <div class="prose">
+  <h2>Paper coverage</h2>
+  <p>This set contains {len(questions)} selected questions. The answer choices follow the SLRC final keys. AxomRank wrote the worked explanations.</p>
+  <table><thead><tr><th>Paper</th><th>Questions in this set</th><th>Final key</th></tr></thead><tbody>{''.join(coverage)}</tbody></table>
+  <h2>Frequently asked questions</h2>{faq}
+  <h2>Sources</h2><p>See the paper and final-key links above and the <a href="{GITHUB}">AxomRank previous-year question dataset</a>. Use the <a href="{base}/{EXAMS[guide["exam"]][1]}/">exam preparation hub</a> to find more papers.</p>
+  </div>
+</article>'''
+    jsonld = [
+        {"@context": "https://schema.org", "@type": "LearningResource", "name": title,
+         "description": guide["description"], "url": canonical, "inLanguage": "en-IN",
+         "learningResourceType": "Practice questions", "isAccessibleForFree": True,
+         "numberOfQuestions": len(questions), "teaches": guide["topic"], "dateModified": guide["updated"]},
+        {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Questions by topic", "item": f"{base}/questions/"},
+            {"@type": "ListItem", "position": 2, "name": guide["topic"], "item": parent},
+            {"@type": "ListItem", "position": 3, "name": title, "item": canonical}]},
+        {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in guide["faq"]]},
+    ]
+    d = out / guide["path"]
+    d.mkdir(parents=True, exist_ok=False)
+    (d / "index.html").write_text(page(site, title=f"{title} | AxomRank", description=guide["description"],
+                                      canonical=canonical, body=body, jsonld=jsonld, og_type="article"), encoding="utf-8")
+    urls.append((canonical, guide["updated"]))
+
+
+def build(site, page, out, urls, utm, pyq_data, posts, paper_downloads, editorial):
     pyq, papers, rows = pyq_data
     base = site["base_url"]
     img_base = f"{base}/pyq-img"
@@ -199,6 +282,20 @@ def build(site, page, out, urls, utm, pyq_data, posts, paper_downloads):
         if r["topic"] and (r["exam"], str(r["year"]), r["paper_code"]) in paper_by_key:
             topics[(r["subject"], r["topic"])].append(r)
     published_topics = {topic_slug(s, t) for (s, t), qs in topics.items() if len(qs) >= MIN_TOPIC_QUESTIONS}
+    guides = []
+    for guide in editorial["guides"]:
+        if guide.get("draft") or not any(p["exam"] == guide["exam"] for p in papers):
+            continue
+        subject, topic = guide["subject"], guide["topic"]
+        slug = topic_slug(subject, topic)
+        path = f"questions/{EXAMS[guide['exam']][1]}/{slug}"
+        eligible = {q["id"]: q for q in topics[subject, topic] if q["exam"] == guide["exam"]}
+        selected = list(reviewed_questions(guide["questions"], eligible, path).values())
+        stems = {re.sub(r"\W+", " ", f"{q['context']} {q['question']}".casefold()).strip() for q in selected}
+        if slug not in published_topics or len(stems) != len(selected) or len(selected) < 12 or len({
+                (q["year"], q["paper_code"]) for q in selected}) < 2:
+            raise ValueError(f"{path}: expected at least 12 distinct reviewed questions across two or more papers")
+        guides.append({**guide, "path": path, "topic_slug": slug, "reviewed": selected})
 
     # Copy only the figures the pages use.
     for r in rows:
@@ -211,6 +308,13 @@ def build(site, page, out, urls, utm, pyq_data, posts, paper_downloads):
     # ---- one page per paper ----
     for p in papers:
         qs = p["qs"]
+        upgrade = editorial["paper_solutions"].get(p["slug"])
+        worked = ""
+        if upgrade:
+            examples = reviewed_questions(upgrade["questions"], {q["id"]: q for q in qs}, p["slug"])
+            qs = [examples.get(q["id"], q) for q in qs]
+            jump = " · ".join(f'<a href="#q{q["q_no"]}">Q{q["q_no"]}</a>' for q in examples.values())
+            worked = f'<aside class="note"><p><strong>Worked solutions</strong></p><p>Open “Show answer” at {jump} to see how AxomRank worked through the final-key answer.</p></aside>'
         n = len(qs)
         canonical = f"{base}/question-papers/{p['slug']}/"
         sources = collections.Counter(r["answer_source"] for r in qs)
@@ -223,6 +327,9 @@ def build(site, page, out, urls, utm, pyq_data, posts, paper_downloads):
         title = f"{p['name']} Question Paper with Answers ({n} Questions)"
         desc = (f"{n} available questions from the {p['name']} paper, with {key_word}, "
                 f"subject-wise breakdown and free practice. Conducted by {qs[0]['conducting_body'] or 'the board'}.")[:160]
+        if upgrade:
+            title = f"{p['name']} Question Paper, Final Key and Solutions"
+            desc = f"Download the {p['name']} booklet and its final key. Practise {n} questions online with worked solutions for selected questions."
         coverage = f'<aside class="note"><p>{html.escape(p["note"])}</p></aside>' if p.get("note") else ""
         app_cta = utm(site["app_url"] + "/", p["slug"], "cta")
         others = [o for o in papers if o["exam"] == p["exam"] and o is not p]
@@ -241,6 +348,10 @@ def build(site, page, out, urls, utm, pyq_data, posts, paper_downloads):
             (f"Can I download the original {p['name']} question paper PDF?",
              "Yes. Use the PDF link on this page to open the archived booklet."),
         ]
+        if upgrade:
+            numbers = ", ".join(q["q_no"] for q in examples.values())
+            faq.append(("Which questions have worked solutions?",
+                        f"Open Show answer at questions {numbers} to read the worked explanations alongside the SLRC final-key choices."))
         faq_html = "".join(f"<h3>{html.escape(q)}</h3><p>{html.escape(a)}</p>" for q, a in faq)
         body = f"""<article class="post wrap pyq">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/">Blog</a> › <a href="{base}/question-papers/">Question papers</a> › <a href="{base}/question-papers/#{EXAMS[p['exam']][1]}">{html.escape(EXAMS[p['exam']][2])}</a></nav>
@@ -248,6 +359,7 @@ def build(site, page, out, urls, utm, pyq_data, posts, paper_downloads):
   <p class="dek">{html.escape(p['paper_title'])}. Practise the available questions below and tap <em>Show answer</em> to check each response.</p>
   <p class="jump-link"><a href="{pdf}">{pdf_label}</a>{pdf_key} · <a href="#questions">Jump to the questions</a></p>
   {coverage}
+  {worked}
   <div class="prose">
   <h2>About this paper</h2>
   <table><tbody>
@@ -284,11 +396,13 @@ def build(site, page, out, urls, utm, pyq_data, posts, paper_downloads):
             {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
                 {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
         ]
+        if upgrade:
+            jsonld[0]["dateModified"] = upgrade["updated"]
         d = out / "question-papers" / p["slug"]
         d.mkdir(parents=True, exist_ok=True)
         (d / "index.html").write_text(page(site, title=f"{title} | AxomRank", description=desc, canonical=canonical,
                                            body=body, jsonld=jsonld, og_type="article"), encoding="utf-8")
-        urls.append((canonical, None))
+        urls.append((canonical, upgrade["updated"] if upgrade else None))
 
     # ---- papers hub ----
     sections = []
@@ -404,6 +518,7 @@ def build(site, page, out, urls, utm, pyq_data, posts, paper_downloads):
   <div class="prose">
   {focused}
   {f'<ul>{culture_link}</ul>' if culture_link else ''}
+  {guide_links([g for g in guides if g['topic_slug'] == slug], base, 'Exam-specific practice')}
   <h2>Where these questions were asked</h2>
   <table><thead><tr><th>Exam</th><th>Questions</th></tr></thead><tbody>{ex_rows}</tbody></table>
   {'<h2>Most-asked subtopics</h2><table><thead><tr><th>Subtopic</th><th>Questions</th></tr></thead><tbody>' + sub_rows + '</tbody></table>' if sub_rows else ''}
@@ -429,6 +544,9 @@ def build(site, page, out, urls, utm, pyq_data, posts, paper_downloads):
         urls.append((canonical, None))
         topic_cards[subject].append((topic, slug, n, exam_list))
 
+    for guide in guides:
+        render_guide(guide, site, page, out, urls, paper_by_key, paper_downloads)
+
     sections = []
     subject_links = []
     for subject in sorted(topic_cards, key=lambda s: -sum(t[2] for t in topic_cards[s])):
@@ -442,6 +560,7 @@ def build(site, page, out, urls, utm, pyq_data, posts, paper_downloads):
     body = f"""<section class="hero wrap"><h1>Assam exam questions by topic</h1>
 <p class="dek">Real previous-year questions grouped by topic across ADRE, APSC, Assam Police, TET and DME papers. Start with the topics that carry the most marks.</p>
 <p class="jump-link"><a href="{base}/question-papers/">Browse full question papers</a></p>
+{guide_links(guides, base, 'Worked practice guides')}
 <details class="toc"><summary>Find topics by subject</summary><ul>{''.join(subject_links)}</ul></details></section>
 <section class="wrap list">{''.join(sections)}</section>"""
     (out / "questions").mkdir(exist_ok=True)
@@ -453,5 +572,5 @@ def build(site, page, out, urls, utm, pyq_data, posts, paper_downloads):
         encoding="utf-8")
     urls.append((canonical, None))
     n_topics = sum(len(v) for v in topic_cards.values())
-    print(f"built {len(papers)} question-paper pages, {n_topics} topic pages")
-    return papers, published_topics
+    print(f"built {len(papers)} question-paper pages, {n_topics} topic pages and {len(guides)} worked practice guides")
+    return papers, published_topics, guides

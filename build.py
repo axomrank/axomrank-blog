@@ -386,11 +386,14 @@ def build(base_url=None, pyq_dir=None):
 
     # Previous-year question pages from the assam-exam-pyq dataset
     if site["has_papers"]:
-        papers, published_topics = pyq_pages.build(site, page, OUT, urls, utm, pyq_data, posts, paper_downloads)
+        editorial = json.loads((ROOT / "data" / "pyq-guides.json").read_text(encoding="utf-8"))
+        papers, published_topics, practice_guides = pyq_pages.build(
+            site, page, OUT, urls, utm, pyq_data, posts, paper_downloads, editorial,
+        )
     else:
         print(f"No PYQ papers found at {pyq_dir}: skipping question-paper pages")
-        papers, published_topics = [], set()
-    exam_pages.build(site, page, OUT, urls, utm, papers, posts, md, published_topics)
+        papers, published_topics, practice_guides = [], set(), []
+    exam_pages.build(site, page, OUT, urls, utm, papers, posts, md, published_topics, practice_guides)
     district_pages.build(site, page, OUT, urls, utm, papers, published_topics)
 
     resources = [("paper-downloads", "Download original question papers", "PDF booklets for Assam exams")]

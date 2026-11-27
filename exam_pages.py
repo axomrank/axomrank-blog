@@ -10,7 +10,7 @@ import html
 import re
 from pathlib import Path
 
-from pyq_pages import EXAMS, topic_reference
+from pyq_pages import EXAMS, guide_links, topic_reference
 
 ROOT = Path(__file__).resolve().parent
 
@@ -131,7 +131,7 @@ def _official_syllabus_html(folder, md):
     return "".join(parts)
 
 
-def build(site, page, out, urls, utm, papers, posts, md, published_topics):
+def build(site, page, out, urls, utm, papers, posts, md, published_topics, practice_guides):
     if not papers:
         return
     base = site["base_url"]
@@ -206,6 +206,7 @@ def build(site, page, out, urls, utm, papers, posts, md, published_topics):
   {_subject_table(qs)}
   <h2>Most-asked topics</h2>
   <ol>{topic_list}</ol>
+  {guide_links([g for g in practice_guides if g['exam'] in hub['exams']], base, 'Worked practice guides')}
   <h2>Previous year question papers</h2>
   <table><thead><tr><th>Year</th><th>Paper (with answers)</th><th>Questions</th></tr></thead><tbody>{paper_rows}</tbody></table>
   {'<h2>Preparation guides</h2><ul>' + post_list + '</ul>' if post_list else ''}
