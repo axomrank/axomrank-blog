@@ -1,0 +1,2176 @@
+{
+  "release": "https://github.com/axomrank/assam-exam-pyq/releases/tag/pyq-original-pdfs-v1",
+  "papers": [
+    {
+      "group": "adre",
+      "exam": "Assam Direct Recruitment Examination",
+      "cycle": "2024",
+      "title": "Grade III Paper 3 (HSSLC)",
+      "asset": "adre-2024-g3-p3-hsslc.pdf",
+      "bytes": 1356040,
+      "sha256": "205f3f2e78d7e6ce25f69ed6c090e2c60fd3922387b8022e778e657d0f536584",
+      "practice": "adre-2024-grade-3-hsslc-question-paper",
+      "key": {
+        "asset": "adre-2024-g3-p3-hsslc-answer-key.pdf",
+        "bytes": 176018,
+        "sha256": "e7cfa2d028139532efadcd84264c7409134422e158c3781dc8f1b02151d929e3"
+      }
+    },
+    {
+      "group": "adre",
+      "exam": "Assam Direct Recruitment Examination",
+      "cycle": "2024",
+      "title": "Grade III Paper 4 (Graduate)",
+      "asset": "adre-2024-g3-p4-degree.pdf",
+      "bytes": 605757,
+      "sha256": "f056b3f60ee7e2cc1c7557ee10f7ce981d96743b5b4c2f01a57caa60aea5c231",
+      "practice": "adre-2024-grade-3-graduate-question-paper",
+      "key": {
+        "asset": "adre-2024-g3-p4-degree-answer-key.pdf",
+        "bytes": 183833,
+        "sha256": "21aaf7a300ac3f6134ae7cbbdfa866ae002e573f48eff93e2db7c999aa43f49d"
+      }
+    },
+    {
+      "group": "adre",
+      "exam": "Assam Direct Recruitment Examination",
+      "cycle": "2024",
+      "title": "Grade III Paper 5 (Driver)",
+      "asset": "adre-2024-g3-p5-driver.pdf",
+      "bytes": 373777,
+      "sha256": "0a0d933dfd914734af98058b512fb36c9e9fde7804e2a1660eab5cda54eaa9c7",
+      "practice": "adre-2024-grade-3-driver-question-paper",
+      "key": {
+        "asset": "adre-2024-g3-p5-driver-answer-key.pdf",
+        "bytes": 29114,
+        "sha256": "e5b4a177ace79bf6749fc9af2749862b7b537f297792cb2bf16446da13fb9fb2"
+      }
+    },
+    {
+      "group": "adre",
+      "exam": "Assam Direct Recruitment Examination",
+      "cycle": "2024",
+      "title": "Grade IV Paper 1 (HSLC)",
+      "asset": "adre-2024-g4-p1-hslc.pdf",
+      "bytes": 472965,
+      "sha256": "86c987d1ba6bf6467b40b08a8fbee9c79c2194cf9cf1e337e175f08f0fc6c057",
+      "practice": "adre-2024-grade-4-hslc-question-paper",
+      "key": {
+        "asset": "adre-2024-g4-p1-hslc-answer-key.pdf",
+        "bytes": 27072,
+        "sha256": "744a66c5302058c3d385359b6b231ab0106a7ddfd913e7da31d836d0cd6b1807"
+      }
+    },
+    {
+      "group": "adre",
+      "exam": "Assam Direct Recruitment Examination",
+      "cycle": "2024",
+      "title": "Grade IV Paper 2 (Class VIII)",
+      "asset": "adre-2024-g4-p2-classviii.pdf",
+      "bytes": 1409530,
+      "sha256": "4b40e276ec28f232e4be46e3011fff339e006a7e6ce9ece53216d95a107c6361",
+      "practice": "adre-2024-grade-4-class-8-question-paper",
+      "key": {
+        "asset": "adre-2024-g4-p2-classviii-answer-key.pdf",
+        "bytes": 27392,
+        "sha256": "ca05b199cf22f1411cd9578cc8e4c489b11d51533986faa79939bc407e974d81"
+      }
+    },
+    {
+      "group": "adre",
+      "exam": "Assam Direct Recruitment Examination",
+      "cycle": "2022",
+      "title": "Grade III Paper 3 (HSSLC)",
+      "asset": "adre-2022-g3-p3-hsslc.pdf",
+      "bytes": 1829960,
+      "sha256": "97ef4cbe0afed504e094c4625cc9c4a91d3ed65f5a86f6c324246426f5f1937f",
+      "practice": "adre-2022-grade-3-hsslc-question-paper"
+    },
+    {
+      "group": "adre",
+      "exam": "Assam Direct Recruitment Examination",
+      "cycle": "2022",
+      "title": "Grade III Paper 4 (Graduate)",
+      "asset": "adre-2022-g3-p4-degree.pdf",
+      "bytes": 2050910,
+      "sha256": "d5aa4c65a070538c2feb77018a59a50b674a8ad240d46fbb93f1f384a395a68b",
+      "practice": "adre-2022-grade-3-graduate-question-paper"
+    },
+    {
+      "group": "adre",
+      "exam": "Assam Direct Recruitment Examination",
+      "cycle": "2022",
+      "title": "Grade III Paper 5 (Driver)",
+      "asset": "adre-2022-g3-p5-driver.pdf",
+      "bytes": 1902361,
+      "sha256": "c61f7507f4b830b920dc06955923dc0d15eb83aa0ab01d8cb4a817d56fcc1678",
+      "practice": "adre-2022-grade-3-driver-question-paper"
+    },
+    {
+      "group": "adre",
+      "exam": "Assam Direct Recruitment Examination",
+      "cycle": "2022",
+      "title": "Grade IV Paper 1 (HSLC)",
+      "asset": "adre-2022-g4-p1-hslc.pdf",
+      "bytes": 2028196,
+      "sha256": "0209e357068f4076640fde57a2dff22aee1b8856287f6d8a14bdb1dd3dd23a1f",
+      "practice": "adre-2022-grade-4-hslc-question-paper"
+    },
+    {
+      "group": "adre",
+      "exam": "Assam Direct Recruitment Examination",
+      "cycle": "2022",
+      "title": "Grade IV Paper 2 (Class VIII)",
+      "asset": "adre-2022-g4-p2-classviii.pdf",
+      "bytes": 2029983,
+      "sha256": "107d8bad28d0d1f7ac983737862f11a011865ecf0c5b24cbc8c2efa5ca32550f",
+      "practice": "adre-2022-grade-4-class-8-question-paper"
+    },
+    {
+      "group": "apsc-cdpo",
+      "exam": "APSC Child Development Project Officer",
+      "cycle": "2023",
+      "title": "Anthropology",
+      "asset": "apsc-cdpo-2023-anthropology-cdpo-33-2023.pdf",
+      "bytes": 2203867,
+      "sha256": "44f00928fa1cd40899f7757fbc497f92b771351f89447ef8ef6765989a908daa"
+    },
+    {
+      "group": "apsc-cdpo",
+      "exam": "APSC Child Development Project Officer",
+      "cycle": "2023",
+      "title": "Child Development",
+      "asset": "apsc-cdpo-2023-child-dev-cdpo-33-2023.pdf",
+      "bytes": 2717560,
+      "sha256": "3e6fffd47b318da039b3ccccd9d0bf0058e11225edcd063b2460fdf9e888a225"
+    },
+    {
+      "group": "apsc-cdpo",
+      "exam": "APSC Child Development Project Officer",
+      "cycle": "2023",
+      "title": "Criminology",
+      "asset": "apsc-cdpo-2023-criminology-cdpo-33-2023.pdf",
+      "bytes": 3553598,
+      "sha256": "facbcb75b41de5a2dcd39fa836163eb9f1696e0c1e68688d8b57f8a42110ab10"
+    },
+    {
+      "group": "apsc-cdpo",
+      "exam": "APSC Child Development Project Officer",
+      "cycle": "2023",
+      "title": "Economics",
+      "asset": "apsc-cdpo-2023-eco-cdpo-33-2023.pdf",
+      "bytes": 2977223,
+      "sha256": "efdfb6e012b9ce1d3e56755cbcc38393341366bf2e3909d2685dec3b083c9478"
+    },
+    {
+      "group": "apsc-cdpo",
+      "exam": "APSC Child Development Project Officer",
+      "cycle": "2023",
+      "title": "Education and Psychology",
+      "asset": "apsc-cdpo-2023-edupsych-cdpo-33-2023.pdf",
+      "bytes": 3493726,
+      "sha256": "5832f1c9c7e5a446f7aab482ccd3ba699dba335351b80baadd837971ef7dfacd"
+    },
+    {
+      "group": "apsc-cdpo",
+      "exam": "APSC Child Development Project Officer",
+      "cycle": "2023",
+      "title": "General English",
+      "asset": "apsc-cdpo-2023-eng-cdpo-33-2023.pdf",
+      "bytes": 961391,
+      "sha256": "b630e10c0a494016fb0052d8aee9adc9008ac8565a2487bcbdc7ce4382b7dbcb"
+    },
+    {
+      "group": "apsc-cdpo",
+      "exam": "APSC Child Development Project Officer",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-cdpo-2023-gk-cdpo-33-2023.pdf",
+      "bytes": 6182748,
+      "sha256": "fe660dacb49bef71ced66888131da81ad957965831ad3478559cba78b91dcc52"
+    },
+    {
+      "group": "apsc-cdpo",
+      "exam": "APSC Child Development Project Officer",
+      "cycle": "2023",
+      "title": "Home Science",
+      "asset": "apsc-cdpo-2023-homesc-cdpo-33-2023.pdf",
+      "bytes": 2490804,
+      "sha256": "d6ba86bc1d44692d9f9c63b0295b22d673516f581b9f9a62d7bac58649573d03"
+    },
+    {
+      "group": "apsc-cdpo",
+      "exam": "APSC Child Development Project Officer",
+      "cycle": "2023",
+      "title": "Labour and Social Welfare",
+      "asset": "apsc-cdpo-2023-labsowel-cdpo-33-2023.pdf",
+      "bytes": 3299070,
+      "sha256": "6b0e9e67f15c222b4dea0afbb75f7b69ca3c81bdabe87f86af2b7ed1bdfcba75"
+    },
+    {
+      "group": "apsc-cdpo",
+      "exam": "APSC Child Development Project Officer",
+      "cycle": "2023",
+      "title": "Nutrition",
+      "asset": "apsc-cdpo-2023-nutrition-cdpo-33-2023.pdf",
+      "bytes": 2275623,
+      "sha256": "c19ee8c5df0f81b38f680af6874e02cbee1edb516425560f0a26e375eab84761"
+    },
+    {
+      "group": "apsc-cdpo",
+      "exam": "APSC Child Development Project Officer",
+      "cycle": "2023",
+      "title": "Philosophy",
+      "asset": "apsc-cdpo-2023-philosophy-cdpo-33-2023.pdf",
+      "bytes": 2554554,
+      "sha256": "7e289d52b8556578b3d97fd4f4ede5b45ea97362db3c9d00afe1a65fd0683177"
+    },
+    {
+      "group": "apsc-cdpo",
+      "exam": "APSC Child Development Project Officer",
+      "cycle": "2023",
+      "title": "Social Work",
+      "asset": "apsc-cdpo-2023-socialworks-cdpo-33-2023.pdf",
+      "bytes": 3316960,
+      "sha256": "6d7ba1b76f0a457706fcef1554133340cf17bd3a3f85b182f03d7da254e6c657"
+    },
+    {
+      "group": "apsc-cdpo",
+      "exam": "APSC Child Development Project Officer",
+      "cycle": "2023",
+      "title": "Sociology",
+      "asset": "apsc-cdpo-2023-sociology-cdpo-33-2023.pdf",
+      "bytes": 5673332,
+      "sha256": "71dcd388a6d3d029461a1752574c11a28646ba257c1cb8cf997d3c2cb999d847"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC AE PHE",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-ae-phe-2025-ae-phe-gs-qp-31-2025.pdf",
+      "bytes": 8030080,
+      "sha256": "0b08a7b1ab89800e66dadeddb4176886034a788e50ae0d4cd1a2c2847937e291"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC AE PHE",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-ae-phe-2023-gs-ae-phe-28-2023.pdf",
+      "bytes": 6244362,
+      "sha256": "27184c2e9106273b034b46a55772459bf9455bf71764508de5144a4f839663db"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC AE PWD",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-ae-pwd-2023-gs-ae-pwd.pdf",
+      "bytes": 4252377,
+      "sha256": "0530e79a8ead432a62b963f09d079b755620d88db071d8b1dbfc2ca44494cff2"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC AE WRD Civil",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-ae-wrd-civil-2025-ae-civil-wrd-gs-paper-i-13-2025.pdf",
+      "bytes": 2919499,
+      "sha256": "b752104f8f01729d00b7ab0dcd176de93b57050c0e1fc531089f61d7057d13e9"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC AE WRD Mechanical",
+      "cycle": "2025",
+      "title": "General Studies and English",
+      "asset": "apsc-ae-wrd-mechanical-2025-ae-mecha-wrd-gs-ge-paper-ii-15-2025.pdf",
+      "bytes": 2085058,
+      "sha256": "970db751a9d2e1dcb6ed02a76557ab13f663744b26ef8581cef148ebed5b855a"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC Assistant Architect",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-assistant-architect-2025-gs-asst-architect-pwd-02-2025.pdf",
+      "bytes": 3332458,
+      "sha256": "e58b92b9631240250c94de0e830ff32d7ddc62769b6a0eae6eeb19416043e1c2"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC JE Fishery",
+      "cycle": "2025",
+      "title": "General Studies and English",
+      "asset": "apsc-je-fishery-2025-je-civil-fishery-gs-ge-qp-17-2025.pdf",
+      "bytes": 1868873,
+      "sha256": "327101c48c534479bb422bdab4ab56615a244e41f2af3c913f31c275bc324297"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC JE PHE",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-je-phe-2025-je-phe-gs-qp-27-2025.pdf",
+      "bytes": 8049507,
+      "sha256": "5fd71ae2e2ca91ba8c7c5818df2f88acf6c40bd7ced34936f401563ef12d30c9"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC JE PHE",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-je-phe-2023-gs-je-phe-29-2023.pdf",
+      "bytes": 2006600,
+      "sha256": "1437338414dc7aa7065599969f469dbea14f0cc57d90ceb0d95632478a4840fa"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC JE PWD Civil",
+      "cycle": "2025",
+      "title": "General Studies and English",
+      "asset": "apsc-je-pwd-civil-2025-gs-and-general-english-je-civil-pwd-05-2025.pdf",
+      "bytes": 2849693,
+      "sha256": "8d3928220f068e2d6fb83b3fb7b92d653957b4fce586890ee44c7da82c311718"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC JE PWD Electrical",
+      "cycle": "2026",
+      "title": "General Studies",
+      "asset": "apsc-je-pwd-electrical-2026-03-2026-je-generalstudies-qp.pdf",
+      "bytes": 4465769,
+      "sha256": "24974d0fc16e9e5a50c0936dad2fbbb002f81179a5904a741aee2b17e8b47ce7"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC JE PWD Mechanical",
+      "cycle": "2024",
+      "title": "General Studies and English",
+      "asset": "apsc-je-pwd-mechanical-2024-gs-ge-je-pwd-10-2024.pdf",
+      "bytes": 2560231,
+      "sha256": "310daecc5179915416e7fca6d9ec9cba554be9000f3876a1de4112ed6e51f050"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC JE Soil Conservation",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-je-soil-conservation-2025-je-soil-civil-gk-qp-26-2025.pdf",
+      "bytes": 6728517,
+      "sha256": "7ed86a7604b55c21c230b4892253c5451e3111f73323a81c60b34b229d6d13fe"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC JE WRD Civil",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-je-wrd-civil-2025-general-studies-general-english-14-2025.pdf",
+      "bytes": 1976491,
+      "sha256": "5b4daab375582bb27cb10b571746fa083a4afadf063eb53f7175bf96f946c0ad"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC JE WRD Mechanical",
+      "cycle": "2025",
+      "title": "General Studies and English",
+      "asset": "apsc-je-wrd-mechanical-2025-je-mechanical-18-2025-gs-eng.pdf",
+      "bytes": 2325269,
+      "sha256": "c178de391cdff8e16be435ecb6c8c038f765d94cfd5bab5263dac171b979c31c"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC Motor Vehicle Inspector",
+      "cycle": "2024",
+      "title": "General Studies",
+      "asset": "apsc-motor-vehicle-inspector-2024-gs-mvi-08-2024.pdf",
+      "bytes": 4428358,
+      "sha256": "36c146e42328bc128446e4b0e82f3cc411420b0ba4013db140cfa4fe344dbb05"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC Urban Technical Officer",
+      "cycle": "2025",
+      "title": "General Studies and English",
+      "asset": "apsc-urban-technical-officer-2025-uto-gs-general-eng-question-paper-29-2025.pdf",
+      "bytes": 5260427,
+      "sha256": "3d1c49999562439244803c33e9ea2723d72c3c49645e0cc184d50418fb7d727e"
+    },
+    {
+      "group": "apsc-engineering",
+      "exam": "APSC Urban Technical Officer",
+      "cycle": "2023",
+      "title": "General Studies and English",
+      "asset": "apsc-urban-technical-officer-2023-urban-tech-gs-gen-eng-16-2023.pdf",
+      "bytes": 3727989,
+      "sha256": "5a6204977b4c2cb6a11c8ea0a780b8c6153a945e9032b774d910005d777eb60c"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Chemical Examiner",
+      "cycle": "2023",
+      "title": "Chemistry and Instruments",
+      "asset": "apsc-chemical-examiner-2023-chem-sophins-chex-27-2023.pdf",
+      "bytes": 3166040,
+      "sha256": "1fff13f7ea19380eb45274c5c278e3cf35a0d19c88de81a29a91481f5c15791d"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Chemical Examiner",
+      "cycle": "2023",
+      "title": "General Awareness and Acts",
+      "asset": "apsc-chemical-examiner-2023-ga-acts-rules-chex-27-2023.pdf",
+      "bytes": 3363615,
+      "sha256": "b781745f5f9c0c864a57ee3896e3228ba81c9833a9860fd1e25c73f77d036f77"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2025",
+      "title": "Biology and General Studies",
+      "asset": "apsc-forensic-scientific-officer-2025-sci-offic-bio-gs-directorate-01-2025.pdf",
+      "bytes": 2377300,
+      "sha256": "6f7a11084fc439f94f36855e4bd1602ff89f3052d69ed09a7f1204c4336c2dff"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2025",
+      "title": "Biology and General Studies (2)",
+      "asset": "apsc-forensic-scientific-officer-2025-sci-offic-bio-gs-regilab-01-2025.pdf",
+      "bytes": 2523011,
+      "sha256": "18e98f5c087322f1596e400ba9231e0887eec2b85a31e8265d352c19d1f5cdc3"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2025",
+      "title": "Drugs and Narcotics and General Studies",
+      "asset": "apsc-forensic-scientific-officer-2025-sci-offic-drugs-narco-gs-directr-01-2025.pdf",
+      "bytes": 2609412,
+      "sha256": "a856948ebdb0c5bb43e59a80861b317e7874b0d4db034cb0375a65c445c7ce1b"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2025",
+      "title": "Instrumentation and General Studies",
+      "asset": "apsc-forensic-scientific-officer-2025-sci-offic-inst-gs-regionallab-01-2025.pdf",
+      "bytes": 2577470,
+      "sha256": "0118d6cf079adf1e94c5e6ef695234df4cef6dc3dd8b4bc564ccff48f3b319d4"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2025",
+      "title": "Toxicology and General Studies",
+      "asset": "apsc-forensic-scientific-officer-2025-sci-offic-toxi-gs-directr-01-2025.pdf",
+      "bytes": 2538786,
+      "sha256": "5f0023263b2d2bc626f3e845b23ca6ffe377fc7e1471f1a69db87bb0a9d92da0"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2023",
+      "title": "Biology and General Studies",
+      "asset": "apsc-forensic-scientific-officer-2023-bio-gs-jso-26-2023.pdf",
+      "bytes": 2489648,
+      "sha256": "6d938337c8f4334bce2ad4c0719e356574f5a0fac425b20ffbe9bf2a87e995d6"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2023",
+      "title": "Biology and General Studies (2)",
+      "asset": "apsc-forensic-scientific-officer-2023-bio-gs-so-26-2023.pdf",
+      "bytes": 3050431,
+      "sha256": "1e4c2c677a13f19e9efe97cb9dd6a6fa6a2c45786779a5710cdbe99736193911"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2023",
+      "title": "Chemistry and General Studies",
+      "asset": "apsc-forensic-scientific-officer-2023-chem-gs-jso-26-2023.pdf",
+      "bytes": 2348264,
+      "sha256": "88bca8c67bfacdb20e5887ad47ef23a4429067d5f8aa629f4ad85f6686b2fa72"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2023",
+      "title": "Drugs and Narcotics and General Studies",
+      "asset": "apsc-forensic-scientific-officer-2023-drugsnarco-gs-so-26-2023.pdf",
+      "bytes": 2460509,
+      "sha256": "4e07e4fa3830331b9dda546570f2237ed400948959b4bc57f9345c734eecbbec"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2023",
+      "title": "Explosives and General Studies",
+      "asset": "apsc-forensic-scientific-officer-2023-expl-gs-so-26-2023.pdf",
+      "bytes": 3959939,
+      "sha256": "09a8838051076c7c5ee82e6c33e309ad09a49f6f654b612e5a2ec06d34e6b00e"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2023",
+      "title": "Instrumentation and General Studies",
+      "asset": "apsc-forensic-scientific-officer-2023-instr-gs-so-26-2023.pdf",
+      "bytes": 3349809,
+      "sha256": "6918c54987cacfdc29f4f1522adaa8e1f9e9066997d5ef3822361c938a1e44f6"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2023",
+      "title": "Physics and General Studies",
+      "asset": "apsc-forensic-scientific-officer-2023-physics-gs-jso-26-2023.pdf",
+      "bytes": 3646576,
+      "sha256": "b9d489cb7c043f557d3c4f927490bf023dff1c9422eb3a7d7811f21e5f6c1fa2"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2023",
+      "title": "Questioned Documents",
+      "asset": "apsc-forensic-scientific-officer-2023-ques-docs-so-26-2023.pdf",
+      "bytes": 2936549,
+      "sha256": "6405ddbfa3107b21f7a3e6c6d08ccaab6051d4eb911e3e8506cebc8b2b0dbd03"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2023",
+      "title": "Serology and General Studies",
+      "asset": "apsc-forensic-scientific-officer-2023-sero-gs-so-26-2023.pdf",
+      "bytes": 2659485,
+      "sha256": "aef59c580541d7bbc9db4b65bdf506b11fbe69eb27321647132a5549010e40e3"
+    },
+    {
+      "group": "apsc-forensic",
+      "exam": "APSC Forensic Scientific Officer",
+      "cycle": "2023",
+      "title": "Toxicology and General Studies",
+      "asset": "apsc-forensic-scientific-officer-2023-toxic-gs-so-26-2023.pdf",
+      "bytes": 3308969,
+      "sha256": "55d3bc0570602ea5e4bf81b0e7acf17b903a5c05703f6ca2ab0d21188650a714"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2025",
+      "title": "Essay",
+      "asset": "apsc-cce-mains-2025-essay-ccm-2025.pdf",
+      "bytes": 350515,
+      "sha256": "4fcc51c777a3cf408557fcb9b17c88ef22545f7cedad55f6d2d9f0ec864a9f0c"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2025",
+      "title": "General Studies I",
+      "asset": "apsc-cce-mains-2025-general-studies-i-ccm-2025.pdf",
+      "bytes": 1240882,
+      "sha256": "cc6151c18aa97aa175d6e31964aee28829259b76aee453738f9c08e059eda9f8"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2025",
+      "title": "General Studies II",
+      "asset": "apsc-cce-mains-2025-general-studies-ii-ccm-2025.pdf",
+      "bytes": 2667498,
+      "sha256": "58fbad9deb9f666be819304a868f709347ff5781c719a253cb531eb5b24020cf"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2025",
+      "title": "General Studies III",
+      "asset": "apsc-cce-mains-2025-general-studies-iii-ccm-2025.pdf",
+      "bytes": 1639776,
+      "sha256": "64da83bfa5a5438504501c327bff232efa19ab49c38d577ff353c4b55d30c4d3"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2025",
+      "title": "General Studies IV",
+      "asset": "apsc-cce-mains-2025-general-studies-iv-ccm-2025.pdf",
+      "bytes": 2933375,
+      "sha256": "7b33f2e8b97d13bc95fb6ffbc0304cedc0fb50a0af6c248fa878cbf7d200822e"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2025",
+      "title": "General Studies V",
+      "asset": "apsc-cce-mains-2025-general-studies-v-ccm-2025.pdf",
+      "bytes": 1484824,
+      "sha256": "5364629f0e70562707e8718e36e310ab543a912c92e12471caccd11b86fab94a"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2024",
+      "title": "Essay",
+      "asset": "apsc-cce-mains-2024-essay-2024.pdf",
+      "bytes": 335682,
+      "sha256": "21a427df0d73824310a9120758482270f29428d746e9b78711d70c2f1279c9eb"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2024",
+      "title": "General Studies I",
+      "asset": "apsc-cce-mains-2024-gs-i-2024.pdf",
+      "bytes": 1358332,
+      "sha256": "42d8f770038b0de9e38d935b927ac20cd04b7da5d2366c512760792a87c74dc3"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2024",
+      "title": "General Studies II",
+      "asset": "apsc-cce-mains-2024-gs-ii-2024.pdf",
+      "bytes": 1376394,
+      "sha256": "b5fae9e87cc46ff9af1c6c4478275953a7cb71d6ee348b9e9aee6529dff6771d"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2024",
+      "title": "General Studies III",
+      "asset": "apsc-cce-mains-2024-gs-iii-2024.pdf",
+      "bytes": 1599933,
+      "sha256": "bb2bf1f2c41eb328f5fa68bb1a32f17154f1cf76edeeff01ec7775134bc28a2d"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2024",
+      "title": "General Studies IV",
+      "asset": "apsc-cce-mains-2024-gs-iv-2024.pdf",
+      "bytes": 3550135,
+      "sha256": "4c36a9cef37b4d83404566c97da4ce502a665bde2e6a384a7d4971c5cc431ebd"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2024",
+      "title": "General Studies V",
+      "asset": "apsc-cce-mains-2024-gs-v-2024.pdf",
+      "bytes": 1584717,
+      "sha256": "730c2b4d5e0e99f0e66e93b4e57488c3d7b0680d63f570c986b22c7caeb6c3c1"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2023",
+      "title": "Essay",
+      "asset": "apsc-cce-mains-2023-essay-ccm-2023.pdf",
+      "bytes": 823693,
+      "sha256": "daef617a171519c24a3a577841ab15495142dda3bbdd7cdc9ec87d155d75dd16"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2023",
+      "title": "General Studies I",
+      "asset": "apsc-cce-mains-2023-gs-i-ccm-2023.pdf",
+      "bytes": 2692070,
+      "sha256": "2e42f18f25da95f8200cc75b4792e31b46ab0cb545b431a8788cc90c59c34d6c"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2023",
+      "title": "General Studies II",
+      "asset": "apsc-cce-mains-2023-gs-ii-ccm-2023.pdf",
+      "bytes": 3330198,
+      "sha256": "0219c3ddb4d061c276f34ac365a8fc98260d59f52511e0a947536620db81452f"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2023",
+      "title": "General Studies III",
+      "asset": "apsc-cce-mains-2023-gs-iii-cce-main-2023.pdf",
+      "bytes": 1401314,
+      "sha256": "01c8a802238c53080fbbfa8f25418de38bfb98d8930cdcf73d1cf08448d3f732"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2023",
+      "title": "General Studies IV",
+      "asset": "apsc-cce-mains-2023-gs-iv-ccm-2023.pdf",
+      "bytes": 5666289,
+      "sha256": "0dc54c813af8c94989bc925e56314a2ca1a5b166e21d9c0169f75f86788c53a8"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2023",
+      "title": "General Studies V",
+      "asset": "apsc-cce-mains-2023-gs-v-ccm-2023.pdf",
+      "bytes": 980616,
+      "sha256": "a397cbfffe39d3c8a37818f38798e829b766c8983f7974fc2b391952375a743b"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2022",
+      "title": "Essay",
+      "asset": "apsc-cce-mains-2022-essay.pdf",
+      "bytes": 569533,
+      "sha256": "266a2c6f305bc0b8d284ea753c183f47e20b944d3e9e6dc7c15fe14ae2e4ac56",
+      "note": "Archived scan"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2022",
+      "title": "General Studies I",
+      "asset": "apsc-cce-mains-2022-gs-i.pdf",
+      "bytes": 869269,
+      "sha256": "fae1ff6200d4a4b5776f5cbeaecb21593392783cd73af867c56e4da5808a4403",
+      "note": "Archived scan"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2022",
+      "title": "General Studies II",
+      "asset": "apsc-cce-mains-2022-gs-ii.pdf",
+      "bytes": 2124666,
+      "sha256": "61bdfa0bbead7e195ccd6a98a88bea02fb59db7b8cd0ee127ff023cf7e92e02b",
+      "note": "Archived scan"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2022",
+      "title": "General Studies III",
+      "asset": "apsc-cce-mains-2022-gs-iii.pdf",
+      "bytes": 1787350,
+      "sha256": "eb2a49afc2d52990a4149a3992d7516174bc986229253979c12ebe5e4e786f11",
+      "note": "Archived scan"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2022",
+      "title": "General Studies IV",
+      "asset": "apsc-cce-mains-2022-gs-iv.pdf",
+      "bytes": 2623462,
+      "sha256": "293cbe25b9c3b77104bf4ae6db0f72369b1d24417e75504f4514fff9dd236372",
+      "note": "Archived scan"
+    },
+    {
+      "group": "apsc-mains",
+      "exam": "APSC Combined Competitive Examination Mains",
+      "cycle": "2022",
+      "title": "General Studies V",
+      "asset": "apsc-cce-mains-2022-gs-v.pdf",
+      "bytes": 2100991,
+      "sha256": "461d3248b71486b8378459989ed6c4d519189009556c79d4bcf83f873c9f5464",
+      "note": "Archived scan"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Agricultural Development Officer",
+      "cycle": "2025",
+      "title": "Agriculture",
+      "asset": "apsc-agricultural-development-officer-2025-exam-paper-ado-agri-advt-09-25.pdf",
+      "bytes": 1973428,
+      "sha256": "a099b4b0a65a32ef1594527a2d6c2dde9899493e52bb115b0d11498f29c0f2bf"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Agricultural Development Officer",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-agricultural-development-officer-2025-exam-paper-ado-gs-advt-09-25.pdf",
+      "bytes": 4246148,
+      "sha256": "01888591977d590f847a33296cbd40401b6317a2970f35b4fb2b9b2dc02e4355"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Assistant Director Cottage Industries",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-assistant-director-cottage-industries-2025-gs-asst-dir-cottage-industries-06-2025.pdf",
+      "bytes": 2427654,
+      "sha256": "a7c6fd263a51ffec3bbb483ba0eaa024bbe2ca1b1e842cde535fd90072e2f337"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Conservation Officer",
+      "cycle": "2022",
+      "title": "CIVIL ENGINEERING and GENERAL AWARENESS",
+      "asset": "apsc-conservation-officer-2022-qp-conserv-officer-04-2022.pdf",
+      "bytes": 1969337,
+      "sha256": "010bbf26e7d410a8ab0d93d9110409bff44de457eb41e17df83e14baad8804b5"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Cultural Development Officer",
+      "cycle": "2023",
+      "title": "General English",
+      "asset": "apsc-cultural-development-officer-2023-cdo-english.pdf",
+      "bytes": 761520,
+      "sha256": "676f6e3b5c259db17489f33eca5810b4e3a10e27a70060e7c05b6a2722539853"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Cultural Development Officer",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-cultural-development-officer-2023-cdo-gs.pdf",
+      "bytes": 4215391,
+      "sha256": "36d365e52207da594b0e0b403048dac333efc0c4f6c219b3bd7b39dbb6116db6"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Cultural Development Officer",
+      "cycle": "2023",
+      "title": "Language Paper (Assamese/Bengali/Bodo)",
+      "asset": "apsc-cultural-development-officer-2023-cdo-assa-ben-boro.pdf",
+      "bytes": 1342966,
+      "sha256": "9458b9c832e883c4d34d3a67abb0ed1ea0c12486fa69adf29c3baaecc366e311"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC District Museum Officer",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-district-museum-officer-2025-dmo-gs-question-paper-34-2025.pdf",
+      "bytes": 5985858,
+      "sha256": "d2377accc32c06b627e4b8249ea8c940b2e2f5596e1ea72dfb7e9e32432e2a64"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Enforcement Inspector",
+      "cycle": "2024",
+      "title": "General Studies",
+      "asset": "apsc-enforcement-inspector-2024-ei-gs-t-tr-transport-deptt.pdf",
+      "bytes": 866315,
+      "sha256": "33814151aaf0bdcb0a32d79a6dd3ac9bfa1e96e02d82bcf5b7fcbe7cebf7a611"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Functional Manager",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-functional-manager-2025-func-mngr-question-paper-19-2025.pdf",
+      "bytes": 2602578,
+      "sha256": "c71fe51c6794ddacf065f9a1e961d9460e627667804f2ac926a2c0c183885c2c"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Inspector of Factories",
+      "cycle": "2024",
+      "title": "General Studies",
+      "asset": "apsc-inspector-of-factories-2024-gs-inspfac-01-2024.pdf",
+      "bytes": 3406476,
+      "sha256": "d9ac7a87d466de54401bf411035f341852d1d265b18ad08e9a7ad9affb18f986"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Inspector of Legal Metrology",
+      "cycle": "2025",
+      "title": "General Science",
+      "asset": "apsc-inspector-of-legal-metrology-2025-gscience-10-2025.pdf",
+      "bytes": 2660298,
+      "sha256": "ca093a036e049f55f23b863c685027f27e8477a7fc78fdb5d6f38dc78366f0f2"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Inspector of Legal Metrology",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-inspector-of-legal-metrology-2025-gstu-10-2025.pdf",
+      "bytes": 3656073,
+      "sha256": "57846d095bd645a7e9c8c341b53c1ed53f0b985c4553b7eb6568f0cb4cdbf57d"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Inspector of Schools",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-inspector-of-schools-2025-inspt-of-schools-gs-07-2025.pdf",
+      "bytes": 5741817,
+      "sha256": "6c48a361b8601d2ecb07a94cef851b3688da963165a615121d1705a6b8d04843"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Inspector of Schools",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-inspector-of-schools-2023-gs-32-2023-is-deeo.pdf",
+      "bytes": 4471531,
+      "sha256": "e8cbd3d4cec043dbfbd76cda9050cf98012912fe544a8a4d09ec269a918b2018"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Junior Development Officer",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-junior-development-officer-2025-11-2025-jdo-qp.pdf",
+      "bytes": 5081862,
+      "sha256": "4c7af9f0fdd11390ac9e6806f5ba4c42700f331bc9baef881ef66fbe6468b781"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Junior Information and Public Relations Officer",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-junior-ipr-officer-2023-jrinfopr-19-2023.pdf",
+      "bytes": 5091032,
+      "sha256": "7692f64ccfe49834d92c47474417b0a6faa6b6bdb053f2c8276efcfc0e08ca03"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Law Assistant",
+      "cycle": "2024",
+      "title": "General Studies",
+      "asset": "apsc-law-assistant-2024-question-paper-ga-ii-lawassistt-3-2024.pdf",
+      "bytes": 3961411,
+      "sha256": "320f0c0102db1cfc797aca0e007b05f6a4b7c83aa1d7f6c1cb09796b72dd9187"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Law Assistant",
+      "cycle": "2024",
+      "title": "Law",
+      "asset": "apsc-law-assistant-2024-question-paper-law-i-3-2024.pdf",
+      "bytes": 3449998,
+      "sha256": "9188cc7f6eb694d10f3fc30c338bd5251e6ce18360793f22a12003fb0da03fa8"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Librarian cum Archive Officer",
+      "cycle": "2021",
+      "title": "General Studies",
+      "asset": "apsc-librarian-cum-archive-officer-2021-lib-arch-off-gs-infosc-13-2021.pdf",
+      "bytes": 4751406,
+      "sha256": "c109796c505ecdd4a013fd5497d64e202cfa2937eddb34abb6143df2f9811ae5"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Research Officer (RRSC)",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-research-officer-rrsc-2023-res-office-09-2023.pdf",
+      "bytes": 2657565,
+      "sha256": "fea5ca82b50f0fb356583f9369a34338b10edd9ebd7be86cdf3c8a105bf1949e"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Senior Information and Public Relations Officer",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-senior-ipr-officer-2023-srinfopr-18-2023.pdf",
+      "bytes": 5767907,
+      "sha256": "dd524e12d701fa3e351f527bec3da1e11fb297c6c2bcfff87ddd6864b4861428"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Tourism Development Officer",
+      "cycle": "2024",
+      "title": "General English",
+      "asset": "apsc-tourism-development-officer-2024-geneng-tdo-05-2024.pdf",
+      "bytes": 812674,
+      "sha256": "5f52effb13903354a05debea371180f2ff90baa0971252af5f4a1ac758a7c26e"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Tourism Development Officer",
+      "cycle": "2024",
+      "title": "General Knowledge & Arithmetic",
+      "asset": "apsc-tourism-development-officer-2024-gkamt-tdo-05-2024.pdf",
+      "bytes": 4625818,
+      "sha256": "fddc5669d61550a74c32528c7716c3bb21f54dadff8c54113c9c9da44eaf63ce"
+    },
+    {
+      "group": "apsc-posts",
+      "exam": "APSC Veterinary Officer",
+      "cycle": "2024",
+      "title": "Veterinary Science",
+      "asset": "apsc-veterinary-officer-2024-ah-vsc-bo-bvo-6-2024.pdf",
+      "bytes": 2971536,
+      "sha256": "4bd8d3cb49e67bdd405f4edd8262ab16dac3c82008ce1dfc5c0c059c6e37e709"
+    },
+    {
+      "group": "apsc-prelims",
+      "exam": "APSC Combined Competitive Examination Prelims",
+      "cycle": "2025",
+      "title": "GS I (General Studies)",
+      "asset": "apsc-cce-prelims-2025-gs-i.pdf",
+      "bytes": 22738602,
+      "sha256": "32b48d9a490aa81672d6c733c1500f125d1903f412df1a528852dc9afc9ab87c",
+      "practice": "apsc-cce-prelims-2025-gs-i-question-paper",
+      "key": {
+        "asset": "apsc-cce-prelims-2025-gs-i-answer-key.pdf",
+        "bytes": 1022613,
+        "sha256": "2f7c48f9f12b80f8d2e2cf236053c1822445000bbb32a787dd787bda19709fc5"
+      }
+    },
+    {
+      "group": "apsc-prelims",
+      "exam": "APSC Combined Competitive Examination Prelims",
+      "cycle": "2025",
+      "title": "Gs Ii (Csat)",
+      "asset": "apsc-cce-prelims-2025-gs-ii.pdf",
+      "bytes": 14300096,
+      "sha256": "b5c29fe1216e4d1cb40a3386e16bc86c6adaf2c17bd3962d37a453df2e58601f",
+      "practice": "apsc-cce-prelims-2025-gs-ii-question-paper",
+      "key": {
+        "asset": "apsc-cce-prelims-2025-gs-ii-answer-key.pdf",
+        "bytes": 910463,
+        "sha256": "d6c7cb2c36a4bf750b659186c00fd9abf0089006df2624cdea223abab810bfd9"
+      }
+    },
+    {
+      "group": "apsc-prelims",
+      "exam": "APSC Combined Competitive Examination Prelims",
+      "cycle": "2024",
+      "title": "GS I (General Studies)",
+      "asset": "apsc-cce-prelims-2024-gs-i.pdf",
+      "bytes": 3975339,
+      "sha256": "207a1e310081f136489505b8d29681ab31e5f9203592ebc726020d430785e87a",
+      "practice": "apsc-cce-prelims-2024-gs-i-question-paper",
+      "key": {
+        "asset": "apsc-cce-prelims-2024-gs-i-answer-key.pdf",
+        "bytes": 832476,
+        "sha256": "c990a65248c5c923a02b44deed6d1bb8729aab3dc6624c3febbbe2dad1520164"
+      }
+    },
+    {
+      "group": "apsc-prelims",
+      "exam": "APSC Combined Competitive Examination Prelims",
+      "cycle": "2024",
+      "title": "Gs Ii (Csat)",
+      "asset": "apsc-cce-prelims-2024-gs-ii.pdf",
+      "bytes": 3590895,
+      "sha256": "59427d62be42ea56f712dcef1101743a3000f120a5e866de0ed915dad0098ad5",
+      "practice": "apsc-cce-prelims-2024-gs-ii-question-paper",
+      "key": {
+        "asset": "apsc-cce-prelims-2024-gs-ii-answer-key.pdf",
+        "bytes": 754802,
+        "sha256": "9d2a91b4aa07a2d491510edb7f921baa4c2a0da168f7d2741fb7c57b8d67e713"
+      }
+    },
+    {
+      "group": "apsc-prelims",
+      "exam": "APSC Combined Competitive Examination Prelims",
+      "cycle": "2023",
+      "title": "GS I (General Studies)",
+      "asset": "apsc-cce-prelims-2023-gs-i.pdf",
+      "bytes": 5345732,
+      "sha256": "35d9c62a723862a38938692ac39150bfef1fd8ca157ba75fbbf0b07109281666",
+      "practice": "apsc-cce-prelims-2023-gs-i-question-paper",
+      "key": {
+        "asset": "apsc-cce-prelims-2023-gs-i-answer-key.pdf",
+        "bytes": 885783,
+        "sha256": "08de7f79acdaafe9baf764b29971d7739fb71cb1047ce9886eb84030a11c086e"
+      }
+    },
+    {
+      "group": "apsc-prelims",
+      "exam": "APSC Combined Competitive Examination Prelims",
+      "cycle": "2023",
+      "title": "Gs Ii (Csat)",
+      "asset": "apsc-cce-prelims-2023-gs-ii.pdf",
+      "bytes": 4190789,
+      "sha256": "071eb11749c4f37bc82e3a508f0322d65ba9635c7d7c473808e385523cd49745",
+      "practice": "apsc-cce-prelims-2023-gs-ii-question-paper",
+      "key": {
+        "asset": "apsc-cce-prelims-2023-gs-ii-answer-key.pdf",
+        "bytes": 776397,
+        "sha256": "27bae39f65585214460b28a2797799d77d7c17884866946d6a42920ce17d5646"
+      }
+    },
+    {
+      "group": "apsc-prelims",
+      "exam": "APSC Combined Competitive Examination Prelims",
+      "cycle": "2022",
+      "title": "GS I (General Studies)",
+      "asset": "apsc-cce-prelims-2022-gs-i.pdf",
+      "bytes": 5749618,
+      "sha256": "896a3da6018941374b59c9a26e6286a5f20b3e55fcd11d78cc4478f9bd0ef827",
+      "note": "Archived scan"
+    },
+    {
+      "group": "apsc-prelims",
+      "exam": "APSC Combined Competitive Examination Prelims",
+      "cycle": "2022",
+      "title": "Gs Ii (Csat)",
+      "asset": "apsc-cce-prelims-2022-gs-ii.pdf",
+      "bytes": 6586905,
+      "sha256": "6c0c826f514f36a76c78834d5bc15cd07527df84d5efd5e30c819efb2de022b7",
+      "note": "Archived scan"
+    },
+    {
+      "group": "apsc-prelims",
+      "exam": "APSC Combined Competitive Examination Prelims",
+      "cycle": "2020",
+      "title": "GS I (General Studies)",
+      "asset": "apsc-cce-prelims-2020-gs-i.pdf",
+      "bytes": 3357850,
+      "sha256": "2b9566e4b78d924c044dafe2df33aab165e2e863cc81ba675e6e1e624901eb4e",
+      "note": "Archived scan"
+    },
+    {
+      "group": "apsc-prelims",
+      "exam": "APSC Combined Competitive Examination Prelims",
+      "cycle": "2020",
+      "title": "Gs Ii (Csat)",
+      "asset": "apsc-cce-prelims-2020-gs-ii.pdf",
+      "bytes": 5773025,
+      "sha256": "a46d73242ca349e68f029a5e354a780762cf0d0f4aee156229192939598cecb1",
+      "note": "Archived scan"
+    },
+    {
+      "group": "apsc-prelims",
+      "exam": "APSC Combined Competitive Examination Prelims",
+      "cycle": "2018",
+      "title": "General Studies",
+      "asset": "apsc-cce-prelims-2018-gs.pdf",
+      "bytes": 3182962,
+      "sha256": "f855b774a16e6d6020fde603d3b76635cc0fb5fef9ce8b2e501b0005947710aa",
+      "note": "Archived scan"
+    },
+    {
+      "group": "apsc-prelims",
+      "exam": "APSC Combined Competitive Examination Prelims",
+      "cycle": "2016",
+      "title": "General Studies",
+      "asset": "apsc-cce-prelims-2016-gs.pdf",
+      "bytes": 2795773,
+      "sha256": "5b5c2f354628df0d479e7b0583f29aaaecea6a2d42c74b14fe22421ff522bbf7",
+      "note": "Archived scan"
+    },
+    {
+      "group": "apsc-prelims",
+      "exam": "APSC Combined Competitive Examination Prelims",
+      "cycle": "2015",
+      "title": "General Studies",
+      "asset": "apsc-cce-prelims-2015-gs.pdf",
+      "bytes": 3123679,
+      "sha256": "2f192d79d5752ce44928c23b016fd5d3099dc8f655b7d171aeb208f56f940114",
+      "note": "Archived scan"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Assistant Research Officer",
+      "cycle": "2022",
+      "title": "Economics",
+      "asset": "apsc-assistant-research-officer-2022-aro-eco-252022.pdf",
+      "bytes": 2164643,
+      "sha256": "8c2af973730c73306652e4aaaa4cadcd17c4bd097e2b72ea263701ac04ceb8a3"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Assistant Research Officer",
+      "cycle": "2022",
+      "title": "General Studies",
+      "asset": "apsc-assistant-research-officer-2022-aro-gs-252022.pdf",
+      "bytes": 3193031,
+      "sha256": "2ecf481dc28487eb323a25d2e513481eb00525e70cd4bd6d5b74b9c9d8253a65"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Assistant Research Officer",
+      "cycle": "2022",
+      "title": "Mathematics",
+      "asset": "apsc-assistant-research-officer-2022-aro-maths-252022.pdf",
+      "bytes": 1932009,
+      "sha256": "b83819e34323cc596f02e1a176140f765658a6016d55a4cb6dd9a6a6e1164d77"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Assistant Research Officer",
+      "cycle": "2022",
+      "title": "Statistics",
+      "asset": "apsc-assistant-research-officer-2022-aro-stats-252022.pdf",
+      "bytes": 1977454,
+      "sha256": "f60984bb0df14a2f7e70c58a6f7be0a28486dfd7cc1e783403908ef21df51ffc"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Inspector of Statistics",
+      "cycle": "2025",
+      "title": "Economics",
+      "asset": "apsc-inspector-of-statistics-2025-qp-insp-stat-eco-03-2025.pdf",
+      "bytes": 416539,
+      "sha256": "d04f507b954241e32519f6fe771fbbfd1f58a4630e3d19e0d1ed5f0431e5e6d7"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Inspector of Statistics",
+      "cycle": "2025",
+      "title": "English",
+      "asset": "apsc-inspector-of-statistics-2025-qp-insp-stat-eng-03-2025.pdf",
+      "bytes": 760016,
+      "sha256": "d841bb6fc7ab0c66380cf734126b18d22f185faf7cbd7def85f0867183090cb5"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Inspector of Statistics",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-inspector-of-statistics-2025-qp-insp-stat-gk-03-2025.pdf",
+      "bytes": 2767145,
+      "sha256": "3bd673962b7e1e76c0bd9be3bb4b9516520391fba5ada73dc3790c00580d2f8d"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Inspector of Statistics",
+      "cycle": "2025",
+      "title": "Mathematics",
+      "asset": "apsc-inspector-of-statistics-2025-qp-insp-stat-math-03-2025.pdf",
+      "bytes": 745660,
+      "sha256": "834abf83cb0c72d9c20ee946cb5c16b956444ebcd68458ea51dc44e96a330b5e"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Inspector of Statistics",
+      "cycle": "2025",
+      "title": "Statistics",
+      "asset": "apsc-inspector-of-statistics-2025-qp-insp-stat-stats-03-2025.pdf",
+      "bytes": 816622,
+      "sha256": "45d1beffd74de20908374b252eb6cd09ad299ce54070932577407ae11de8668b"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Inspector of Statistics",
+      "cycle": "2023",
+      "title": "Economics",
+      "asset": "apsc-inspector-of-statistics-2023-economics-advt-04-2023.pdf",
+      "bytes": 841173,
+      "sha256": "7897dcb839a8ad88be613e2f91a0cb8aa954494a184e9b570fdf0843a37b042d"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Inspector of Statistics",
+      "cycle": "2023",
+      "title": "General English",
+      "asset": "apsc-inspector-of-statistics-2023-english-advt-04-2023.pdf",
+      "bytes": 1710995,
+      "sha256": "cac97d6a0281e491a66bc0b60626eda1abd99147d21db69446c1b7d99a23debf"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Inspector of Statistics",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-inspector-of-statistics-2023-insp-stat-gk-04-2023.pdf",
+      "bytes": 3364240,
+      "sha256": "33f1370d1e5feb4a8c8583937d16eadd9f740385018c11c5e707a8c22ee0d8db"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Inspector of Statistics",
+      "cycle": "2023",
+      "title": "Mathematics",
+      "asset": "apsc-inspector-of-statistics-2023-mathematics-advt-04-2023.pdf",
+      "bytes": 1128730,
+      "sha256": "13ce56dbc7fd2740468b7960980e8d4dff30a8918744d3d73178ae03b153a724"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Inspector of Statistics",
+      "cycle": "2023",
+      "title": "Statistics",
+      "asset": "apsc-inspector-of-statistics-2023-statistics-advt-04-2023.pdf",
+      "bytes": 2458321,
+      "sha256": "68a6f0238d56e698fec9cbe107adf2ffc6b05a887e87cb87f443d6dbebef1565"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Research Assistant Economic Affairs",
+      "cycle": "2024",
+      "title": "General Studies",
+      "asset": "apsc-research-assistant-economic-affairs-2024-gs-compapp-ra-09-2024.pdf",
+      "bytes": 4782421,
+      "sha256": "445e9def5b3b333931d06c90e8e1e30c00a0a3d8f02fbb948f38c1396f38f421"
+    },
+    {
+      "group": "apsc-statistics",
+      "exam": "APSC Research Assistant Finance",
+      "cycle": "2025",
+      "title": "General/Financial Awareness, English, Quantitative Aptitude and Reasoning",
+      "asset": "apsc-research-assistant-finance-2025-ra-finance-budget-question-paper-28-2025.pdf",
+      "bytes": 9971043,
+      "sha256": "e560a9b151532cd251cc1d95b53d6547c4113854e943d6b5d33e80cd0d7b392f"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "Agriculture",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-agriculture-qp-22-2025.pdf",
+      "bytes": 6709127,
+      "sha256": "194d7660353b69cc9965ba187d14c5fe59c1b35780a5830f3d78b30100ff5e3f"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "Botany",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-botany-qp-22-2025.pdf",
+      "bytes": 7383341,
+      "sha256": "75e4545d16cbe546412c8ea019fe820319a900037319a27612b556dffcc42c6f"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "Chemistry",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-chemistry-qp-22-2025.pdf",
+      "bytes": 7649410,
+      "sha256": "1b8c0fc1b4019022ea97576c4bd039f6c65ef106bf4de4ca0c83c8dba9fdbf7f"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "Computer Application",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-comp-app-sci-qp-22-2025.pdf",
+      "bytes": 5838875,
+      "sha256": "d3b64772af42274e1a470520815dfd340d594ad99694c26b10f0ce3a1e94a88a"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "Environmental Science",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-env-sci-qp-22-2025.pdf",
+      "bytes": 6032368,
+      "sha256": "db7bdbafdbb42dc368e5a1ab8f83bb6bab79f2c83a34a5509d05571313109124"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "Forestry",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-forestry-qp-22-2025.pdf",
+      "bytes": 5787126,
+      "sha256": "11e2c31da39aef1af75379232afbd3f6599adfe7e088cc1c06dd649d095fef51"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "General English",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-english-qp-22-2025.pdf",
+      "bytes": 2073494,
+      "sha256": "a0d3ed51b413b70d9cc8408d574c77782c77130c23cc8d2711fd8cb73d5c5a25"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-gk-qp-22-2025.pdf",
+      "bytes": 7703737,
+      "sha256": "9232134d16ea45e00d0ba87f8dea0ae2355f67fe283c34160c9b7ac95e453fdd"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "Geology",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-geology-qp-22-2025.pdf",
+      "bytes": 4515142,
+      "sha256": "ecdbe051d582a4ba92c08867ce6eb41e02b93eb9d15bd7aee09561479485274c"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "Horticulture",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-horti-qp-22-2025.pdf",
+      "bytes": 3508590,
+      "sha256": "f01e1431588ef8b491f9e06d8992700be6573e085de8ba20c7664cef45cff9be"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "Mathematics",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-mathematics-qp-22-2025.pdf",
+      "bytes": 7108485,
+      "sha256": "52ac8bffc32bf711b88b61090227471ee00b9635b9ad42b950d51df251242121"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "Physics",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-physics-qp-22-2025.pdf",
+      "bytes": 7231659,
+      "sha256": "0dc5defc81b044695fdcc42e98a42ab07a9d415716051df77e564d461edf9b53"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "Statistics",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-statistics-qp-22-2025.pdf",
+      "bytes": 5745914,
+      "sha256": "c8a57c28c1232692fb362c7d6d348c500dd9b67aad8e785702b1bad79eb25bfa"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "Veterinary Science",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-vet-sci-qp-22-2025.pdf",
+      "bytes": 3389112,
+      "sha256": "f3769373f592e4dc9c517735acf584995d70d9e6f943974206612954468ecf00"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Forest Ranger",
+      "cycle": "2025",
+      "title": "Zoology",
+      "asset": "apsc-forest-ranger-2025-forest-ranger-zoology-qp-22-2025.pdf",
+      "bytes": 7085822,
+      "sha256": "c7c96ec217e8c2428eb0c7e573300c97e55cc9f5862434047cec1fc0531204d3"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Soil Conservation Ranger",
+      "cycle": "2025",
+      "title": "Agriculture",
+      "asset": "apsc-soil-conservation-ranger-2025-25-2025-scr-qp-agri.pdf",
+      "bytes": 2545604,
+      "sha256": "ce3dbc4fd5bc7febc8882aee5a33854e461e6e50f80505bc4a1f37471bca8064"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Soil Conservation Ranger",
+      "cycle": "2025",
+      "title": "Botany",
+      "asset": "apsc-soil-conservation-ranger-2025-25-2025-scr-qp-botany.pdf",
+      "bytes": 6873042,
+      "sha256": "14579192fbbe3bb13f7e726d8030981bf8d734b21e026f85e0d52b6854bc46b9"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Soil Conservation Ranger",
+      "cycle": "2025",
+      "title": "Chemistry",
+      "asset": "apsc-soil-conservation-ranger-2025-chemistry-pyq-soil-con-rngr.pdf",
+      "bytes": 7203480,
+      "sha256": "74812f1784d3021248811829ef9cbe6a9acf33a8cf06e83b32b4d2ada2f08f93"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Soil Conservation Ranger",
+      "cycle": "2025",
+      "title": "Environmental Science",
+      "asset": "apsc-soil-conservation-ranger-2025-environmental-sc-pyq.pdf",
+      "bytes": 7339663,
+      "sha256": "d3d9809e81065e17ab207ae55817635a51b105911bba054e4bbf3350611c0b81"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Soil Conservation Ranger",
+      "cycle": "2025",
+      "title": "Forestry",
+      "asset": "apsc-soil-conservation-ranger-2025-forestry-pyq-soil-con-rngr.pdf",
+      "bytes": 6907570,
+      "sha256": "f2c19fe149c9f6caa91b40ace853196561c0985fafde175b0ef174cf864b5c3f"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Soil Conservation Ranger",
+      "cycle": "2025",
+      "title": "General English",
+      "asset": "apsc-soil-conservation-ranger-2025-25-2025-scr-qp-eng.pdf",
+      "bytes": 2530320,
+      "sha256": "9cf8628f6cbcf960938385ae4a596dbf9d4788b0d3fb8884e68540dc685b0c24"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Soil Conservation Ranger",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-soil-conservation-ranger-2025-25-2025-scr-qp-gk.pdf",
+      "bytes": 3725515,
+      "sha256": "164685d6cad02a5f43fd022e85ddcbf28be56d287c47be35895b473c3a16653a"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Soil Conservation Ranger",
+      "cycle": "2025",
+      "title": "Geology",
+      "asset": "apsc-soil-conservation-ranger-2025-geology-pyq-soil-con-rngr.pdf",
+      "bytes": 5023659,
+      "sha256": "1215f213b9333355d3114c3b8adc754102b7c1b8273a47da8fc72dad84375b89"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Soil Conservation Ranger",
+      "cycle": "2025",
+      "title": "Horticulture",
+      "asset": "apsc-soil-conservation-ranger-2025-25-2025-scr-qp-horticulture.pdf",
+      "bytes": 1656393,
+      "sha256": "182134c992476675a8b10a5144e3e6fe3700402592aaf7ebd5ad997ae5fe5cf3"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "APSC Soil Conservation Ranger",
+      "cycle": "2025",
+      "title": "Physics",
+      "asset": "apsc-soil-conservation-ranger-2025-physics-pyq-soil-con-rngr.pdf",
+      "bytes": 4994971,
+      "sha256": "a251443faa36d3147858287cb73713013f44bbec7b17c3d788c20c0279fff026"
+    },
+    {
+      "group": "assam-forest",
+      "exam": "Assam Forest Guard",
+      "cycle": "2021",
+      "title": "Question paper",
+      "asset": "forest-guard-2021-paper.pdf",
+      "bytes": 4109735,
+      "sha256": "6b7bc1e444ce725f99457492aa15a48df9557b03851f9b233c4a3c7438f96e3d"
+    },
+    {
+      "group": "assam-health",
+      "exam": "DHS Assam Grade III",
+      "cycle": "2022",
+      "title": "Technical",
+      "asset": "dhs-grade-iii-2022-technical.pdf",
+      "bytes": 4907962,
+      "sha256": "adb7de94bc0663a3591d09670b0029488d398e857e0866139eee0e05fa49931d"
+    },
+    {
+      "group": "assam-health",
+      "exam": "DHS Assam Grade III",
+      "cycle": "2021",
+      "title": "Question paper",
+      "asset": "dhs-grade-iii-2021-paper.pdf",
+      "bytes": 4701134,
+      "sha256": "e5d2706f8289917ad3697c574df0c10fadde0018af0872973a946f7b79cbf4d4"
+    },
+    {
+      "group": "assam-health",
+      "exam": "DME Assam Grade III",
+      "cycle": "2025",
+      "title": "Grade III Non-Technical",
+      "asset": "dme-2025-g3-nontechnical.pdf",
+      "bytes": 3357671,
+      "sha256": "d278e80a46eedac8981bb5d017223d5cfbf090cc18d97ab1753a20fb93a4ce16",
+      "note": "Partial scan",
+      "practice": "dme-assam-2025-grade-3-non-technical-question-paper"
+    },
+    {
+      "group": "assam-health",
+      "exam": "DME Assam Grade III",
+      "cycle": "2025",
+      "title": "Grade III Technical",
+      "asset": "dme-2025-g3-technical.pdf",
+      "bytes": 3468953,
+      "sha256": "566e6fcb084e5731bf068783a37d729428433923089f4039214e15b80bc6ae82",
+      "note": "Partial scan",
+      "practice": "dme-assam-2025-grade-3-technical-question-paper"
+    },
+    {
+      "group": "assam-office",
+      "exam": "APSC Computer Operator",
+      "cycle": "2024",
+      "title": "General Studies",
+      "asset": "apsc-computer-operator-2024-gs-compop-07-2024.pdf",
+      "bytes": 3877349,
+      "sha256": "59bd99f9e9f76c456bec8821d88ddde4d192ab052a5dc176817ffdd5582d41a4"
+    },
+    {
+      "group": "assam-office",
+      "exam": "APSC Grade IV",
+      "cycle": "2025",
+      "title": "General Studies",
+      "asset": "apsc-grade-iv-2025-gradeiv-gs-30-2025.pdf",
+      "bytes": 2868935,
+      "sha256": "688a09f25589b512da6efbf0067ef9ba911f8ce0d8706567dbca8fdbf024d245"
+    },
+    {
+      "group": "assam-office",
+      "exam": "APSC Junior Administrative Assistant",
+      "cycle": "2024",
+      "title": "General Assamese / Alternative English",
+      "asset": "apsc-junior-administrative-assistant-2024-gen-assamese-alt-eng-jaa-24-2024.pdf",
+      "bytes": 641011,
+      "sha256": "eae5d6a4be0b7fd16ebf86b2b91385ad3b78f7a16b59d75a7f211d34baa6b30d"
+    },
+    {
+      "group": "assam-office",
+      "exam": "APSC Junior Administrative Assistant",
+      "cycle": "2024",
+      "title": "General English",
+      "asset": "apsc-junior-administrative-assistant-2024-gen-eng-jaa-24-2024.pdf",
+      "bytes": 857694,
+      "sha256": "e18dfe831f8e9247445f2f03b822697f57e6a07fda1656da096784fdcabcb62e"
+    },
+    {
+      "group": "assam-office",
+      "exam": "APSC Junior Administrative Assistant",
+      "cycle": "2024",
+      "title": "General Studies",
+      "asset": "apsc-junior-administrative-assistant-2024-precis-writing-drafting-gk-jaa-24-2024.pdf",
+      "bytes": 1329214,
+      "sha256": "85cf44139db064f35d50a6dfac4ed294f160a2e4e0e2cb23e870ff4cd29bba75"
+    },
+    {
+      "group": "assam-office",
+      "exam": "APSC Junior Administrative Assistant",
+      "cycle": "2024",
+      "title": "General Studies (2)",
+      "asset": "apsc-junior-administrative-assistant-2024-question-paper-gs-jaa-24-2024.pdf",
+      "bytes": 4466428,
+      "sha256": "788666fe60fbe157f1a96ab4eaf666614c4142e62483b6b4a1dee114b8ef0afa"
+    },
+    {
+      "group": "assam-office",
+      "exam": "APSC Junior Administrative Assistant",
+      "cycle": "2024",
+      "title": "Paper (2)",
+      "asset": "apsc-junior-administrative-assistant-2024-jaa-computer-test-question-paper-24-2024.pdf",
+      "bytes": 1051283,
+      "sha256": "602ddc02a96bfbc740cf77eae54e71e788f8fc78a4454550847e748fccb43806"
+    },
+    {
+      "group": "assam-office",
+      "exam": "APSC Stenographer",
+      "cycle": "2024",
+      "title": "General Studies",
+      "asset": "apsc-stenographer-2024-steno-grade-i-paper-2025.pdf",
+      "bytes": 3549919,
+      "sha256": "3b96221583436c68e062196e7b32df2d196ff720d6379c50f4e35854353eaf46"
+    },
+    {
+      "group": "assam-office",
+      "exam": "Assam Panchayat and Rural Development (PNRD)",
+      "cycle": "2020",
+      "title": "Written paper (English scan)",
+      "asset": "pnrd-2020-paper-english.pdf",
+      "bytes": 6298950,
+      "sha256": "8563814b5fdf9ade17f54107bc231ec3ef2f9e5120b6b3dd0fa50ccbc9e5156c",
+      "note": "Archived scan"
+    },
+    {
+      "group": "assam-office",
+      "exam": "Assam Secretariat Junior Administrative Assistant",
+      "cycle": "2018",
+      "title": "Question paper",
+      "asset": "secretariat-jaa-2018-paper.pdf",
+      "bytes": 16575682,
+      "sha256": "eb134496d9a904b239fa092521c4f6a3c21630e26d94434a9a14da8dbcd6b94e"
+    },
+    {
+      "group": "assam-office",
+      "exam": "Gauhati High Court Junior Administrative Assistant",
+      "cycle": "2023",
+      "title": "Question paper",
+      "asset": "gauhati-high-court-jaa-2023-paper.pdf",
+      "bytes": 5156319,
+      "sha256": "2ce1514c4e0a71bf0842a8f65e6d9917d9b4f3eac9407b20334c52b83351b431"
+    },
+    {
+      "group": "assam-office",
+      "exam": "Gauhati High Court Junior Administrative Assistant",
+      "cycle": "2018",
+      "title": "Question paper",
+      "asset": "gauhati-high-court-jaa-2018-paper.pdf",
+      "bytes": 465622,
+      "sha256": "830bbc066de62297eeb803fc1f96f6496ccdd0eda17cb6dff11793fe7c050675"
+    },
+    {
+      "group": "assam-office",
+      "exam": "Gauhati High Court Junior Administrative Assistant",
+      "cycle": "2014",
+      "title": "Question paper",
+      "asset": "gauhati-high-court-jaa-2014-paper.pdf",
+      "bytes": 898306,
+      "sha256": "0464e8f32d702dd43a6a39e7ce47bae9a5883320d3e0d1c877ebae24c32fd3cd"
+    },
+    {
+      "group": "assam-office",
+      "exam": "Gauhati High Court Junior Administrative Assistant",
+      "cycle": "2012",
+      "title": "Question paper",
+      "asset": "gauhati-high-court-jaa-2012-paper.pdf",
+      "bytes": 7152891,
+      "sha256": "04b8fb681ba0012e71e7500d5ba1001c9ac845067e339db6835fce7cf15e604d"
+    },
+    {
+      "group": "assam-police",
+      "exam": "APSC Home Guards Class I",
+      "cycle": "2026",
+      "title": "Paper I",
+      "asset": "apsc-home-guards-class-i-2026-home-guards-paper-i-qp-02-2026.pdf",
+      "bytes": 6322394,
+      "sha256": "d9be30dd9fa2ffd6656e35e2c4ef71b531d176ec4725e67ec8508c503229711c"
+    },
+    {
+      "group": "assam-police",
+      "exam": "APSC Home Guards Class I",
+      "cycle": "2026",
+      "title": "Paper II",
+      "asset": "apsc-home-guards-class-i-2026-home-guards-paper-ii-qp-02-2026.pdf",
+      "bytes": 2309169,
+      "sha256": "ed4ddb3e31f77c1dc0145d63a7b750c62087610bbd93c1fae86463919bb10271"
+    },
+    {
+      "group": "assam-police",
+      "exam": "Assam Police Constable",
+      "cycle": "2025",
+      "title": "Combined Written Test Paper II, Set A",
+      "asset": "assam-police-constable-2025-cwt-p2-seta.pdf",
+      "bytes": 944745,
+      "sha256": "f76f1c6d29939dcba807c0c0751b9a49eea72bbfb765d962858e35e5dfb07e0a",
+      "note": "Archived scan",
+      "practice": "assam-police-constable-2025-question-paper",
+      "key": {
+        "asset": "assam-police-constable-2025-cwt-p2-seta-answer-key.pdf",
+        "bytes": 15358,
+        "sha256": "75ff61f3ff4d6b94c79cd6beaabadc3f537efa6a2a8da46f526d314f28bfff5e"
+      }
+    },
+    {
+      "group": "assam-police",
+      "exam": "Assam Police Sub-Inspector",
+      "cycle": "2025",
+      "title": "Combined Written Test Paper I, Set A",
+      "asset": "assam-police-si-2025-cwt-p1-seta.pdf",
+      "bytes": 621244,
+      "sha256": "d66d295f89d0010f4b6938821a7e543317120e17a92c188b24be0c6e7e992c26",
+      "practice": "assam-police-si-2025-question-paper",
+      "key": {
+        "asset": "assam-police-si-2025-cwt-p1-seta-answer-key.pdf",
+        "bytes": 16976,
+        "sha256": "f4ac95df31eff7d6a439f2da3ecfd6710d2ab8de4e2a2b6399006a4600fd9d5d"
+      }
+    },
+    {
+      "group": "assam-police",
+      "exam": "Assam Police Written Test",
+      "cycle": "2019",
+      "title": "Paper I",
+      "asset": "assam-police-written-test-2019-paper-i.pdf",
+      "bytes": 1006771,
+      "sha256": "c0fac74fb08ba8ba588552448194dc3f5e6958eb470920a2217720c8998ad30f"
+    },
+    {
+      "group": "assam-police",
+      "exam": "Assam Police Written Test",
+      "cycle": "2019",
+      "title": "Paper II",
+      "asset": "assam-police-written-test-2019-paper-ii.pdf",
+      "bytes": 1126475,
+      "sha256": "1e521f6381c02e716b4a766ce6004b504376ad765422177416c13e7bf702a1d9"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APDCL Assistant Accounts Officer",
+      "cycle": "2016",
+      "title": "Paper I",
+      "asset": "apdcl-aao-2016-paper-i.pdf",
+      "bytes": 398486,
+      "sha256": "4e4901e27171cbd2a985494b25cdf66dc7aea4c9b32377482d283fc013260792"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APDCL Assistant Accounts Officer",
+      "cycle": "2016",
+      "title": "Paper II",
+      "asset": "apdcl-aao-2016-paper-ii.pdf",
+      "bytes": 957186,
+      "sha256": "821f884ed67a727b1e1540fba7fb8823249c7ef2d7e0b09c9ddd1cac6a375758"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC AEGCL Assistant Accounts Officer",
+      "cycle": "2024",
+      "title": "Accountancy",
+      "asset": "apsc-aegcl-assistant-accounts-officer-2024-paper-ii-part-ii-accountancy-aao-aegcl.pdf",
+      "bytes": 2431674,
+      "sha256": "855dacbca06e6a6b99cf228c622d718624a1e8b5b0d40ee6764205e8f4eb6e56"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC AEGCL Assistant Accounts Officer",
+      "cycle": "2024",
+      "title": "General English",
+      "asset": "apsc-aegcl-assistant-accounts-officer-2024-paper-i-part-i-general-english-aao-aegcl.pdf",
+      "bytes": 1228090,
+      "sha256": "0d4f26d4f62df6734b37ddfc51be0f838c67677a51a2a119241bdd6380b1647b"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC AEGCL Assistant Accounts Officer",
+      "cycle": "2024",
+      "title": "General Studies",
+      "asset": "apsc-aegcl-assistant-accounts-officer-2024-paper-i-part-ii-general-knowledge-aao-aegcl.pdf",
+      "bytes": 4428056,
+      "sha256": "51c9e696561babeb23c151d44a61a037af22831daf901f62b799d3322afda9ad"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC AEGCL Assistant Accounts Officer",
+      "cycle": "2024",
+      "title": "Mathematics",
+      "asset": "apsc-aegcl-assistant-accounts-officer-2024-paper-ii-part-ii-mathematics-aao-aegcl.pdf",
+      "bytes": 2236421,
+      "sha256": "e3b0c96fcb203d881897b1ae3cf77877245464461f8565041621f55c47fe8273"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC AEGCL Assistant Accounts Officer",
+      "cycle": "2024",
+      "title": "Mathematics (2)",
+      "asset": "apsc-aegcl-assistant-accounts-officer-2024-paper-ii-part-i-general-mathematics-aao-aegcl.pdf",
+      "bytes": 248061,
+      "sha256": "b4dcbcf47cac7bef9d6f8b2ec1a9055b758113ae16b0a5a756637545d01f4a17"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC AEGCL Assistant Accounts Officer",
+      "cycle": "2024",
+      "title": "Statistics",
+      "asset": "apsc-aegcl-assistant-accounts-officer-2024-paper-ii-part-ii-statistics-aao-aegcl.pdf",
+      "bytes": 2185648,
+      "sha256": "ad23bc03565a4e0b84b15b9e12e9dffdabe8aab71db58f158eaf28da8ff6bfce"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC AEGCL Assistant Manager",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-aegcl-assistant-manager-2023-am-aegcl-gs-13-2023.pdf",
+      "bytes": 5751341,
+      "sha256": "39b9481e54a01893cae5ad9e40443f2fa231fa4b5b735e50e211fa7795c831fc"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC AEGCL Junior Manager",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-aegcl-junior-manager-2023-gs-jr-manager-aegcl-14-2023.pdf",
+      "bytes": 4136919,
+      "sha256": "4185a376ad7d18e3332a1e6d993f6b385b8b716284411f6452a25c334b846df1"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC APDCL Assistant Accounts Officer",
+      "cycle": "2024",
+      "title": "Accountancy",
+      "asset": "apsc-apdcl-assistant-accounts-officer-2024-paper-ii-part-ii-accountancy-aao-apdcl.pdf",
+      "bytes": 13069739,
+      "sha256": "7d74769b737a073e040ceca6ac3a4f28d93a8c779b2e15ba1dd322ab13c6635d"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC APDCL Assistant Accounts Officer",
+      "cycle": "2024",
+      "title": "General English",
+      "asset": "apsc-apdcl-assistant-accounts-officer-2024-paper-i-part-i-general-english-aao-apdcl.pdf",
+      "bytes": 682600,
+      "sha256": "41bbb1fe2e04f52b20cc1fa046c85f64249c0c6fd844d1d82a8b106632638f6a"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC APDCL Assistant Accounts Officer",
+      "cycle": "2024",
+      "title": "General Studies",
+      "asset": "apsc-apdcl-assistant-accounts-officer-2024-paper-i-part-ii-general-knowledege-aao-apdcl.pdf",
+      "bytes": 2570486,
+      "sha256": "e95417554c82ac00a3a300172408760aae9111714eeeab88f993bca48533a722"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC APDCL Assistant Accounts Officer",
+      "cycle": "2024",
+      "title": "Mathematics",
+      "asset": "apsc-apdcl-assistant-accounts-officer-2024-paper-ii-part-ii-mathematics-aao-apdcl.pdf",
+      "bytes": 3864295,
+      "sha256": "d056f01d16efcff1177d50fd45dd4cf5e3703b00474b090b7a500cb54846cb22"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC APDCL Assistant Accounts Officer",
+      "cycle": "2024",
+      "title": "Mathematics (2)",
+      "asset": "apsc-apdcl-assistant-accounts-officer-2024-paper-ii-part-i-mathematics-aao-apdcl.pdf",
+      "bytes": 209777,
+      "sha256": "28aad055fbe542ea5a708254ddd6f4b49fdf3389e4e66dcbf452c697e919f14c"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC APDCL Assistant Accounts Officer",
+      "cycle": "2024",
+      "title": "Statistics",
+      "asset": "apsc-apdcl-assistant-accounts-officer-2024-paper-ii-part-ii-statistics-aao-apdcl.pdf",
+      "bytes": 3755882,
+      "sha256": "2d96dab66b3c6f4ce9a94f6bbed5e181cd515479862d0f47e9beccea3ba0264b"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC APDCL Assistant Manager",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-apdcl-assistant-manager-2023-asst-mana-apdcl-gs-06-2023.pdf",
+      "bytes": 2454591,
+      "sha256": "74ff373bcc14e890063fa083c98e94d16ba72276a51bac11bac6069f99858359"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC APDCL Assistant Manager HR",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-apdcl-assistant-manager-hr-2023-asst-mana-hr-gs-apdcl-07-2023.pdf",
+      "bytes": 2666899,
+      "sha256": "32cfb4537d659a1aab9246fc1f474eb9d63cd46796784ceaadba43eed24f1906"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC APDCL Assistant Manager HR",
+      "cycle": "2023",
+      "title": "Human Resource",
+      "asset": "apsc-apdcl-assistant-manager-hr-2023-asst-mana-hr-apdcl-07-2023.pdf",
+      "bytes": 2798657,
+      "sha256": "891ec21f970476ec6f49a9453801199c8fe74f6f0a31eeed63707c33e852241c"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC APDCL Junior Manager",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-apdcl-junior-manager-2023-jun-mana-gs-apdcl-08-2023.pdf",
+      "bytes": 2489407,
+      "sha256": "08035bd69e16aed7ea0ce06dcf816da93dc854e49082805b0b84ae562e3ce03d"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC APGCL Assistant Manager",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-apgcl-assistant-manager-2023-asst-manager-apgcl-gs-11-2023.pdf",
+      "bytes": 3310221,
+      "sha256": "781df92bc0e62597d1a47fae3bf0fe04007c654f0312d4bb747b146fe7bc354b"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC APGCL Assistant Manager",
+      "cycle": "2023",
+      "title": "Human Resource",
+      "asset": "apsc-apgcl-assistant-manager-2023-asst-manager-apgcl-hr-11-2023.pdf",
+      "bytes": 2241090,
+      "sha256": "e39416abdcc02e9e39a7927060c761b1f4b742629e5a5700b108934381fc2a61"
+    },
+    {
+      "group": "assam-power",
+      "exam": "APSC APGCL Junior Manager",
+      "cycle": "2023",
+      "title": "General Studies",
+      "asset": "apsc-apgcl-junior-manager-2023-gs-jr-manager-apgcl-12-2023.pdf",
+      "bytes": 4050936,
+      "sha256": "45bf43629f63b494b3c5aa07b52507016e2e9a3995d7926a2de48dd1933595c6"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam Higher Secondary TET",
+      "cycle": "2021",
+      "title": "Paper I",
+      "asset": "hs-tet-2021-paper-i.pdf",
+      "bytes": 493630,
+      "sha256": "be873388cc1319068e8421e90ec0302e0b0eb69a74cb396fc7af7a8685084034",
+      "practice": "assam-tet-2021-paper-i-question-paper"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam Higher Secondary TET",
+      "cycle": "2021",
+      "title": "Paper II (Commerce)",
+      "asset": "hs-tet-2021-paper-ii.pdf",
+      "bytes": 406008,
+      "sha256": "4781ec236d447af668a56ae9818a48d8b487b8751d5136593f6507121b1989cf",
+      "practice": "assam-tet-2021-paper-ii-question-paper"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam Higher Secondary TET",
+      "cycle": "2021",
+      "title": "Paper II (Option C)",
+      "asset": "hs-tet-2021-paper-ii-optionc.pdf",
+      "bytes": 452444,
+      "sha256": "f0362865264ce9fe00842eb0e37ec9708aa7fb31ff62f8e23963fd6ef2a0fa1e"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam TET-cum-Recruitment",
+      "cycle": "2025",
+      "title": "Paper I",
+      "asset": "tet-cum-recruitment-2025-paper-i.pdf",
+      "bytes": 9036953,
+      "sha256": "9cc8595abaaf8aa138bc920fab867129ddda926941a68b545d9983bfcabcaaba"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam TET-cum-Recruitment",
+      "cycle": "2025",
+      "title": "Paper II",
+      "asset": "tet-cum-recruitment-2025-paper-ii.pdf",
+      "bytes": 10320025,
+      "sha256": "4c33746e234c4fcae3b9d2d0703b0b74413c423f24604286170aeb5c46ab2e3b"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam TET-cum-Recruitment",
+      "cycle": "2024",
+      "title": "BTR Graduate Teacher",
+      "asset": "tet-cum-recruitment-2024-btr-graduate-teacher.pdf",
+      "bytes": 22828955,
+      "sha256": "dcaeff307342b3c2436160ad0cb8f97305ff5d543c08314639f127fc47f29a72"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam Teacher Eligibility Test",
+      "cycle": "2026",
+      "title": "Special Paper I",
+      "asset": "tet-2026-special-paper-i.pdf",
+      "bytes": 1287729,
+      "sha256": "88fec6233c7a796779d9bef2cca1be7b564d126575ed044fd1d862007df4c6f3"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam Teacher Eligibility Test",
+      "cycle": "2026",
+      "title": "Special Paper II",
+      "asset": "tet-2026-special-paper-ii.pdf",
+      "bytes": 1619775,
+      "sha256": "058e88155bd3dbab1cbe97c76060d80e1bc88b0eccc2a72408418c89ce28eaae"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam Teacher Eligibility Test",
+      "cycle": "2023",
+      "title": "Paper I",
+      "asset": "tet-2023-paper-i.pdf",
+      "bytes": 498429,
+      "sha256": "36736dd3e9c21baea57baad2eb009af432c02f056bb702f5b6a526643e343749"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam Teacher Eligibility Test",
+      "cycle": "2023",
+      "title": "Paper II",
+      "asset": "tet-2023-paper-ii.pdf",
+      "bytes": 562135,
+      "sha256": "0e2c8f29a6d26c8744d72dfbf333512171af56766e2066b06d2402fb4c3fb4d8"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam Teacher Eligibility Test",
+      "cycle": "2021",
+      "title": "Paper I",
+      "asset": "tet-2021-paper-i.pdf",
+      "bytes": 1918049,
+      "sha256": "98163ff6a4db4fd6c5556103db352549ae30a1363fc43fe19d86327e453c6e34"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam Teacher Eligibility Test",
+      "cycle": "2021",
+      "title": "Paper II",
+      "asset": "tet-2021-paper-ii.pdf",
+      "bytes": 2504428,
+      "sha256": "2759fef46615486715e853066c05f0fa283abb0cbac2ad939416d4070a7936c1"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam Teacher Eligibility Test",
+      "cycle": "2021",
+      "title": "Special Paper I",
+      "asset": "tet-2021-special-paper-i.pdf",
+      "bytes": 805477,
+      "sha256": "f002e666161b140a134d335415eb3b1f4fcf7ac1ffd22764935b112ff3715893",
+      "practice": "assam-tet-2021-special-paper-i-question-paper"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam Teacher Eligibility Test",
+      "cycle": "2019",
+      "title": "Paper I",
+      "asset": "tet-2019-paper-i.pdf",
+      "bytes": 913765,
+      "sha256": "9629886c8d1b9847673d35ce188889ebfa6716b747ce038b6d6feeb39193ce6f"
+    },
+    {
+      "group": "assam-tet",
+      "exam": "Assam Teacher Eligibility Test",
+      "cycle": "2019",
+      "title": "Paper II",
+      "asset": "tet-2019-paper-ii.pdf",
+      "bytes": 1147991,
+      "sha256": "c326e3dc1e174b1c411cc3cfc4b9d4f977b3d8fd4f1b7b9482dbb48ec2bb8462"
+    },
+    {
+      "group": "dibru-bed",
+      "exam": "Dibrugarh University B.Ed. CET",
+      "cycle": "2023",
+      "title": "Question paper",
+      "asset": "dibrugarh-university-bed-cet-2023-paper.pdf",
+      "bytes": 21806836,
+      "sha256": "b2d1b03a17a1efee1efe4a0a9c255a65fb616ba1985fa4005c1d18e91759c6ce",
+      "note": "Archived scan"
+    },
+    {
+      "group": "dibru-bed",
+      "exam": "Dibrugarh University B.Ed. CET",
+      "cycle": "2022",
+      "title": "Question paper",
+      "asset": "dibrugarh-university-bed-cet-2022-paper.pdf",
+      "bytes": 6769001,
+      "sha256": "c685594657300e47db9f737e59c5f5d280f579986bca3f5f281026b732fd5d4c",
+      "note": "Archived scan"
+    },
+    {
+      "group": "dibru-bed",
+      "exam": "Dibrugarh University B.Ed. CET",
+      "cycle": "2020",
+      "title": "Question paper",
+      "asset": "dibrugarh-university-bed-cet-2020-paper.pdf",
+      "bytes": 5735252,
+      "sha256": "d718945f7fe916a03c649c0483c3546605e9db71087ffe88ab6302844c3d0526",
+      "note": "Archived scan"
+    },
+    {
+      "group": "dibru-bed",
+      "exam": "Dibrugarh University B.Ed. CET",
+      "cycle": "2019",
+      "title": "Question paper",
+      "asset": "dibrugarh-university-bed-cet-2019-paper.pdf",
+      "bytes": 7433710,
+      "sha256": "75f4229160b71c0d661d0bec40e155a4cc48ff7dbaf7518b0596ee179ea206c5",
+      "note": "Archived scan"
+    },
+    {
+      "group": "dibru-bed",
+      "exam": "Dibrugarh University B.Ed. CET",
+      "cycle": "2018",
+      "title": "Question paper",
+      "asset": "dibrugarh-university-bed-cet-2018-paper.pdf",
+      "bytes": 5726776,
+      "sha256": "f355431f4a9a9b910fdc1db12fd4b8d0e288009438a1aa036fe3c5a03f00e0b3",
+      "note": "Archived scan"
+    }
+  ]
+}

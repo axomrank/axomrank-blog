@@ -30,6 +30,8 @@ For a recruitment notice, add `notice_exam` (the exam hub slug), `notice_date` (
 
 For a monthly current-affairs post, set `current_affairs` to the covered month (`YYYY-MM`). The post is published at `/current-affairs/<month>/`.
 
+For a paper-download guide, set `download_collection` to a group from `data/pyq-downloads.json` and put `{{paper_downloads}}` in the body. Preserve the PDF bytes and verify the release asset's size and SHA-256 before adding it to the manifest. `practice` connects the same booklet to its online question-paper page when available.
+
 For Assamese, use `lang: as-IN`, `translation_of` with the matching English slug, and `draft: true` until a human editor approves the copy. Published translations use `/as/` and link back to the English article through `hreflang` and a visible language link. Use `## সঘনে সোধা প্ৰশ্ন` for Assamese FAQs.
 
 ## Build locally

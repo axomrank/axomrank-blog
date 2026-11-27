@@ -118,6 +118,8 @@ Based on these shares, a Grade III aspirant with 10 study hours a week could try
 
 Grade IV aspirants can move one English hour to reasoning.
 
+For offline practice, open the [ADRE PDF download guide]({{base}}/adre-question-paper-pdf-download/) and choose the matching year, grade and paper level.
+
 ## Frequently asked questions
 
 ### How many questions are in an ADRE paper?

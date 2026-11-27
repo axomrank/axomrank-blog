@@ -66,6 +66,8 @@ AxomRank's free [Assam History course]({{app}}/) (93 lessons) and [Indian Polity
 
 If you are considering a paid batch, use your Prelims practice to identify the help you need. The [APSC coaching guide]({{base}}/apsc-coaching-in-assam/) compares published course formats and shows how to check CSAT practice and Mains feedback.
 
+Save an original booklet from the [APSC CCE Prelims PDF collection]({{base}}/apsc-cce-prelims-question-paper-pdf-download/) before you try a full paper.
+
 ## Frequently asked questions
 
 ### Is APSC CSAT qualifying?

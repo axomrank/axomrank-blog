@@ -238,6 +238,7 @@ h3 { font-size: 1.125rem; }
 }
 .table-scroll th { font-weight: 650; }
 .table-scroll thead { background: var(--surface); }
+.download-links a { display: inline-block; padding-block: .3rem; }
 .table-scroll .sortable { min-width: 42rem; }
 .sortable button {
   min-height: 2.75rem;

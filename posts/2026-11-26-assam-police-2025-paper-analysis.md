@@ -33,6 +33,8 @@ These are counts from the archived booklets. Use the official advertisement for 
 
 The [Assam Police exam hub]({{base}}/assam-police/) links to the syllabus analysis and official notice board.
 
+The [Assam Police PDF download guide]({{base}}/assam-police-question-paper-pdf-download/) links directly to both Set A booklets and their matching keys.
+
 ## Frequently asked questions
 
 ### Where can I find the Assam Police SI 2025 question paper with answers?

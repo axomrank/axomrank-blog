@@ -35,6 +35,7 @@ from urllib.parse import quote, urlsplit
 import markdown
 
 import district_pages
+import downloads
 import exam_pages
 import post_images
 import pyq_pages
@@ -228,6 +229,8 @@ def build(base_url=None, pyq_dir=None):
     pyq_dir = pyq_dir or os.environ.get("PYQ_DIR") or (ROOT.parent / "assam-exam-pyq")
     pyq_data = pyq_pages.load(pyq_dir)
     site["has_papers"] = bool(pyq_data and pyq_data[1])
+    download_groups, paper_downloads = downloads.load(ROOT / "data" / "pyq-downloads.json")
+    practice_slugs = {p["slug"] for p in pyq_data[1]} if site["has_papers"] else set()
 
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -284,7 +287,12 @@ def build(base_url=None, pyq_dir=None):
             post_images.render(p, image_path)
         image_url = f"{base}/{image_path.relative_to(OUT).as_posix()}"
         md.reset()
-        body_html = md.convert(p["body_md"].replace("{{app}}", site["app_url"]).replace("{{base}}", base))
+        body_md = p["body_md"].replace("{{app}}", site["app_url"]).replace("{{base}}", base)
+        if group := p.get("download_collection"):
+            if group not in download_groups or body_md.count("{{paper_downloads}}") != 1:
+                raise SystemExit(f"{p['slug']}: expected a known download collection and one paper download table")
+            body_md = body_md.replace("{{paper_downloads}}", downloads.table(download_groups[group], base, practice_slugs))
+        body_html = md.convert(body_md)
         if not site["has_papers"]:
             data_routes = ["exams", "question-papers", "questions", "syllabus", *(hub["slug"] for hub in exam_pages.HUBS)]
             body_html = re.sub(r'href="' + re.escape(base) + rf'/(?:{"|".join(data_routes)})/[^\"]*"',
@@ -378,14 +386,14 @@ def build(base_url=None, pyq_dir=None):
 
     # Previous-year question pages from the assam-exam-pyq dataset
     if site["has_papers"]:
-        papers, published_topics = pyq_pages.build(site, page, OUT, urls, utm, pyq_data, posts)
+        papers, published_topics = pyq_pages.build(site, page, OUT, urls, utm, pyq_data, posts, paper_downloads)
     else:
         print(f"No PYQ papers found at {pyq_dir}: skipping question-paper pages")
         papers, published_topics = [], set()
     exam_pages.build(site, page, OUT, urls, utm, papers, posts, md, published_topics)
     district_pages.build(site, page, OUT, urls, utm, papers, published_topics)
 
-    resources = []
+    resources = [("paper-downloads", "Download original question papers", "PDF booklets for Assam exams")]
     if papers:
         total = sum(len(x["qs"]) for x in papers)
         resources.extend([

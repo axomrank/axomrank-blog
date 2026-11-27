@@ -25,6 +25,8 @@ The collection contains **320 transcribed questions** across these three booklet
 
 Mark any question you guessed, even if you answered it correctly. For teaching-method and child-development questions, write a short reason for the option you selected. Practise the [teaching methods]({{base}}/questions/teaching-methods/) and [child development]({{base}}/questions/child-development/) topic sets before repeating the marked questions.
 
+The [Assam TET PDF collection]({{base}}/assam-tet-question-paper-pdf-download/) also lists the available General, Higher Secondary and later Special TET scans.
+
 ## Frequently asked questions
 
 ### Which Assam TET 2021 papers are available?

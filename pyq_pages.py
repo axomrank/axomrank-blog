@@ -189,7 +189,7 @@ def practice_items(questions, paper_by_key, base, img_base):
     return "".join(items)
 
 
-def build(site, page, out, urls, utm, pyq_data, posts):
+def build(site, page, out, urls, utm, pyq_data, posts, paper_downloads):
     pyq, papers, rows = pyq_data
     base = site["base_url"]
     img_base = f"{base}/pyq-img"
@@ -228,21 +228,25 @@ def build(site, page, out, urls, utm, pyq_data, posts):
         others = [o for o in papers if o["exam"] == p["exam"] and o is not p]
         related = "".join(f'<li><a href="{base}/question-papers/{o["slug"]}/">{html.escape(o["name"])} paper</a></li>' for o in others)
         qlist = "".join(question_html(r, base, img_base=img_base, published_topics=published_topics) for r in qs)
-        pdf = f"{GITHUB}/blob/main/{p['source_pdf']}"
+        download = paper_downloads.get(p["slug"])
+        pdf = download["url"] if download else f"{GITHUB}/blob/main/{p['source_pdf']}"
+        pdf_label = "Download question paper PDF" if download else "View question paper PDF"
+        pdf_key = (f' · <a href="{download["key"]["url"]}">Download answer key PDF</a>'
+                   if download and "key" in download else "")
         faq = [
             (f"How many questions are available for {p['name']}?",
              f"This page has {n} questions. The most common subject here is {subj.most_common(1)[0][0]} with {subj.most_common(1)[0][1]} questions."),
             (f"Where do the answers for the {p['name']} paper come from?",
              "; ".join(f"{ANSWER_SOURCE.get(k, k)} for {v} questions" for k, v in sources.most_common()) + "."),
             (f"Can I download the original {p['name']} question paper PDF?",
-             "Yes. The original booklet PDF is linked on this page from the open AxomRank PYQ dataset on GitHub."),
+             "Yes. Use the PDF link on this page to open the archived booklet."),
         ]
         faq_html = "".join(f"<h3>{html.escape(q)}</h3><p>{html.escape(a)}</p>" for q, a in faq)
         body = f"""<article class="post wrap pyq">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{base}/">Blog</a> › <a href="{base}/question-papers/">Question papers</a> › <a href="{base}/question-papers/#{EXAMS[p['exam']][1]}">{html.escape(EXAMS[p['exam']][2])}</a></nav>
   <h1>{html.escape(title)}</h1>
   <p class="dek">{html.escape(p['paper_title'])}. Practise the available questions below and tap <em>Show answer</em> to check each response.</p>
-  <p class="jump-link"><a href="#questions">Jump to the questions</a></p>
+  <p class="jump-link"><a href="{pdf}">{pdf_label}</a>{pdf_key} · <a href="#questions">Jump to the questions</a></p>
   {coverage}
   <div class="prose">
   <h2>About this paper</h2>
@@ -251,7 +255,6 @@ def build(site, page, out, urls, utm, pyq_data, posts):
     <tr><th>Year</th><td>{p['year']}</td></tr>
     <tr><th>Conducted by</th><td>{html.escape(qs[0]['conducting_body'] or '-')}</td></tr>
     <tr><th>Questions</th><td>{n}</td></tr>
-    <tr><th>Original PDF</th><td><a href="{pdf}" rel="nofollow">Question booklet (PDF)</a></td></tr>
   </tbody></table>
   <h3>Where the answers come from</h3>
   <ul>{src_lines}</ul>
@@ -304,7 +307,7 @@ def build(site, page, out, urls, utm, pyq_data, posts):
     total = sum(len(p["qs"]) for p in papers)
     body = f"""<section class="hero wrap"><h1>Assam exam previous year question papers with answers</h1>
 <p class="dek">{total:,} questions from {len(papers)} booklets across ADRE, APSC CCE Prelims, Assam Police, Assam TET and DME. Read the available questions with their answers and sources.</p>
-<p class="jump-link"><a href="{base}/questions/">Browse questions by topic</a></p>
+<p class="jump-link"><a href="{base}/paper-downloads/">Download original paper PDFs</a> · <a href="{base}/questions/">Browse questions by topic</a></p>
 <details class="toc"><summary>Find papers by exam</summary><ul>{''.join(exam_links)}</ul></details></section>
 <section class="wrap list">{''.join(sections)}</section>"""
     canonical = f"{base}/question-papers/"
