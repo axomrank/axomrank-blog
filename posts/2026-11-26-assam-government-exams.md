@@ -45,7 +45,7 @@ The table uses published recruitment examples. Before applying, check the advert
 - Read the age and qualification cut-off dates, accepted equivalents, reservation rules, and any residence, language or Employment Exchange requirements for your post.
 - Save the official advertisement, syllabus and application receipt. Keep certificates ready only as required by the notice, including any professional registration, teaching credential or driving licence.
 
-For help with the application, see the [Assam job application documents guides]({{base}}/topics/job-application-documents/), including [Employment Exchange registration]({{base}}/assam-employment-exchange-registration/) and [APSC One Time Registration]({{base}}/apsc-one-time-registration-assam/).
+Start with the [Assam government job documents checklist]({{base}}/assam-government-job-documents-checklist/) and use the [application document guides]({{base}}/topics/job-application-documents/) to prepare the certificates your vacancy requires.
 
 Use the [exam directory]({{base}}/exams/) to find syllabi and papers after choosing your route.
 

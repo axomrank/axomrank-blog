@@ -6,7 +6,7 @@ slug: assam-obc-ncl-certificate
 tags: Job Application Documents
 ---
 
-**Assam's online Non-Creamy Layer (NCL) form asks for a digital OBC or MOBC certificate number before fetching the caste record.** Open the state form, then gather the residence and income evidence it asks for. If you have a paper caste certificate, check the digital-certificate route linked from the form before entering a number.
+**Assam's online Non-Creamy Layer (NCL) form asks for a digital OBC or MOBC certificate number before fetching the caste record.** Open the state form, then gather the residence and income evidence it asks for. If you have a paper caste certificate, follow the [Assam digital caste certificate application guide]({{base}}/assam-caste-certificate-online/) first.
 
 ## Check the certificate the job actually asks for
 
